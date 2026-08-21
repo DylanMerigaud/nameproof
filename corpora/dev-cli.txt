@@ -1,0 +1,13 @@
+# Developer CLI tools that earned stars
+ripgrep
+fzf
+httpie
+shellcheck
+jq
+bat
+fd
+zoxide
+tldx
+dust
+hadolint
+commitizen

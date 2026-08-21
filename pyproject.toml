@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nameproof"
+version = "0.1.0"
+description = "Proofread a product name before you commit to it: US pronounceability, market conventions, and multi-surface availability."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Dylan Merigaud" }]
+keywords = ["naming", "domain", "brand", "product-name", "rdap", "availability", "cli"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Utilities",
+]
+# Zero runtime dependencies is a feature, not an omission: it makes the tool auditable in one
+# sitting and installable anywhere. Everything here is standard library.
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/DylanMerigaud/nameproof"
+Issues = "https://github.com/DylanMerigaud/nameproof/issues"
+
+[project.scripts]
+nameproof = "nameproof.cli:main"
+
+[tool.setuptools]
+packages = ["nameproof"]
+
+[tool.setuptools.package-data]
+nameproof = ["../corpora/*.txt", "data/*.json", "data/*.txt"]

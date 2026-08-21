@@ -14,6 +14,7 @@ WHY NOT DNS. A DNS lookup is not an availability check. A registered domain with
 returns NXDOMAIN and looks free. Plenty of tools get this wrong; it is worth stating out loud.
 """
 import json
+import time
 import urllib.error
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor
@@ -41,21 +42,37 @@ def _get(url, timeout=15):
         return resp.status, resp.read()
 
 
-def _exists(url, timeout=15):
+# RDAP rate limits, and it does so exactly when the tool is most useful: checking sixty
+# generated names at once. Measured 2026-08-21, four concurrent workers over 61 names returned
+# UNKNOWN on most of them, which is honest but useless. Retrying with a backoff turns a
+# throttled batch into a real answer, and throttling is precisely the case a retry fixes.
+RETRY_CODES = (429, 500, 502, 503, 504)
+
+
+def _exists(url, timeout=15, attempts=3):
     """200 means the record exists, 404 means it does not. Anything else is UNKNOWN.
 
     UNKNOWN is a real answer and it is never silently folded into FREE. A rate limit that reads
-    as 'available' is how a tool tells you to go register a name somebody already owns.
+    as 'available' is how a tool tells you to go register a name somebody already owns. So a
+    throttle is RETRIED rather than reinterpreted: the answer stays honest, it just takes longer
+    to get.
     """
-    try:
-        status, _ = _get(url, timeout)
-        return TAKEN if status == 200 else UNKNOWN
-    except urllib.error.HTTPError as e:
-        if e.code == 404:
-            return FREE
-        return UNKNOWN
-    except Exception:                                        # noqa: BLE001
-        return UNKNOWN
+    delay = 1.0
+    for attempt in range(attempts):
+        try:
+            status, _ = _get(url, timeout)
+            return TAKEN if status == 200 else UNKNOWN
+        except urllib.error.HTTPError as e:
+            if e.code == 404:
+                return FREE
+            if e.code not in RETRY_CODES or attempt == attempts - 1:
+                return UNKNOWN
+        except Exception:                                    # noqa: BLE001
+            if attempt == attempts - 1:
+                return UNKNOWN
+        time.sleep(delay)
+        delay *= 2
+    return UNKNOWN
 
 
 def domain(name, tld="com"):

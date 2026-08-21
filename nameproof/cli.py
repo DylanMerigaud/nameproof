@@ -12,8 +12,10 @@ Four commands, because there are only four questions worth asking about a candid
 import argparse
 import sys
 
-from . import availability, corpus, generate, seo
-from .phonetics import analyse, grade as _grade
+from concurrent.futures import ThreadPoolExecutor
+
+from . import availability, corpus, generate, search, seo
+from .phonetics import Finding, analyse, grade as _grade
 
 BAR = "-" * 66
 
@@ -30,6 +32,8 @@ def cmd_score(args):
             findings = findings + corpus.fits(name, market)
         if args.seo:
             findings = findings + seo.analyse(name, keywords, online=not args.offline)
+        if args.search and not args.offline:
+            findings = findings + search.hijack(name, gl=args.country)
         findings.sort(key=lambda f: -f.weight)
         grade, total = _grade(findings)
         rows.append((name, grade, total, findings))
@@ -63,28 +67,69 @@ def cmd_market(args):
 
 
 def cmd_generate(args):
+    """Generate, then RANK. Never a list per technique.
+
+    The first version printed one block per technique, which is unreadable: four separate lists
+    cannot be compared, and the reader has to do the ranking the tool exists to do. Pooling
+    everything and sorting by penalty means the best name is the first line, whichever technique
+    produced it, and the technique becomes a label rather than a section heading.
+    """
     if not args.all and not args.technique:
         print("generate needs --technique <name> or --all. Techniques: {}".format(
             ", ".join(sorted(generate.TECHNIQUES))))
         return 2
     techniques = (sorted(generate.TECHNIQUES.items()) if args.all
-                 else [(args.technique, generate.TECHNIQUES[args.technique])])
+                  else [(args.technique, generate.TECHNIQUES[args.technique])])
+
+    pool = []
+    seen = set()
     for label, fn in techniques:
-        names = fn(n=args.count, seed=args.seed)
-        print("\n{}  ({} generated)".format(label, len(names)))
-        print(BAR)
-        shown = 0
-        for name in names:
-            if not args.score:
-                print("  {}".format(name))
-                shown += 1
+        for name in fn(n=args.count, seed=args.seed):
+            key = name.lower()
+            if key in seen:
                 continue
-            g, total = _grade(analyse(name))
-            if g in ("A", "B"):
-                print("  {}  {}  (penalty {})".format(g, name, total))
-                shown += 1
-        if shown == 0:
-            print("  nothing to show" + (" at grade A or B" if args.score else ""))
+            seen.add(key)
+            findings = analyse(name)
+            grade, total = _grade(findings)
+            pool.append({"name": name, "how": label, "grade": grade,
+                         "penalty": total, "findings": findings})
+
+    if args.score:
+        pool = [c for c in pool if c["grade"] in ("A", "B")]
+
+    # Availability LAST, because it is the only step that costs network time, and as a BONUS
+    # rather than a gate. Dylan, 2026-08-21: "com nu libre huge bonus, pas necessary". Filtering
+    # hard on it throws away good names, and the whole tool is a ranking with reasons rather
+    # than a set of binary doors. So a free bare .com pulls a name UP the list by carrying a
+    # negative weight, and a taken one costs nothing at all: plenty of good products live at
+    # getsomething.com.
+    if args.available:
+        # Two workers, not four: RDAP throttles above that and the retries then cost
+        # more wall clock than the parallelism saved.
+        with ThreadPoolExecutor(max_workers=2) as ex:
+            for c, st in zip(pool, ex.map(
+                    lambda x: availability.domain(x["name"], "com").status, pool)):
+                c["com"] = st
+                if st == availability.FREE:
+                    c["findings"] = c["findings"] + [Finding(
+                        "BARE_COM_FREE", -3,
+                        "the bare .com is free, no prefix and no suffix needed. That is rare "
+                        "enough in 2026 to be worth real points.")]
+                    c["grade"], c["penalty"] = _grade(c["findings"])
+
+    pool.sort(key=lambda c: (c["penalty"], c["name"].lower()))
+    if not pool:
+        print("nothing survived the filters. Raise --count or drop a filter.")
+        return 0
+
+    print("\n{:<4} {:<16} {:<9} {:<12} {}".format(
+        "", "name", "score", "technique", "bare .com" if args.available else ""))
+    print(BAR)
+    for c in pool:
+        print("{:<4} {:<16} {:<9} {:<12} {}".format(
+            c["grade"], c["name"], c["penalty"], c["how"],
+            c.get("com", "") if args.available else ""))
+    print("\n{} candidate(s), best first.".format(len(pool)))
     return 0
 
 
@@ -100,7 +145,13 @@ def main(argv=None):
                    help="add the SEO findings: dictionary-word risk and brand collision")
     s.add_argument("--keywords", help="comma separated category words, to flag keyword stuffing")
     s.add_argument("--offline", action="store_true",
-                   help="with --seo, skip the Wikidata brand-collision lookup")
+                   help="skip every network lookup")
+    s.add_argument("--search", action="store_true",
+                   help="ask Google whether it keeps your spelling or corrects it away")
+    s.add_argument("--country", default="us",
+                   help="which Google to ask, as a country code. Default us, and it MATTERS: "
+                        "the same name gets a completely different answer from Lima and from "
+                        "New York")
     s.set_defaults(func=cmd_score)
 
     c = sub.add_parser("check", help="is the name free on the surfaces that block a launch")
@@ -120,6 +171,9 @@ def main(argv=None):
     g_.add_argument("--count", type=int, default=20, help="names to generate per technique")
     g_.add_argument("--seed", type=int, default=42,
                     help="same seed and count always produce the same names")
+    g_.add_argument("--available", action="store_true",
+                    help="keep only names whose BARE .com is free. No get- or -hq trick: if it "
+                         "needs a prefix it does not make the list")
     g_.add_argument("--score", action="store_true",
                     help="run each name through phonetics.analyse, keep only grade A or B")
     g_.set_defaults(func=cmd_generate)

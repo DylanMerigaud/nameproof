@@ -1,0 +1,129 @@
+"""Will Google send people somewhere else when they type your name?
+
+THE FAILURE MODE THIS MODULE EXISTS FOR, and it is invisible to every other naming tool. A real
+product was named `wedpalette`. Ask Google for it and every single suggestion comes back as
+"web palette": web palette generator, web palette colors, web design color palette. Fifteen
+suggestions, not one of them the actual brand. The name was available, it scored fine on
+phonetics, and Google quietly redirects its entire search demand to something else.
+
+Availability checkers cannot see this. Phonetic rules cannot see this. It is a fact about the
+index, so it has to be measured against the index.
+
+THE MEASURE. Google's autocomplete endpoint, with `client=chrome`, applies spelling correction.
+Feed it a name and count how many of the suggestions actually contain that name. A healthy brand
+owns its own suggestion list. A hijacked one does not appear at all.
+
+  wedpalette   0 of 15 suggestions contain it   -> Google offers "web palette"
+  recieve      0 of 15                          -> the control, Google offers "receive"
+  rectia       0 of 10                          -> Google offers "certiadulto"
+
+This is an UNDOCUMENTED endpoint. It is free, needs no key, and is what every browser address
+bar uses, but Google does not promise it and can change or block it. So the module degrades
+honestly: a failed lookup returns a finding of weight 0 that says the check did not run, never
+an empty list that would read as a pass. And `nameproof` keeps an offline fallback in
+`near_miss` for exactly this reason.
+
+A NOTE ON WHAT A LOW SCORE MEANS FOR A BRAND-NEW NAME. A coined name nobody has used yet may
+legitimately return nothing at all, which is different from being hijacked. Empty results are
+reported as UNKNOWN, not as failure: silence is the normal state of a name that does not exist
+yet, and punishing it would punish every good coined name.
+"""
+import json
+import urllib.error
+import urllib.parse
+import urllib.request
+
+from .phonetics import Finding
+
+# gl and hl are NOT optional, and leaving them out was a real measurement bug caught on
+# 2026-08-21. Run from Lima, the endpoint answered with Peruvian government services: `probia`
+# suggested "provias nacional", `rectia` suggested "certiadulto". Forced to the US it answers
+# "probiotics" instead, which is a completely different verdict about a name aimed at American
+# buyers. THE MARKET YOU SELL TO IS THE MARKET YOU MUST QUERY, and the endpoint silently uses
+# the caller's location unless told otherwise.
+SUGGEST = ("https://suggestqueries.google.com/complete/search"
+           "?client=chrome&gl={gl}&hl={hl}&q={q}")
+UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+      "(KHTML, like Gecko) Chrome/128.0 Safari/537.36")
+
+
+def suggestions(name, timeout=15, gl="us", hl="en"):
+    """Raw suggestion list, or None if the endpoint did not answer.
+
+    `gl` is the country to ask as. Default US because that is where the tool's users mostly
+    sell; change it if your buyer is elsewhere. It changes the answer completely, not slightly.
+    """
+    url = SUGGEST.format(gl=gl, hl=hl, q=urllib.parse.quote(name))
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": UA})
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            raw = resp.read().decode("utf-8", "replace")
+        data = json.loads(raw)
+    except Exception:                                        # noqa: BLE001
+        return None
+    if not isinstance(data, list) or len(data) < 2:
+        return None
+    return [s for s in data[1] if isinstance(s, str)]
+
+
+def hijack(name, timeout=15, gl="us", hl="en"):
+    """Does Google keep your name, or replace it, in the market you sell to?"""
+    sug = suggestions(name, timeout, gl, hl)
+    if sug is None:
+        return [Finding("SEARCH_UNKNOWN", 0,
+                        "Google suggest did not answer; search hijack not checked. "
+                        "This is not a pass.")]
+    if not sug:
+        # Normal for a freshly coined name. Reporting it as a problem would penalise exactly
+        # the kind of name the rest of the tool is trying to find.
+        return [Finding("SEARCH_UNKNOWN", 0,
+                        "Google returns no suggestions at all, which is the normal state of a "
+                        "name nobody has used yet. Nothing to conclude either way.")]
+    low = name.lower()
+    kept = [s for s in sug if low in s.lower()]
+    ratio = len(kept) / len(sug)
+    if ratio >= 0.5:
+        return []
+    others = [s for s in sug if low not in s.lower()][:3]
+    weight = 3 if ratio == 0 else 2
+    return [Finding(
+        "SEARCH_HIJACK", weight,
+        "only {} of {} Google suggestions keep this spelling. Google steers typers toward: "
+        "{}. People who hear your name on a call will land on somebody else. (asked as {})".format(
+            len(kept), len(sug), "; ".join(repr(o) for o in others), gl.upper())
+    )]
+
+
+def near_miss(name, words):
+    """Offline twin of `hijack`: is the name one edit away from two ordinary words?
+
+    This is the mechanism behind the wedpalette case, reproduced without the network.
+    `wedpalette` is one substitution from `webpalette`, which splits cleanly into `web` and
+    `palette`. Google corrects toward frequent strings, and two common words joined are far more
+    frequent than any new coinage, so the correction is close to guaranteed.
+
+    Deliberately strict about what counts as a word: both halves must be at least three
+    characters and both must be in the supplied list. Loosening either turns every name into a
+    false positive, which is worse than not checking.
+    """
+    w = "".join(c for c in name.lower() if c.isalpha())
+    if len(w) < 6:
+        return []
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
+    variants = {w}
+    for i in range(len(w)):
+        for c in alphabet:
+            if c != w[i]:
+                variants.add(w[:i] + c + w[i + 1:])
+    for v in sorted(variants):
+        for cut in range(3, len(v) - 2):
+            left, right = v[:cut], v[cut:]
+            if left in words and right in words:
+                how = "is" if v == w else "is one letter away from"
+                return [Finding(
+                    "SPLIT_RISK", 3,
+                    "'{}' {} '{} {}', two ordinary words. Google corrects toward frequent "
+                    "strings, and a two-word phrase beats a new coinage every time. This is "
+                    "the mechanism that sends every search for 'wedpalette' to 'web "
+                    "palette'.".format(w, how, left, right))]
+    return []

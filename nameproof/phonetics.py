@@ -200,6 +200,12 @@ def grade(findings):
     other. Weights are additive on purpose: three small problems really are worse than one small
     problem, and a name with six findings is a name you will be spelling out loud for years."""
     total = sum(f.weight for f in findings)
+    # A negative total is reachable, and on purpose. A finding can carry a NEGATIVE weight when
+    # it is a bonus rather than a flaw, which is how a free bare .com enters the ranking:
+    # strongly desirable, never required. Grading it as its own band keeps the reader from
+    # reading a bonus as merely "clean".
+    if total < 0:
+        return "A+", total
     if total == 0:
         return "A", total
     if total <= 2:

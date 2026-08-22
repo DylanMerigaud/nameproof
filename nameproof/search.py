@@ -23,6 +23,30 @@ honestly: a failed lookup returns a finding of weight 0 that says the check did 
 an empty list that would read as a pass. And `nameproof` keeps an offline fallback in
 `near_miss` for exactly this reason.
 
+DOES A HIJACKED NAME EVENTUALLY WIN? Sometimes, and much less often than founders hope. Two
+real companies measured on 2026-08-21 answer it better than any argument:
+
+  drata   12 of 15 suggestions are the company: drata login, drata glassdoor, drata trust
+          center, drata layoffs, drata ipo, drata ceo, drata vs vanta. The Pokemon `dratini`
+          sits at position 4 and loses. So yes, a coined name can own a list.
+
+  vanta    2 of 15. The rest are vantage, vantage west, vantablack, vantaca, vantage data
+          centers. This is a company with hundreds of millions raised and a very large brand
+          budget, and it still does not own its own name.
+
+The difference is not company size, it is what the string competes with. Nobody was searching
+`drata` before Drata existed, so the company filled an empty string rather than displacing
+anything. `vanta` is the prefix of `vantage`, a word with permanent search demand that no
+marketing budget can outbid.
+
+READ THAT AS A RULE: a hijacked name does not get fixed by blog posts and age when the thing
+hijacking it has its own standing demand. It gets fixed when there was nothing there to begin
+with, which is the case where it was barely hijacked at all. If Vanta cannot displace `vantage`,
+a solo will not displace a franchise or a common word.
+
+Which is why the ratio matters more than the pass or fail. A name at 14 of 15 today needs to win
+nothing; a name at 0 of 15 is asking you to fund a displacement campaign as your first act.
+
 TWO MECHANISMS, AND THIS MODULE ONLY SEES ONE. Google corrects a query in two different
 places, and they do not agree:
 
@@ -124,7 +148,7 @@ def hijack(name, timeout=15, gl="us", hl="en"):
     weight = 3 if ratio == 0 else 2
     return [Finding(
         "SEARCH_HIJACK", weight,
-        "only {} of {} Google suggestions keep this spelling. Google steers typers toward: "
+        "{} of {} Google suggestions keep this spelling. Google steers typers toward: "
         "{}. People who hear your name on a call will land on somebody else. (asked as {})".format(
             len(kept), len(sug), "; ".join(repr(o) for o in others), gl.upper())
     )]

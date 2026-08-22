@@ -29,6 +29,7 @@ reported as UNKNOWN, not as failure: silence is the normal state of a name that 
 yet, and punishing it would punish every good coined name.
 """
 import json
+import re
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -79,8 +80,14 @@ def hijack(name, timeout=15, gl="us", hl="en"):
         return [Finding("SEARCH_UNKNOWN", 0,
                         "Google returns no suggestions at all, which is the normal state of a "
                         "name nobody has used yet. Nothing to conclude either way.")]
+    # WHOLE WORD, not substring, and the difference is the whole check. The first version asked
+    # `name in suggestion`, which passes `normfin` on `normfinder` and reports a clean name.
+    # NormFinder is an established bioinformatics tool with an R package and a download page, so
+    # every search for the brand would have landed there, and the tool said it was fine.
+    # Caught 2026-08-21 on a name this repo had itself recommended.
     low = name.lower()
-    kept = [s for s in sug if low in s.lower()]
+    whole = re.compile(r"(?<![a-z]){}(?![a-z])".format(re.escape(low)))
+    kept = [s for s in sug if whole.search(s.lower())]
     ratio = len(kept) / len(sug)
     if ratio >= 0.5:
         return []

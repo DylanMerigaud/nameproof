@@ -14,7 +14,7 @@ import sys
 
 from concurrent.futures import ThreadPoolExecutor
 
-from . import availability, corpus, generate, search, seo
+from . import availability, corpus, doctor, generate, search, seo
 from .phonetics import Finding, analyse, grade as _grade
 
 BAR = "-" * 66
@@ -136,6 +136,10 @@ def cmd_generate(args):
     return 0
 
 
+def cmd_doctor(args):
+    return doctor.run(verbose=args.verbose)
+
+
 def main(argv=None):
     p = argparse.ArgumentParser(prog="nameproof", description=__doc__,
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -162,6 +166,12 @@ def main(argv=None):
     c.add_argument("--surfaces", default="com,pypi,npm,github",
                    help="comma separated: com,io,dev,pypi,npm,crates,github")
     c.set_defaults(func=cmd_check)
+
+    d = sub.add_parser("doctor",
+                       help="do the live checks still agree with reality? runs real names "
+                            "with known answers against the network")
+    d.add_argument("--verbose", action="store_true", help="also list the cases that agreed")
+    d.set_defaults(func=cmd_doctor)
 
     m = sub.add_parser("market", help="describe the naming conventions of a market")
     m.add_argument("file", help="one competitor name per line")

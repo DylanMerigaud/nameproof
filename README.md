@@ -385,6 +385,56 @@ here under its BSD-style license; the SEC company name list is U.S. federal gove
 public domain in the United States. Full attribution is in the header of each generated data
 file and in `tools/build_data.py`.
 
+## `nameproof doctor`: does the tool still describe reality?
+
+```bash
+nameproof doctor
+```
+
+```
+nameproof doctor: 12 live case(s) against known answers
+--------------------------------------------------------------------------
+12 agreed, 0 disagreed, 0 could not run
+```
+
+**Why this is the most important command in the repo.** Over one afternoon this tool shipped six
+wrong answers in a row: a substring test where it needed whole words, half a fix applied, Google
+queried as the wrong country, a ratio read backwards, a redirector that contradicted the
+module's own premise, and a CLI flag that parsed without wiring anything. **Not one of them
+crashed.** Every single one returned confident, plausible, wrong output.
+
+Unit tests caught none of them and could not have. They test the code against the author's
+beliefs, and the author's belief *was* the bug.
+
+So `corpora/calibration.jsonl` holds real names whose verdict is known from the world rather
+than from this tool, each carrying the failure it guards:
+
+| case | what it guards |
+|---|---|
+| `drata` | a launched brand that owns its suggestion list. The only positive control. |
+| `vanta` | a very large company that still does **not** own its name. If this goes clean, the threshold has been loosened too far. |
+| `wedpalette` | the case the search check was built for: available, phonetically fine, and entirely redirected. |
+| `normfin` | the substring bug. `normfin` *is* inside `normfinder`, so a naive test called it healthy. |
+| `normix`, `tutify` | the inverted reading. Both scored high because an antibiotic and a tutoring service already own those strings. |
+| `google.com` / a nonsense domain | the registry path, in both directions. With only one, a client that answers the same thing to everything still passes. |
+
+**And the harness is proved by breaking it.** Re-introducing each shipped bug into a scratch copy
+makes `doctor` fail, which is the only evidence that a passing suite means anything:
+
+```
+substring instead of whole word            CAUGHT   11 agreed, 1 disagreed
+high ratio read as good on an unlaunched   CAUGHT   10 agreed, 2 disagreed
+Google queried without forcing a country   CAUGHT   11 agreed, 1 disagreed
+```
+
+Run it before trusting a batch of results, and after touching any check. A disagreement is not a
+flaky test: each case is a real name whose answer is known, so a check that stops reproducing it
+has drifted, and everything it produced since is suspect.
+
+**Contributing a counter-example is the most valuable contribution to this repo.** If a check is
+wrong for your market or your accent, the fix is a line in `calibration.jsonl` with the name and
+why, not an argument.
+
 ## What this is not
 
 - **Not a trademark search.** It cannot tell you a name is legally available. Talk to a lawyer.

@@ -117,5 +117,49 @@ class TestCountRequested(unittest.TestCase):
         self.assertGreater(len(names), 0)
 
 
+class TestRootLexicon(unittest.TestCase):
+    """A bring-your-own root file, added after a real naming run failed for a reason no
+    algorithm change could fix: every A-grade output was formally clean and semantically empty,
+    because the built-in roots (omni, tele, luc, vera) have nothing to do with any particular
+    field. The fix is the caller's vocabulary, not a better generator."""
+
+    def setUp(self):
+        self.path = os.path.join(
+            os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+            "corpora", "roots-trust.txt")
+
+    def test_the_shipped_lexicon_loads(self):
+        roots = generate.load_roots(self.path)
+        self.assertGreater(len(roots), 25)
+        self.assertIn("prob", roots)
+        self.assertIn("cust", roots)
+
+    def test_the_lexicon_actually_drives_the_output(self):
+        """The wiring broke silently on the first attempt: the flag parsed, the file was read,
+        and the generator kept using the built-in roots anyway. The output looked plausible,
+        which is exactly why it went unnoticed for a full run. This asserts the roots really
+        come from the file."""
+        names = generate.latin_roots(n=30, seed=11, roots_file=self.path)
+        from_file = set(generate.load_roots(self.path))
+        builtin_only = {"clar", "nova", "scala", "tele", "omni", "luc"} - from_file
+        matched = [n for n in names if any(n.lower().startswith(r) for r in from_file)]
+        self.assertGreater(len(matched), len(names) // 2)
+        stray = [n for n in names if any(n.lower().startswith(r) for r in builtin_only)]
+        self.assertEqual(stray, [])
+
+    def test_an_empty_file_is_refused(self):
+        """A lexicon that silently falls back to the built-in roots is the failure above,
+        shipped as a feature. Better to stop."""
+        import tempfile
+        with tempfile.NamedTemporaryFile("w", suffix=".txt", delete=False) as fh:
+            fh.write("# only a comment\n\n")
+            tmp = fh.name
+        try:
+            with self.assertRaises(ValueError):
+                generate.load_roots(tmp)
+        finally:
+            os.unlink(tmp)
+
+
 if __name__ == "__main__":
     unittest.main()

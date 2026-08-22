@@ -1,0 +1,48 @@
+# Root lexicon: order, proof, record, guardianship, readiness.
+# For naming in compliance, assurance, audit-adjacent and trust products.
+#
+# Format: root<space>meaning. Used with `nameproof generate --technique roots --roots <file>`.
+#
+# WHY THIS FILE EXISTS. The built-in root list is generic on purpose (omni, tele, luc, vera) and
+# a generic lexicon produces clean names that mean nothing for your product. Measured on a real
+# naming run: every A-grade output was formally fine and semantically empty. The fix is not a
+# better algorithm, it is your own vocabulary.
+#
+# DELIBERATELY ABSENT: roots that ARE the category word. `audi` (audire, to hear) gives Audita
+# and reads as "audit"; `regul` gives Regula and reads as "regulation"; `jur` and `lex` read as
+# "legal". Naming yourself after the category is what SERVICE firms do, and the market data in
+# corpora/ shows product companies do it 10 percent of the time against 50 percent for service
+# firms. It also boxes the product into one category it may want to grow out of.
+
+norm    rule, standard (Lat. norma)
+ordin   to set in order (Lat. ordinare)
+prob    honest, upright (Lat. probus)
+cert    certain, settled (Lat. certus)
+fid     trust, faith (Lat. fides)
+cust    guardian (Lat. custos)
+tut     to watch over (Lat. tueri)
+vigil   watchful (Lat. vigil)
+sign    mark, seal (Lat. signum)
+scrib   to write (Lat. scribere)
+doc     to show, to prove (Lat. docere)
+rat     reckoning, account (Lat. ratio)
+cens    to assess, to appraise (Lat. censere)
+grad    step, degree (Lat. gradus)
+lim     threshold (Lat. limen)
+par     to make ready (Lat. parare)
+firm    steady, secure (Lat. firmus)
+integ   whole, untouched (Lat. integer)
+solv    to loosen, to settle (Lat. solvere)
+mun     official duty (Lat. munus)
+tess    token, proof of identity (Lat. tessera)
+arb     to judge (Lat. arbiter)
+sanc    to make binding (Lat. sancire)
+val     to be strong, to be valid (Lat. valere)
+ver     true (Lat. verus)
+nom     law, custom (Gk. nomos)
+kan     rule, measuring rod (Gk. kanon)
+crit    to judge, to discern (Gk. krites)
+dok     to seem proven (Gk. dokein)
+ethos   settled character (Gk. ethos)
+stat    to stand, to establish (Lat. stare)
+prax    practice, doing (Gk. praxis)

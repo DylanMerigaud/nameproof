@@ -142,13 +142,36 @@ BAD_SEAMS = {"tt", "kk", "xx", "qq", "yy", "vv", "ff", "cc", "gg",
              "kg", "gk", "tk", "kt", "aa", "ee", "ii", "oo", "uu"}
 
 
-def latin_roots(n=20, seed=42):
+def load_roots(path):
+    """A root lexicon from a file: `root<space>meaning`, one per line, `#` for comments.
+
+    Added because the built-in list is deliberately GENERIC (omni, tele, luc, vera) and a
+    generic lexicon produces clean names that mean nothing for your product. Measured on a real
+    naming run: every A-grade output was formally fine and semantically empty, because the roots
+    had nothing to do with the field being named. The fix is not a better algorithm, it is your
+    own vocabulary. Ship a file with the roots of YOUR domain and the same generator suddenly
+    produces names that say something.
+    """
+    out = {}
+    with open(path, encoding="utf-8") as fh:
+        for line in fh:
+            line = line.strip()
+            if not line or line.startswith("#"):
+                continue
+            parts = line.split(None, 1)
+            out[parts[0].lower()] = parts[1] if len(parts) > 1 else ""
+    if not out:
+        raise ValueError("no roots found in {}".format(path))
+    return out
+
+
+def latin_roots(n=20, seed=42, roots_file=None):
     """A root plus a suffix, biased toward a vowel-final suffix at roughly 2 to 1.
 
     The bias is deliberate, not measured: about half the suffix list already ends open, and
     that is not enough to reliably echo the Vanta/Drata/Sprinto register on its own."""
     rng = random.Random(seed)
-    roots = sorted(ROOTS)
+    roots = sorted(load_roots(roots_file) if roots_file else ROOTS)
     weighted_suffixes = [
         (s, 2 if s.endswith(_OPEN_FINAL_LETTERS) else 1) for s in SUFFIXES
     ]

@@ -84,7 +84,10 @@ def cmd_generate(args):
     pool = []
     seen = set()
     for label, fn in techniques:
-        for name in fn(n=args.count, seed=args.seed):
+        kwargs = {"n": args.count, "seed": args.seed}
+        if label == "roots" and getattr(args, "roots", None):
+            kwargs["roots_file"] = args.roots
+        for name in fn(**kwargs):
             key = name.lower()
             if key in seen:
                 continue
@@ -171,6 +174,10 @@ def main(argv=None):
     g_.add_argument("--count", type=int, default=20, help="names to generate per technique")
     g_.add_argument("--seed", type=int, default=42,
                     help="same seed and count always produce the same names")
+    g_.add_argument("--roots",
+                    help="a root lexicon file for the roots technique: 'root meaning' per "
+                         "line. The built-in roots are generic on purpose; bring your own "
+                         "field's vocabulary and the output starts meaning something")
     g_.add_argument("--available", action="store_true",
                     help="keep only names whose BARE .com is free. No get- or -hq trick: if it "
                          "needs a prefix it does not make the list")

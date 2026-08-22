@@ -75,14 +75,49 @@ def _exists(url, timeout=15, attempts=3):
     return UNKNOWN
 
 
+# The IANA bootstrap maps each TLD to the RDAP base URL of its own REGISTRY. Fetched once,
+# cached for the process.
+#
+# WHY NOT rdap.org, which is what the first version used. rdap.org is a redirector: it reads
+# your query, looks up the same bootstrap, and forwards you. It works, and it is one more party
+# that sees every name you are considering before you have registered it. The whole reason this
+# module avoids a registrar search box is that a name under consideration is worth keeping
+# quiet, and routing through a middleman to achieve that is self-defeating. The bootstrap file
+# is 100 KB of public data; resolving locally costs one fetch and removes the observer.
+BOOTSTRAP = "https://data.iana.org/rdap/dns.json"
+_registry_cache = {}
+
+
+def _registry_base(tld):
+    """RDAP base URL for a TLD, straight from IANA. None when the TLD has no RDAP service."""
+    if not _registry_cache:
+        try:
+            _, body = _get(BOOTSTRAP, 30)
+            for tlds, urls in json.loads(body).get("services", []):
+                for t in tlds:
+                    if urls:
+                        _registry_cache[t.lower()] = urls[0].rstrip("/")
+        except Exception:                                    # noqa: BLE001
+            _registry_cache["__failed__"] = True
+    return _registry_cache.get(tld.lower())
+
+
 def domain(name, tld="com"):
     """Availability, plus the thing nobody reports: whether the TLD itself is a safe bet.
 
     A ccTLD is leased from a sovereign. Four have already been retired when their territory
     dissolved. Reporting availability without reporting that exposure is half an answer."""
     d = "{}.{}".format(name.lower(), tld)
-    st = _exists("https://rdap.org/domain/{}".format(d))
-    detail = "RDAP registry lookup"
+    base = _registry_base(tld)
+    if base:
+        st = _exists("{}/domain/{}".format(base, d))
+        detail = "RDAP, asked {} directly".format(base.split("//")[-1].split("/")[0])
+    else:
+        # No bootstrap entry, or the bootstrap fetch failed. Falling back to the redirector is
+        # better than returning UNKNOWN, but the answer says which path produced it so nobody
+        # has to guess whether a third party saw the query.
+        st = _exists("https://rdap.org/domain/{}".format(d))
+        detail = "RDAP via the rdap.org redirector (no direct registry found)"
     risk = tld_risk.rate(tld)
     if risk and risk[0] != tld_risk.LOW:
         detail += "  |  TLD RISK {}".format(tld_risk.annotate(tld))

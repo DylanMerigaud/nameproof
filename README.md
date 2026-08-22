@@ -92,10 +92,21 @@ and no domain check will ever tell you that.
 
 **Two implementation notes, because plenty of tools get these wrong:**
 
-- **RDAP, not a registrar search box.** RDAP ([RFC 7482](https://www.rfc-editor.org/rfc/rfc7482))
-  is served by the *registry*. A registrar's search field is a marketing funnel, and domain front
-  running has been a live accusation against that channel for two decades. Querying the registry
-  is both the authoritative answer and the quiet one.
+- **RDAP, straight to the registry, with no middleman.** RDAP
+  ([RFC 7482](https://www.rfc-editor.org/rfc/rfc7482)) is served by the *registry itself*. A
+  registrar's search field is a marketing funnel, and domain front running has been a live
+  accusation against that channel for two decades. `nameproof` resolves the registry endpoint
+  from the [IANA bootstrap](https://data.iana.org/rdap/dns.json) and asks it directly, so a
+  `.com` lookup goes to `rdap.verisign.com` and nowhere else. The output names the host it
+  asked, so you never have to guess who saw the query.
+
+  The first version routed through `rdap.org`, which works and is one more party reading every
+  name you are considering. Avoiding a registrar search box and then handing the query to a
+  redirector is self-defeating; the bootstrap costs one fetch and removes the observer.
+
+- **The check is quiet. Buying is not.** A silent availability check is wasted if you then paste
+  the name into a registrar's search box and think about it for a week. If the name matters,
+  keep the gap between deciding and registering short.
 - **A DNS lookup is not an availability check.** A registered domain with no nameservers returns
   NXDOMAIN and looks free. `nameproof` never infers availability from DNS.
 - **`unknown` is a real answer.** A rate limit is never folded into "free". That is how a tool

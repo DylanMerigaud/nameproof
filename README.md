@@ -201,6 +201,15 @@ domain system listed among Google's active ranking systems, which exists to "ens
 give too much credit for content hosted under domains designed to exactly match particular
 queries". A **cap on benefit**, live today, not a one-off penalty in 2012.
 
+**What this check can and cannot see.** Google corrects a query in two places: in
+autocomplete while you type, and on the results page after you press enter ("These are results
+for X"). This measures the first. On one real name the two disagreed completely: autocomplete
+offered a bioinformatics tool, the results page corrected to a Pokemon. The verdict matched, the
+culprit did not. Read a finding as *"Google does not think this string is a thing"*, not as
+*"this specific competitor takes your traffic"*. Fetching the results page directly returns a
+JavaScript shell with no result text, and driving a real browser would break the
+zero-dependency promise, so the gap is documented rather than papered over.
+
 ### Bonus: is the TLD itself a safe bet?
 
 `check` flags country-code TLDs whose sovereign link is a live risk, which neither comparable

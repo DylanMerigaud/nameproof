@@ -23,6 +23,30 @@ honestly: a failed lookup returns a finding of weight 0 that says the check did 
 an empty list that would read as a pass. And `nameproof` keeps an offline fallback in
 `near_miss` for exactly this reason.
 
+TWO MECHANISMS, AND THIS MODULE ONLY SEES ONE. Google corrects a query in two different
+places, and they do not agree:
+
+  1. AUTOCOMPLETE, while you type. This is what the module measures.
+  2. THE RESULTS PAGE, after you press enter, which says "These are results for X, search
+     instead for Y" and silently swaps your query.
+
+Measured on `normfin` on 2026-08-21, the two disagreed completely. Autocomplete offered
+`normfinder`, a bioinformatics tool. The results page corrected to `Normifin`, a Pokemon, and
+returned dolphin encyclopedia pages. Same name, two different hijackers, and only the first is
+visible from here.
+
+The verdict was the same either way, which is the useful part: zero of fifteen suggestions kept
+the spelling, and the results page refused the spelling outright. When autocomplete does not
+recognise a name, the results page usually will not either. But the module NAMES the culprit it
+can see, and that name can be the wrong one. Read the finding as "Google does not think this
+string is a thing", not as "this specific competitor will take your traffic".
+
+Fetching the results page directly was tried and does not work: google.com/search answers 200
+with a JavaScript shell and no result text for a non-browser client. Driving a real browser
+would fix it and would also make this an entirely different kind of tool, one with a headless
+Chrome dependency, which the zero-dependency promise rules out. The limitation is documented
+rather than hidden.
+
 A NOTE ON WHAT A LOW SCORE MEANS FOR A BRAND-NEW NAME. A coined name nobody has used yet may
 legitimately return nothing at all, which is different from being hijacked. Empty results are
 reported as UNKNOWN, not as failure: silence is the normal state of a name that does not exist

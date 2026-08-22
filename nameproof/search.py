@@ -23,6 +23,21 @@ honestly: a failed lookup returns a finding of weight 0 that says the check did 
 an empty list that would read as a pass. And `nameproof` keeps an offline fallback in
 `near_miss` for exactly this reason.
 
+THE SAME NUMBER MEANS TWO OPPOSITE THINGS, AND THIS IS THE TRAP. A high share of suggestions
+that keep your spelling looks like health. It is health only if the entity behind those
+suggestions is YOU. The pattern is identical either way:
+
+  drata login, drata glassdoor, drata trust center      Drata owns the string
+  normix medication, normix 200 mg, normix antibiotic   an ANTIBIOTIC owns the string
+  tutify login, tutify academy, tutify math             a TUTORING SERVICE owns the string
+
+Same shape, opposite conclusion. So `hijack()` takes `launched`: while you are still choosing a
+name, a high ratio is reported as STRING_OCCUPIED and weighs 3, because you would be arriving
+into somebody else's results. Once you run the name, a high ratio is the goal.
+
+What an unlaunched name actually wants is a VACUUM: few suggestions, and those few pointing at
+nothing with real demand. That is where Drata started.
+
 DOES A HIJACKED NAME EVENTUALLY WIN? Sometimes, and much less often than founders hope. Two
 real companies measured on 2026-08-21 answer it better than any argument:
 
@@ -115,8 +130,13 @@ def suggestions(name, timeout=15, gl="us", hl="en"):
     return [s for s in data[1] if isinstance(s, str)]
 
 
-def hijack(name, timeout=15, gl="us", hl="en"):
-    """Does Google keep your name, or replace it, in the market you sell to?"""
+def hijack(name, timeout=15, gl="us", hl="en", launched=False):
+    """Does Google keep your name, replace it, or hand it to somebody else?
+
+    `launched` flips the reading of a HIGH ratio, and nothing else. Set it True to
+    audit a name you already run, where owning your suggestion list is the goal. Leave
+    it False while choosing a name, where a string somebody else already owns is the
+    thing you are trying to avoid."""
     sug = suggestions(name, timeout, gl, hl)
     if sug is None:
         return [Finding("SEARCH_UNKNOWN", 0,
@@ -138,7 +158,28 @@ def hijack(name, timeout=15, gl="us", hl="en"):
     kept = [s for s in sug if whole.search(s.lower())]
     ratio = len(kept) / len(sug)
     if ratio >= 0.5:
-        return []
+        # HIGH IS NOT GOOD FOR A NAME YOU HAVE NOT LAUNCHED, and reading it as good was this
+        # module's worst bug. `drata login`, `drata glassdoor`, `drata trust center`: that
+        # pattern, name plus qualifier, means an ENTITY OWNS THE STRING. For Drata the entity is
+        # Drata, which is why it looks like success. For a name you are still choosing, the
+        # entity is somebody else.
+        #
+        # Caught 2026-08-21 on four names this tool had just recommended. Every one came back
+        # above 50 percent and every one was already taken: `normix` is an antibiotic (normix
+        # medication, normix 200 mg), `aptura` is a company (aptura group, aptura careers),
+        # `nomio` is a drink, `tutify` is a tutoring service. The metric was right and the
+        # reading was inverted.
+        #
+        # So the same measurement now returns opposite verdicts depending on `launched`.
+        if launched:
+            return []
+        return [Finding(
+            "STRING_OCCUPIED", 3,
+            "{} of {} suggestions are this exact word plus a qualifier ({}), which is the "
+            "signature of an entity that already owns the string. For a name you have not "
+            "launched, that entity is not you: you would be arriving into somebody else's "
+            "search results.".format(len(kept), len(sug), "; ".join(repr(k) for k in kept[:3]))
+        )]
     # Same whole-word test as `kept`, and fixing only one of the two was its own bug: the
     # culprit list stayed on substring matching, so it came back EMPTY exactly when the hijack
     # was by a longer word (probero -> proberos, intego -> identogo). The message then said a

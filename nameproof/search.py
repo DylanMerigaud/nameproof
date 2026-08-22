@@ -115,7 +115,12 @@ def hijack(name, timeout=15, gl="us", hl="en"):
     ratio = len(kept) / len(sug)
     if ratio >= 0.5:
         return []
-    others = [s for s in sug if low not in s.lower()][:3]
+    # Same whole-word test as `kept`, and fixing only one of the two was its own bug: the
+    # culprit list stayed on substring matching, so it came back EMPTY exactly when the hijack
+    # was by a longer word (probero -> proberos, intego -> identogo). The message then said a
+    # name was hijacked and named nobody, which is the least useful possible output for the
+    # most important case.
+    others = [s for s in sug if not whole.search(s.lower())][:3]
     weight = 3 if ratio == 0 else 2
     return [Finding(
         "SEARCH_HIJACK", weight,

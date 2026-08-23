@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "nameproof",
+  "displayName": "nameproof",
+  "description": "Proofread a product name before you commit to it: US pronounceability, market conventions, and multi-surface availability. Offline scoring, no API key.",
+  "version": "0.2.0",
+  "author": { "name": "Dylan Merigaud", "url": "https://github.com/DylanMerigaud" },
+  "homepage": "https://github.com/DylanMerigaud/nameproof",
+  "repository": "https://github.com/DylanMerigaud/nameproof",
+  "license": "MIT",
+  "keywords": ["naming", "brand", "domain", "availability", "rdap", "cli"]
+}

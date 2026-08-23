@@ -31,8 +31,23 @@ No account, no API key, no language model. `score`, `market` and `generate` run 
 
 ## Install
 
+As a Claude Code plugin, which is the only install that needs nothing on your machine:
+
 ```bash
-pip install nameproof
+claude plugin marketplace add DylanMerigaud/nameproof
+claude plugin install nameproof@nameproof
+```
+
+Claude then reaches for `nameproof` on its own when you ask it to roast a name, and the
+`nameproof` command is on the PATH of its Bash tool. Nothing is pip-installed: the plugin
+ships the package and puts it on `PYTHONPATH`.
+
+As a plain CLI, clone and run it. There is no PyPI package, so `pip install nameproof` does
+not work and never did:
+
+```bash
+git clone https://github.com/DylanMerigaud/nameproof
+nameproof/bin/nameproof score kestra loomis
 ```
 
 Python 3.9+, zero runtime dependencies. The whole thing is standard library.

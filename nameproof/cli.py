@@ -18,7 +18,8 @@ import sys
 
 from concurrent.futures import ThreadPoolExecutor
 
-from . import availability, cohort, corpus, doctor, generate, gold, safety, search, seo
+from . import (availability, cohort, corpus, doctor, generate, gold, safety, search,
+               seo, serp)
 from .phonetics import Finding, analyse, grade as _grade
 
 BAR = "-" * 66
@@ -36,6 +37,8 @@ def cmd_score(args):
         findings = findings + safety.connotation(name)
         if args.connotation and not args.offline:
             findings = findings + safety.sense_labels(name)
+        if args.serp and not args.offline:
+            findings = findings + serp.analyse(name)
         if market:
             findings = findings + corpus.fits(name, market)
         if args.seo:
@@ -54,6 +57,15 @@ def cmd_score(args):
             print("  nothing to report. It spells the way it sounds.")
         for f in findings:
             print("  [{}] {:<16} {}".format(f.weight, f.code, f.detail))
+
+    # A STANDING FOOTER, not a per-name finding, and printed whatever the flags were. `msbrenew`
+    # scored clean on every check this tool can run and its search results were pornography, so
+    # the one dimension the package cannot reach is stated once, at the end, where the reader
+    # has just finished deciding. Per-name it would be noise; absent it would be the silence
+    # that let that name through.
+    if not (args.serp and not args.offline):
+        for f in safety.serp_unchecked():
+            print("\n{}\n  [{}] {:<16} {}".format(BAR, f.weight, f.code, f.detail))
     return 0
 
 
@@ -304,6 +316,11 @@ def main(argv=None):
                    help="ask Wiktionary what the word actually MEANS: sexual, vulgar or "
                         "slur senses, sourced to the dictionary's own usage labels (network). "
                         "The offline half of this screen always runs, flag or no flag")
+    s.add_argument("--serp", action="store_true",
+                   help="READ the first page of results (Bing and DuckDuckGo, via a stealth "
+                        "browser set in $NAMEPROOF_FETCHER) and veto the name if an adult "
+                        "platform is on it. The only check here that looks at real results "
+                        "rather than at the name")
     s.add_argument("--search", action="store_true",
                    help="ask Google whether it keeps your spelling or corrects it away")
     s.add_argument("--country", default="us",

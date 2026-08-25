@@ -82,6 +82,52 @@ marque. Sur un finaliste, ajoute `--connotation` (reseau) pour l'avis de Wiktion
 Une shortlist issue d'un seul registre ne se presente JAMAIS comme "les meilleurs": elle se
 presente comme ce qu'elle est, le meilleur du registre explore.
 
+## L'ecran NSFW: deux voies, et la seconde n'est pas optionnelle sur un finaliste
+
+Origine, 2026-08-25. Dylan a cherche `msbrenew`, un candidat sorti de cet outil, et est tombe sur
+du porno. Le nom est PROPRE par denotation: aucun fragment obscene, aucune entree Wiktionary. La
+page de resultats de Google le corrige vers `msbreewc`, une creatrice adulte a deux editions
+d'ecart, 1.4M followers, Pornhub en premier resultat.
+
+**Ne derive JAMAIS de l'autocomplete ce que la recherche va trouver.** Verbatim: "tu peux pas
+deriver de l'auto complete ce que la recherche va trouver. exemple wedpalette." Mesure: sur cinq
+locales (us, pe, es, fr, mx) l'autocomplete de `msbrenew` n'a JAMAIS produit `msbreewc`, il
+proposait "ms renewal" et "msb renov". `search.py` documente deja le meme divorce sur `normfin`.
+Une heuristique batie la-dessus fabrique de la confiance, c'est exactement ce que ce repo refuse.
+
+### Voie 1, automatisable: `--serp` (stealth)
+
+```bash
+export NAMEPROOF_FETCHER="<python du venv> <chemin>/scrape_url.py"   # skill scrape-stealth
+nameproof score <nom> --serp
+```
+
+Lit les VRAIS premiers resultats sur Bing et DuckDuckGo via un navigateur stealth, et met un VETO
+(grade `X`) si une plateforme adulte y figure. Mesure du jour: `msbreewc` donne onlyfans.com en
+4e position sur les deux moteurs. Sans `$NAMEPROOF_FETCHER` la commande repond `SERP_UNCHECKED`,
+jamais "clean": tu ne rapportes pas un nom comme sûr sur cette base.
+
+### Voie 2, OBLIGATOIRE sur chaque finaliste: le vrai navigateur (MCP)
+
+Google repond 429 + captcha meme au stealth, et Google est justement le moteur qui REECRIT un nom
+en un autre. Donc la voie 1 attrape le nom dont les resultats SONT adultes, et rate le nom que
+Google CORRIGE en un nom adulte. C'est exactement le cas `msbrenew`, qui sort `SERP_CLEAN` sur
+Bing et DDG.
+
+Sur chaque finaliste, avant de le mettre dans une shortlist, ouvre-le dans le vrai navigateur
+(`arc-lane`, lane `nameproof-serp`, ou les outils `mcp__arc-browser__*` si tu es seul dessus):
+
+1. `google.com/search?q=<nom>&safe=off`, avec **SafeSearch OFF**. Sinon Google te cache le
+   probleme et tu rapportes un faux propre.
+2. Lis les 5 premiers resultats ET la ligne de correction ("Showing results for X", "Did you mean
+   X"). Si Google corrige, refais la recherche sur la chaine corrigee: c'est la que le probleme
+   vit.
+3. Interroge la locale du MARCHE cible, pas seulement la tienne. Dylan, sur sa capture: "c'est
+   peut etre google espagnol", et le premier resultat etait `es.pornhub.com`. La machine est
+   geolocalisee au Perou, ce qui change ce qui remonte.
+
+Un finaliste qui n'a pas eu cette passe se presente comme "non verifie", jamais comme propre.
+
 ## Reading `cohort`, and the answer you must not soften
 
 `nameproof cohort` tests seven measurable name properties against a real outcome: 1899 resolved
@@ -125,7 +171,8 @@ Output is one block per name, best first, `GRADE  name  (penalty N)` then one li
 as `[weight] CODE  explanation`. The grade bands: `A+` below 0 (a bonus fired), `A` at 0,
 `B` 1-2, `C` 3-5, `D` 6-9, `F` above. Lower penalty is better.
 
-`X` IS NOT A BAND, C'EST UN VETO. Il sort des que `NSFW_FRAGMENT` ou `NSFW_SENSE` est present, et
+`X` IS NOT A BAND, C'EST UN VETO. Il sort des que `NSFW_FRAGMENT`, `NSFW_SENSE` ou `NSFW_SERP`
+est present, et
 aucun total ne le rachete, y compris un `.com` nu libre. Un `X` ne se presente jamais comme "un
 nom moyen": c'est un nom inutilisable, tu le retires de la liste et tu le dis. `NSFW_NEAR` (poids
 2) est l'inverse: un avertissement pour l'ecran humain, jamais un blocage.
@@ -135,8 +182,9 @@ Quote the finding CODES back to the user. They are the roast, and they are falsi
 letters can be read two ways. A one-line "it is fine" throws away the only thing the tool
 produces.
 
-Useful flags: `--connotation` asks Wiktionary what the word MEANS (network; l'ecran hors-ligne
-tourne toujours, flag ou pas), `--market corpora/dev-cli.txt` adds fit-against-the-market findings, `--seo
+Useful flags: `--serp` LIT les vrais premiers resultats et met un veto sur une plateforme adulte
+(voir l'ecran NSFW ci-dessus), `--connotation` asks Wiktionary what the word MEANS (network;
+l'ecran hors-ligne tourne toujours, flag ou pas), `--market corpora/dev-cli.txt` adds fit-against-the-market findings, `--seo
 --keywords a,b` adds dictionary-word and collision risk, `--search` asks Google whether it
 keeps the spelling or corrects it away (network), `--offline` forbids every lookup.
 

@@ -211,7 +211,7 @@ def analyse(name):
 # So they get their own grade rather than a bigger number. Inflating the weight to 10 would have
 # worked arithmetically and would have broken the documented 0-to-3 scale to encode something
 # that is not a magnitude in the first place.
-VETO_CODES = frozenset({"NSFW_FRAGMENT", "NSFW_SENSE"})
+VETO_CODES = frozenset({"NSFW_FRAGMENT", "NSFW_SENSE", "NSFW_SERP"})
 
 
 def grade(findings):

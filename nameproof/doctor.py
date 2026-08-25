@@ -21,7 +21,7 @@ Run it before trusting a batch of results, and after touching any check.
 import json
 import os
 
-from . import availability, safety, search, seo
+from . import availability, safety, search, seo, serp
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CASES = os.path.join(HERE, "corpora", "calibration.jsonl")
@@ -74,6 +74,16 @@ def run_case(case):
         if found and found[0].code == "CONNOTATION_UNKNOWN":
             return None, "unknown", found[0].detail
         observed = "flag" if found else "clean"
+        detail = found[0].detail if found else "no finding"
+    elif kind == "serp":
+        # One engine, not both. Each stealth fetch boots a headless browser and costs tens of
+        # seconds, and `doctor` is meant to be run before trusting a batch rather than admired.
+        # Bing is the one kept because its markup hides the destination behind a redirect, so it
+        # is the parser most likely to break silently when the engine changes its page.
+        found = serp.analyse(name, engines=("bing",))
+        if found and found[0].code == "SERP_UNCHECKED":
+            return None, "unknown", found[0].detail
+        observed = "flag" if found and found[0].code == "NSFW_SERP" else "clean"
         detail = found[0].detail if found else "no finding"
     elif kind == "domain":
         stem, _, tld = name.rpartition(".")

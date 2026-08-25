@@ -341,6 +341,55 @@ missing from the system dictionary gets no suppression, so `Scunthorpe` and the 
 are flagged. Separating those needs a gazetteer, which is a bigger dependency than the problem
 deserves.
 
+#### `--serp`: read the first results instead of guessing at them
+
+The connotation check above asks what a name **means**. It cannot answer what a search actually
+**returns**, and those come apart. `msbrenew`, a real candidate, is clean by denotation: no
+obscene fragment, no Wiktionary entry. Its Google results are pornography, because Google's
+results page rewrites it to `msbreewc`, an adult creator two edits away.
+
+**Do not try to derive the results page from autocomplete.** Measured across five locales (us,
+pe, es, fr, mx), autocomplete for `msbrenew` never once produced that handle; it offered "ms
+renewal" and "msb renov". This tool already documents the same divorce on `normfin`, where
+autocomplete blamed a bioinformatics tool and the results page blamed a Pokemon. A heuristic
+built on that inference manufactures confidence.
+
+So `--serp` reads real pages. What is readable was measured rather than assumed:
+
+| engine | plain stdlib client | stealth headless browser |
+|---|---|---|
+| Google | 200, JavaScript shell, no result text | **429 plus a captcha** |
+| DuckDuckGo | 202, anti-bot challenge | 200, ten results |
+| Bing | (not tried plain) | 200, ten results |
+| Mojeek | 403 | n/a |
+
+```bash
+export NAMEPROOF_FETCHER="/path/to/venv/bin/python /path/to/scrape_url.py"
+nameproof score msbreewc --serp
+```
+
+```
+X  msbreewc  (penalty 7)
+  [5] NSFW_SERP        the first page of results carries an adult platform:
+                       bing -> onlyfans.com; duckduckgo -> onlyfans.com. This is not what the
+                       name means, it is what a person searching it actually gets.
+```
+
+Matching is on the **registrable domain**, never on a substring of the page text: a domain is a
+fact about where a result points, a word in a snippet is an argument about what it means. That
+also handles the localised subdomain Dylan actually saw, `es.pornhub.com`.
+
+**The boundary, stated because it is the whole honesty of the feature.** This catches a name
+whose results **are** adult. It does not catch a name that Google **corrects into** one, because
+the engine doing the correcting is the one that cannot be read. `msbrenew` itself comes back
+`SERP_CLEAN` here, on fincen.gov and fintrac-canafe.canada.ca. That residue is why the tool
+prints a standing `SERP_UNCHECKED` footer whenever the check has not run, and why the bundled
+skill requires a human browser pass on every finalist with SafeSearch off.
+
+**No new dependency.** The stealth fetcher is an external command named by `$NAMEPROOF_FETCHER`,
+used when the machine has one, the same way the SEO check uses `/usr/share/dict/words` when
+present. Absent, the check degrades to `SERP_UNCHECKED`, never to clean.
+
 ### Bonus: is the TLD itself a safe bet?
 
 `check` flags country-code TLDs whose sovereign link is a live risk, which neither comparable

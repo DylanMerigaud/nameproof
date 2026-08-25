@@ -55,6 +55,31 @@ Measured against Wiktionary on 2026-08-25:
 company names in software, and a check that fires on the bare "slang" label would reject it. The
 trigger set below is therefore the sexual and abusive labels only.
 
+THE CLASS THIS MODULE CANNOT CATCH, AND IT IS THE ONE THAT STARTED IT. `msbrenew`, a real
+candidate from this portfolio, is clean by denotation: no obscene fragment, no Wiktionary entry,
+nothing for either layer below to find. Its search results are a pornography site anyway, because
+Google's RESULTS PAGE corrects it to `msbreewc`, an adult creator handle two edits away with over
+a million followers. Measured 2026-08-25: autocomplete never once produced that handle from that
+name, in any of five locales (us, pe, es, fr, mx). It offered "ms renewal" and "msb renov".
+
+DO NOT TRY TO DERIVE THE RESULTS PAGE FROM AUTOCOMPLETE. Dylan, 2026-08-25, killing exactly that
+idea while it was being built here: "tu peux pas deriver de l'auto complete ce que la recherche va
+trouver. exemple wedpalette." A neighbourhood scan over autocomplete DID surface the handle for
+this one string, and that is a coincidence of this string rather than a method: `search.py`
+already documents `normfin`, where autocomplete blamed a bioinformatics tool and the results page
+blamed a Pokemon. A heuristic built on that inference would manufacture confidence, which is the
+one thing this repository refuses to ship.
+
+AND THE RESULTS PAGE CANNOT BE READ FROM HERE. Four doors were tried on 2026-08-25 rather than
+assumed shut: `google.com/search` answers 200 with a JavaScript shell, DuckDuckGo's `html.` and
+`lite.` endpoints answer 202 with an anti-bot challenge, and Mojeek answers 403. A real browser
+reads all of them and is a dependency this package does not take.
+
+SO THIS MODULE DECLARES ITS BLIND SPOT INSTEAD OF COVERING IT. `serp_unchecked()` returns a
+weight-0 finding on every name, `score` prints it as a standing footer, and the skill turns it
+into a mandatory browser step on every finalist. A blind spot written in a docstring is a blind
+spot nobody reads; a blind spot in the output is one the caller has to answer for.
+
 THE SCUNTHORPE PROBLEM IS HANDLED EXPLICITLY, because a fragment matcher that does not handle it
 is worse than no matcher. `analytics` contains a fragment; it is also an ordinary English word,
 and an ordinary English word carries its own meaning that the fragment does not override. So a
@@ -276,6 +301,22 @@ def sense_labels(name, timeout=15):
         "Wiktionary labels this word {}. That is what a searcher gets, whatever you intend it "
         "to mean, and it is the whole first page rather than a footnote.".format(
             ", ".join(hits)))]
+
+
+def serp_unchecked(name=None):
+    """The dimension this package structurally cannot measure, as a finding rather than prose.
+
+    Weight 0, so it never moves a grade: an unverified dimension is not a defect, and the same
+    contract already governs `SEARCH_UNKNOWN` and `COLLISION_UNKNOWN`. What it does is make the
+    gap impossible to mistake for a clean result, which is precisely how `msbrenew` reached a
+    shortlist: every check that ran said fine, and the check that mattered was never run.
+    """
+    return [Finding(
+        "SERP_UNCHECKED", 0,
+        "what a real search actually returns for this name has NOT been checked, and cannot be "
+        "from here: autocomplete does not predict the results page (wedpalette, normfin, "
+        "msbrenew) and no results page is readable without a browser. Open the name in one "
+        "before shortlisting it, with SafeSearch off, and look at what the first results are.")]
 
 
 def analyse(name, online=True, timeout=15):

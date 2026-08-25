@@ -129,6 +129,23 @@ Sur chaque finaliste, avant de le mettre dans une shortlist, ouvre-le dans le vr
    surcharge PAS la geoloc IP: le pied de page disait toujours "Urubamba, Peru - From your
    device". Un vrai test US demande une sortie reseau US.
 
+4. **AVANT DE CONCLURE, REGARDE A QUI APPARTIENT LE RESULTAT N.1.** C'est la regle qui manquait
+   et elle a coute une erreur le 2026-08-25: `praxtrust`, `planremit` et `pamawatch` ont ete
+   rapportes comme des collisions de marque alors que le premier resultat etait le site de Dylan
+   lui-meme ("built by Dylan Merigaud" en pied de page). Le ticker Nasdaq PRAX, les montres, le
+   voisin `palremit.com`: tout etait SOUS lui, pas devant.
+
+   `search.hijack()` porte deja un parametre `launched` pour exactement ca, parce que "le meme
+   chiffre veut dire deux choses opposees": posseder sa propre liste est une REUSSITE si l'entite
+   derriere c'est toi, et un ECHEC sinon. La passe navigateur n'a pas ce garde-fou, donc rien
+   n'empeche d'inverser la lecture. Le motif `nom + qualificatif` en tete (drata login, drata
+   glassdoor) se lit dans les deux sens: ouvre le premier resultat et regarde QUI c'est avant de
+   dire quoi que ce soit.
+
+   Un nom LANCE dont le site sort premier est SAIN, meme si les positions 2 a 10 sont des tiers.
+   Un nom NON LANCE dont la chaine est occupee est un cout reel (`STRING_OCCUPIED`, poids 3),
+   PAS un nom mort: ne le surclasse pas.
+
 Un finaliste qui n'a pas eu cette passe se presente comme "non verifie", jamais comme propre.
 
 ## Reading `cohort`, and the answer you must not soften

@@ -165,20 +165,26 @@ def load_roots(path):
     return out
 
 
-def latin_roots(n=20, seed=42, roots_file=None):
+def latin_roots(n=20, seed=42, roots_file=None, roots=None):
     """A root plus a suffix, biased toward a vowel-final suffix at roughly 2 to 1.
 
     The bias is deliberate, not measured: about half the suffix list already ends open, and
-    that is not enough to reliably echo the Vanta/Drata/Sprinto register on its own."""
+    that is not enough to reliably echo the Vanta/Drata/Sprinto register on its own.
+
+    `roots`, a dict passed directly, wins over `roots_file` and over the built-in `ROOTS`.
+    Added for `gold.py`: its lexicon is embedded in code rather than sitting in a file on disk,
+    so it has nothing to hand `--roots`, and this is the one function both paths go through.
+    """
     rng = random.Random(seed)
-    roots = sorted(load_roots(roots_file) if roots_file else ROOTS)
+    root_map = roots if roots is not None else (load_roots(roots_file) if roots_file else ROOTS)
+    root_pool = sorted(root_map)
     weighted_suffixes = [
         (s, 2 if s.endswith(_OPEN_FINAL_LETTERS) else 1) for s in SUFFIXES
     ]
 
     def gen_one():
         for _ in range(50):
-            root = rng.choice(roots)
+            root = rng.choice(root_pool)
             suffix = _weighted(rng, weighted_suffixes)
             seam = root[-1] + suffix[0]
             if seam in BAD_SEAMS:
@@ -186,7 +192,7 @@ def latin_roots(n=20, seed=42, roots_file=None):
             return (root + suffix).capitalize()
         # Every combination for this root kept hitting a bad seam; a bad seam plus a fresh
         # root is virtually certain to clear, and this keeps the function total.
-        return (rng.choice(roots) + "a").capitalize()
+        return (rng.choice(root_pool) + "a").capitalize()
 
     max_attempts = max(200, n * 20)
     return _collect_unique(gen_one, n, max_attempts)

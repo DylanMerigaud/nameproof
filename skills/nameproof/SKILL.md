@@ -7,7 +7,8 @@ description: Judge, roast, or find a product name. Use when asked to roast this 
 
 A deterministic name proofreader. Every verdict names the mechanism that will cost the user
 something, so you never have to say "it feels weak". No API key, no model call: `score`,
-`market` and `generate` are offline, only `check` touches the network.
+`market`, `generate` and `gold` are offline; only `check`, and the `--available` flag on
+`generate`/`gold`, touch the network.
 
 The command is `nameproof`, already on your PATH. Never `pip install` it, never call `python`
 directly, never rewrite its logic in your head.
@@ -20,6 +21,7 @@ directly, never rewrite its logic in your head.
 | is X free / can I get the domain | `nameproof check X --surfaces com,io,pypi,npm,github` |
 | find me a name / nomme ce projet | `nameproof generate --all --score --count 40` then `score` the shortlist |
 | what do names in this market look like | `nameproof market <corpus file>` |
+| find gold names / a revendre / trouve des noms gold | `nameproof gold --available` (multi-seed until enough free .com survive) |
 
 Bundled corpora live at `corpora/`: `dev-cli.txt`, `regtech-product.txt`, `roots-trust.txt`,
 `aml-fincrime.txt`, `ria-compliance.txt`, `soc2-compliance.txt`.
@@ -81,6 +83,24 @@ deterministic: same `--seed` and `--count`, same names.
 For a name that has to mean something in a specific field, write a roots file
 (`root meaning` per line) and pass `--technique roots --roots <file>`. The built-in roots are
 generic on purpose.
+
+## Reading `gold`
+
+`gold` is registre 3 from DEEP ALWAYS above, as a command instead of a hand-run recipe: it pools
+`phonotactic`, `markov` and a `roots` pass off its own embedded, wide, positive lexicon
+(`nova`, `vera`, `prax`, `norm`, `flux`, `arc`...), never `rare`, because a 2026-08-24/25
+measurement across four real products found short real-word candidates almost entirely taken.
+Every candidate then has to clear the GOLD profile: 4-9 letters, 2-3 syllables, the same
+pronounceability gate `score` uses (grade A or B), no digit, no hyphen, no niche vertical
+morpheme (an `msb`/`pama`/`clfs` fragment reads as bought for one specific bet, the opposite of
+resellable). Same table format as `generate`, best first; `--available` checks the bare `.com`
+and a free one always ranks above a taken one, by construction.
+
+For the harvest itself: run `nameproof gold --available` across several `--seed` values, since
+one run rarely clears 30 verified free names on its own; re-check every `?` before counting it,
+same rule as `check`. This produces a RESERVE independent of any product, not a recommendation
+to buy: registering is still Dylan's call, and a hand-registered coined name is worth more as a
+name he can reach for than as something to resell.
 
 ## Do not
 

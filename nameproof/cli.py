@@ -1,20 +1,22 @@
 """nameproof: proofread a product name before you commit to it.
 
-Four commands, because there are only four questions worth asking about a candidate name:
+Five commands, because there are only five questions worth asking about a candidate name:
 
   score      is it a good name (phonetics, shape, reading traps)
   check      is it free (domain, package registries, GitHub homonyms)
   market     what do the names that already won in this space look like
   generate   produce candidates instead of judging ones you already have
+  gold       produce a name that stands on its own, not tied to any product
 
-`score`, `market` and `generate` work offline. Only `check` touches the network.
+`score`, `market`, `generate` and `gold` work offline. Only `check` touches the network, and the
+`--available` flag on `generate`/`gold` does too, since it is a bare .com RDAP lookup.
 """
 import argparse
 import sys
 
 from concurrent.futures import ThreadPoolExecutor
 
-from . import availability, corpus, doctor, generate, search, seo
+from . import availability, corpus, doctor, generate, gold, search, seo
 from .phonetics import Finding, analyse, grade as _grade
 
 BAR = "-" * 66
@@ -66,6 +68,40 @@ def cmd_market(args):
     return 0
 
 
+def _apply_available_bonus(pool):
+    """Bare .com availability, checked LAST because it is the only step that costs network
+    time, and applied as a BONUS rather than a gate. Dylan, 2026-08-21: "com nu libre huge
+    bonus, pas necessary". Filtering hard on it throws away good names; a free bare .com pulls
+    a name UP the list via a negative-weight finding, a taken one costs nothing. Shared by
+    `generate` and `gold` so the two commands' rankings agree on what a free .com is worth, and
+    because both are also a BONUS by construction the sort below never needs a special case for
+    "free first": every GOLD candidate that clears the profile sits at penalty 0-2, and the
+    -3 bonus always drops a free one below that floor.
+    """
+    with ThreadPoolExecutor(max_workers=2) as ex:
+        for c, st in zip(pool, ex.map(
+                lambda x: availability.domain(x["name"], "com").status, pool)):
+            c["com"] = st
+            if st == availability.FREE:
+                c["findings"] = c["findings"] + [Finding(
+                    "BARE_COM_FREE", -3,
+                    "the bare .com is free, no prefix and no suffix needed. That is rare "
+                    "enough in 2026 to be worth real points.")]
+                c["grade"], c["penalty"] = _grade(c["findings"])
+
+
+def _print_pool(pool, show_available):
+    """One ranked table, shared by `generate` and `gold` so a candidate reads the same way
+    regardless of which command produced it."""
+    print("\n{:<4} {:<16} {:<9} {:<12} {}".format(
+        "", "name", "score", "technique", "bare .com" if show_available else ""))
+    print(BAR)
+    for c in pool:
+        print("{:<4} {:<16} {:<9} {:<12} {}".format(
+            c["grade"], c["name"], c["penalty"], c["how"],
+            c.get("com", "") if show_available else ""))
+
+
 def cmd_generate(args):
     """Generate, then RANK. Never a list per technique.
 
@@ -100,38 +136,66 @@ def cmd_generate(args):
     if args.score:
         pool = [c for c in pool if c["grade"] in ("A", "B")]
 
-    # Availability LAST, because it is the only step that costs network time, and as a BONUS
-    # rather than a gate. Dylan, 2026-08-21: "com nu libre huge bonus, pas necessary". Filtering
-    # hard on it throws away good names, and the whole tool is a ranking with reasons rather
-    # than a set of binary doors. So a free bare .com pulls a name UP the list by carrying a
-    # negative weight, and a taken one costs nothing at all: plenty of good products live at
-    # getsomething.com.
+    # Two workers, not four: RDAP throttles above that and the retries then cost more wall
+    # clock than the parallelism saved.
     if args.available:
-        # Two workers, not four: RDAP throttles above that and the retries then cost
-        # more wall clock than the parallelism saved.
-        with ThreadPoolExecutor(max_workers=2) as ex:
-            for c, st in zip(pool, ex.map(
-                    lambda x: availability.domain(x["name"], "com").status, pool)):
-                c["com"] = st
-                if st == availability.FREE:
-                    c["findings"] = c["findings"] + [Finding(
-                        "BARE_COM_FREE", -3,
-                        "the bare .com is free, no prefix and no suffix needed. That is rare "
-                        "enough in 2026 to be worth real points.")]
-                    c["grade"], c["penalty"] = _grade(c["findings"])
+        _apply_available_bonus(pool)
 
     pool.sort(key=lambda c: (c["penalty"], c["name"].lower()))
     if not pool:
         print("nothing survived the filters. Raise --count or drop a filter.")
         return 0
 
-    print("\n{:<4} {:<16} {:<9} {:<12} {}".format(
-        "", "name", "score", "technique", "bare .com" if args.available else ""))
-    print(BAR)
-    for c in pool:
-        print("{:<4} {:<16} {:<9} {:<12} {}".format(
-            c["grade"], c["name"], c["penalty"], c["how"],
-            c.get("com", "") if args.available else ""))
+    _print_pool(pool, args.available)
+    print("\n{} candidate(s), best first.".format(len(pool)))
+    return 0
+
+
+def cmd_gold(args):
+    """Names as a RESERVE, not a label for a product already picked.
+
+    Dylan, 2026-08-24: renaming a shipped product is a failure, never a plan B, and a name kept
+    independent of any one bet is an asset that avoids that failure. So `gold` pools
+    `phonotactic`, `markov` and `roots` off `gold.GOLD_ROOTS` (a wide, positive lexicon embedded
+    for this command, not the generic `generate.ROOTS`), skipping `rare` on purpose: a
+    2026-08-24/25 measurement across four real products found short real-word candidates almost
+    entirely taken, so the technique that only ever proposes real words is spending the count
+    budget on a register already disqualified.
+
+    Every candidate then has to clear `gold.passes_profile`, a harder gate than `generate
+    --score`'s plain grade cut: 4 to 9 letters, 2 to 3 syllables, no digit, no hyphen, no niche
+    vertical morpheme, on top of the same phonetic pronounceability gate `score` uses. This is a
+    reserve for a bet nobody has named yet, so a fragment that already reads as one vertical
+    (compliance jargon, a category word) is exactly what this gate exists to keep out.
+    """
+    pool = []
+    seen = set()
+    for label, fn in sorted(gold.TECHNIQUES.items()):
+        for name in fn(n=args.count, seed=args.seed):
+            key = name.lower()
+            if key in seen:
+                continue
+            seen.add(key)
+            if not gold.passes_profile(name, args.min_length, args.max_length):
+                continue
+            findings = analyse(name)
+            g, total = _grade(findings)
+            pool.append({"name": name, "how": label, "grade": g, "penalty": total,
+                         "findings": findings})
+
+    if args.available:
+        _apply_available_bonus(pool)
+
+    if not pool:
+        print("nothing survived the GOLD profile. Raise --count, widen --min-length/"
+              "--max-length, or try another --seed.")
+        return 0
+
+    # No special "free first" sort needed: every survivor of the profile sits at penalty 0-2
+    # (grade A or B), and `_apply_available_bonus` drops a free .com to -3 to -1, always below
+    # that floor. Same sort as `generate`, on purpose: same format, same ranking rule.
+    pool.sort(key=lambda c: (c["penalty"], c["name"].lower()))
+    _print_pool(pool, args.available)
     print("\n{} candidate(s), best first.".format(len(pool)))
     return 0
 
@@ -194,6 +258,20 @@ def main(argv=None):
     g_.add_argument("--score", action="store_true",
                     help="run each name through phonetics.analyse, keep only grade A or B")
     g_.set_defaults(func=cmd_generate)
+
+    go = sub.add_parser("gold", help="find a name that stands on its own, not tied to any "
+                                     "product: short, pronounceable, wide, resellable")
+    go.add_argument("--count", type=int, default=30,
+                    help="names to generate per technique, before the GOLD profile filter")
+    go.add_argument("--seed", type=int, default=42,
+                    help="same seed and count always produce the same names")
+    go.add_argument("--min-length", type=int, default=4, dest="min_length",
+                    help="shortest letter count the GOLD profile keeps")
+    go.add_argument("--max-length", type=int, default=9, dest="max_length",
+                    help="longest letter count the GOLD profile keeps")
+    go.add_argument("--available", action="store_true",
+                    help="check the bare .com and rank a free one to the top (network)")
+    go.set_defaults(func=cmd_gold)
 
     args = p.parse_args(argv)
     return args.func(args)

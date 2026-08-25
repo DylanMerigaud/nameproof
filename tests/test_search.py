@@ -60,14 +60,33 @@ class TestBonusGrade(unittest.TestCase):
         """A free bare .com carries a negative weight, so a name can score better than clean.
         Collapsing that into A would hide the thing Dylan called a huge bonus."""
         class F:
-            def __init__(self, w):
+            def __init__(self, w, code=None):
                 self.weight = w
+                self.code = code
         self.assertEqual(grade([F(-3)]), ("A+", -3))
         # A bonus that outweighs a real flaw still lands above clean, which is the point.
         self.assertEqual(grade([F(-3), F(2)]), ("A+", -1))
         # But it does not erase a heavy one: two 3-weight flaws survive the bonus.
         self.assertEqual(grade([F(-3), F(3), F(3)]), ("C", 3))
         self.assertEqual(grade([]), ("A", 0))
+
+    def test_a_veto_is_not_a_band_and_no_bonus_buys_it_back(self):
+        """A free bare .com does not make a pornographic reading acceptable, and neither does a
+        perfect phonetic score. The veto is checked before the totals for that reason."""
+        class F:
+            def __init__(self, w, code=None):
+                self.weight = w
+                self.code = code
+        self.assertEqual(grade([F(5, "NSFW_FRAGMENT")]), ("X", 5))
+        self.assertEqual(grade([F(5, "NSFW_FRAGMENT"), F(-3, "BARE_COM_FREE")]), ("X", 2))
+        self.assertEqual(grade([F(2, "NSFW_NEAR")]), ("B", 2))
+
+    def test_grade_still_works_on_a_finding_without_a_code(self):
+        """`grade` has only ever required a `.weight`. Tightening that to require a `.code`
+        would break every duck-typed caller for no gain."""
+        class Bare:
+            weight = 2
+        self.assertEqual(grade([Bare()]), ("B", 2))
 
 
 if __name__ == "__main__":

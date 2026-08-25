@@ -67,6 +67,18 @@ morbus- (maladie), rectus-, tutus- ("tutu") sont sortis grade A. Chaque finalist
 jugement humain/LLM de connotation (sens des racines, lecture involontaire en EN et FR,
 collisions de marque evidentes) AVANT d'entrer dans une shortlist.
 
+**Depuis le 2026-08-25 la moitie mecanique est AUTOMATIQUE et bloquante.** Dylan a cherche un
+candidat sorti de cet outil et est tombe sur du porno: "ca c'etait vraiment un no go". `score`,
+`generate` et `gold` passent maintenant tout candidat par `safety.is_blocked` sans aucun flag, et
+un nom bloque sort en grade `X`, pas `F` ni `C`. Preuve que ca mordait: sur 3840 candidats du
+generateur, le gate a attrape `Sanaly`, que la racine integree `sana` + le suffixe `ly` produit
+comme `s-anal-y`.
+
+Ca ne remplace PAS l'ecran humain, ca lui enleve les cas evidents. La liste de fragments est
+volontairement partielle et ne couvrira jamais une langue que personne ici ne lit. Ce qui reste a
+ta charge: le sens des racines, les lectures involontaires que la liste ignore, les collisions de
+marque. Sur un finaliste, ajoute `--connotation` (reseau) pour l'avis de Wiktionary.
+
 Une shortlist issue d'un seul registre ne se presente JAMAIS comme "les meilleurs": elle se
 presente comme ce qu'elle est, le meilleur du registre explore.
 
@@ -113,12 +125,18 @@ Output is one block per name, best first, `GRADE  name  (penalty N)` then one li
 as `[weight] CODE  explanation`. The grade bands: `A+` below 0 (a bonus fired), `A` at 0,
 `B` 1-2, `C` 3-5, `D` 6-9, `F` above. Lower penalty is better.
 
+`X` IS NOT A BAND, C'EST UN VETO. Il sort des que `NSFW_FRAGMENT` ou `NSFW_SENSE` est present, et
+aucun total ne le rachete, y compris un `.com` nu libre. Un `X` ne se presente jamais comme "un
+nom moyen": c'est un nom inutilisable, tu le retires de la liste et tu le dis. `NSFW_NEAR` (poids
+2) est l'inverse: un avertissement pour l'ecran humain, jamais un blocage.
+
 Quote the finding CODES back to the user. They are the roast, and they are falsifiable:
 `SPELL_AMBIGUOUS` means a listener cannot spell it from hearing it, `READING_TRAP` means the
 letters can be read two ways. A one-line "it is fine" throws away the only thing the tool
 produces.
 
-Useful flags: `--market corpora/dev-cli.txt` adds fit-against-the-market findings, `--seo
+Useful flags: `--connotation` asks Wiktionary what the word MEANS (network; l'ecran hors-ligne
+tourne toujours, flag ou pas), `--market corpora/dev-cli.txt` adds fit-against-the-market findings, `--seo
 --keywords a,b` adds dictionary-word and collision risk, `--search` asks Google whether it
 keeps the spelling or corrects it away (network), `--offline` forbids every lookup.
 

@@ -145,9 +145,24 @@ def hijack(name, timeout=15, gl="us", hl="en", launched=False):
     if not sug:
         # Normal for a freshly coined name. Reporting it as a problem would penalise exactly
         # the kind of name the rest of the tool is trying to find.
+        #
+        # BUT IT IS NOT ONLY THAT, and the old wording of this finding was how a real no-go
+        # reached a shortlist. Measured 2026-08-25: Google SUPPRESSES adult terms on this
+        # endpoint, so `creampie`, `bukkake` and `fleshlight` all return zero suggestions,
+        # exactly like a clean coinage nobody has typed yet. From here the two are
+        # indistinguishable, and the finding used to say "nothing to conclude either way",
+        # which reads as a pass. Dylan hit that case, called it "vraiment un no go", and the
+        # tool had said nothing.
+        #
+        # The check cannot resolve it, so it now names the other branch and points at the
+        # module that can. Saying "I cannot tell these two apart" is the honest output; saying
+        # "nothing to conclude" was an invitation to conclude.
         return [Finding("SEARCH_UNKNOWN", 0,
-                        "Google returns no suggestions at all, which is the normal state of a "
-                        "name nobody has used yet. Nothing to conclude either way.")]
+                        "Google returns no suggestions at all. That is the normal state of a "
+                        "name nobody has used yet AND what Google does for a term it refuses "
+                        "to suggest, including adult ones; from this endpoint the two look "
+                        "identical. Not a pass: run the connotation check (`score "
+                        "--connotation`) before shortlisting.")]
     # WHOLE WORD, not substring, and the difference is the whole check. The first version asked
     # `name in suggestion`, which passes `normfin` on `normfinder` and reports a clean name.
     # NormFinder is an established bioinformatics tool with an R package and a download page, so

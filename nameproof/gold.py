@@ -35,7 +35,7 @@ describe today's bet.
 """
 import re
 
-from . import generate
+from . import generate, safety
 from .phonetics import analyse, syllables
 from .phonetics import grade as _grade
 
@@ -106,6 +106,14 @@ def passes_profile(name, min_length=4, max_length=9):
     grade and findings it prints, this function only decides who gets that far.
     """
     letters = re.sub(r"[^a-z]", "", name.lower())
+    # THE NSFW GATE COMES FIRST, before length, before phonetics, before everything. Dylan,
+    # 2026-08-25, on searching a candidate this tool produced: "ca c'etait vraiment un no go".
+    # A GOLD name is supposed to be an asset you can resell; a name whose search results are
+    # pornography is not an asset with a drawback, it is not an asset. Ordering it first is not
+    # a performance choice, it is so that no other criterion can ever be read as compensating
+    # for this one.
+    if safety.is_blocked(name):
+        return False
     if not (min_length <= len(letters) <= max_length):
         return False
     if re.search(r"\d", name) or "-" in name:

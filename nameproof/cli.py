@@ -18,7 +18,7 @@ import sys
 
 from concurrent.futures import ThreadPoolExecutor
 
-from . import availability, cohort, corpus, doctor, generate, gold, search, seo
+from . import availability, cohort, corpus, doctor, generate, gold, safety, search, seo
 from .phonetics import Finding, analyse, grade as _grade
 
 BAR = "-" * 66
@@ -30,6 +30,12 @@ def cmd_score(args):
     rows = []
     for name in args.names:
         findings = analyse(name)
+        # Always, with no flag to remember. The offline half of the connotation screen costs
+        # nothing and catches the one class of problem that is not a cost to weigh against
+        # other costs but a name you simply cannot use.
+        findings = findings + safety.connotation(name)
+        if args.connotation and not args.offline:
+            findings = findings + safety.sense_labels(name)
         if market:
             findings = findings + corpus.fits(name, market)
         if args.seo:
@@ -155,6 +161,12 @@ def cmd_generate(args):
             if key in seen:
                 continue
             seen.add(key)
+            # THE GATE, and it is not behind a flag on purpose. A generator that can hand back
+            # a pornographic string is not a generator with an option missing; Dylan hit one on
+            # 2026-08-25 and called it a no go. Dropped before scoring, so it can never appear
+            # in a ranked list at all.
+            if safety.is_blocked(name):
+                continue
             findings = analyse(name)
             # `score --market` keeps fit findings OUT of the penalty on purpose: breaking a
             # market's pattern is a positioning choice and the tool has no business overruling
@@ -288,6 +300,10 @@ def main(argv=None):
     s.add_argument("--keywords", help="comma separated category words, to flag keyword stuffing")
     s.add_argument("--offline", action="store_true",
                    help="skip every network lookup")
+    s.add_argument("--connotation", action="store_true",
+                   help="ask Wiktionary what the word actually MEANS: sexual, vulgar or "
+                        "slur senses, sourced to the dictionary's own usage labels (network). "
+                        "The offline half of this screen always runs, flag or no flag")
     s.add_argument("--search", action="store_true",
                    help="ask Google whether it keeps your spelling or corrects it away")
     s.add_argument("--country", default="us",

@@ -202,12 +202,32 @@ def analyse(name):
     return sorted(found, key=lambda f: -f.weight)
 
 
+# Findings that are a VETO rather than a cost. Everything else in this tool is additive: three
+# small problems really are worse than one, and a total is the right way to say so. These are
+# not on that scale at all. A name whose search results are pornography is not an expensive name,
+# it is a name you cannot use, and letting it total to 5 put it in band C, which reads as
+# "mediocre but usable". Dylan hit exactly that case on 2026-08-25 and called it a no go.
+#
+# So they get their own grade rather than a bigger number. Inflating the weight to 10 would have
+# worked arithmetically and would have broken the documented 0-to-3 scale to encode something
+# that is not a magnitude in the first place.
+VETO_CODES = frozenset({"NSFW_FRAGMENT", "NSFW_SENSE"})
+
+
 def grade(findings):
     """Total weight to a letter, (grade, total). Shared by `cli.py`'s `score` and `generate.py`'s
     `--score`, so a name graded A or B through one door is graded the same way through the
-    other. Weights are additive on purpose: three small problems really are worse than one small
+    other. `X` is a veto and not a band: see `VETO_CODES`. Weights are additive on purpose: three small problems really are worse than one small
     problem, and a name with six findings is a name you will be spelling out loud for years."""
     total = sum(f.weight for f in findings)
+    # The veto is checked before the bands, because no total on either side of it changes the
+    # answer: a free bare .com does not buy back a pornographic reading, and neither does a
+    # perfect phonetic score.
+    # `getattr` and not `f.code`, because `grade` has only ever required a `.weight` and
+    # tightening that would break every duck-typed caller for no gain. A finding with no code
+    # cannot be a veto anyway.
+    if any(getattr(f, "code", None) in VETO_CODES for f in findings):
+        return "X", total
     # A negative total is reachable, and on purpose. A finding can carry a NEGATIVE weight when
     # it is a bonus rather than a flaw, which is how a free bare .com enters the ranking:
     # strongly desirable, never required. Grading it as its own band keeps the reader from

@@ -53,7 +53,7 @@ nameproof/bin/nameproof score kestra loomis
 
 Python 3.9+, zero runtime dependencies. The whole thing is standard library.
 
-## The four questions worth asking
+## The five questions worth asking
 
 ### 1. Is it a good name?
 
@@ -259,6 +259,87 @@ culprit did not. Read a finding as *"Google does not think this string is a thin
 *"this specific competitor takes your traffic"*. Fetching the results page directly returns a
 JavaScript shell with no result text, and driving a real browser would break the
 zero-dependency promise, so the gap is documented rather than papered over.
+
+### 5. Does the name MEAN something you cannot put on an invoice?
+
+```bash
+nameproof score mycandidate --connotation
+```
+
+Every other check in this tool looks at how a name spells, sounds and ranks. None of them looked
+at what it **means**, and that gap had a cost: a candidate this tool helped produce scored clean,
+was available, and its search results were pornography.
+
+**The mechanism that let it through is worse than the missing check.** Google's autocomplete
+endpoint, the one `--search` reads, *suppresses* adult terms:
+
+```
+ripgrep      15 suggestions
+creampie      0 suggestions
+bukkake       0 suggestions
+fleshlight    0 suggestions
+```
+
+Zero suggestions is also the normal state of a freshly coined name nobody has typed. From that
+endpoint the best possible name and the worst possible name look **identical**, and the finding
+used to say "nothing to conclude either way", which reads as a pass.
+
+**This does not scrape the results page, and both doors were tried rather than assumed shut.**
+`google.com/search` answers 200 with a JavaScript shell and no result text. DuckDuckGo's `html.`
+and `lite.` endpoints now answer 202 with an anti-bot challenge. A headless browser would fix
+both and would break the zero-dependency promise. So the question is answered from what the name
+**denotes** instead, which is the more durable signal anyway: a term is not pornographic because
+of today's ranking.
+
+Two layers, and only one of them blocks:
+
+| layer | when | what it does |
+|---|---|---|
+| `connotation` | offline, **always**, no flag | fragment list, EN and FR. A hard hit is a **veto** |
+| `sense_labels` | `--connotation`, network | Wiktionary's own usage labels, so the verdict cites a dictionary |
+
+**A veto is not a bad score.** A blocked name grades **`X`**, not `F` and not `C`. At weight 5 it
+used to total into band C, which reads as "mediocre but usable", and that is not what this is. No
+bonus buys it back either: a free bare `.com` does not make a pornographic reading acceptable, so
+the veto is checked before any total.
+
+```
+$ nameproof score Analfin Vanta Cultura --offline
+
+A  Vanta  (penalty 0)
+  nothing to report. It spells the way it sounds.
+
+X  Analfin  (penalty 5)
+  [5] NSFW_FRAGMENT    contains 'anal'. On a coined name there is no other reading available...
+
+C  Cultura  (penalty 5)
+  [2] NSFW_NEAR        contains 'cul', which is obscene in French and also sits inside ordinary
+                       words. Not a block, a line for the human screen.
+```
+
+**The two tiers are the whole design, and the second one exists because of measured false
+positives.** The first version of the fragment list blocked `Cultura` on `cul`, `Bitewave` on
+`bite` and `Computix` on `pute`. A gate that does that gets switched off within a week, and a
+gate nobody runs protects nothing. So productive fragments **warn** and never block, and the
+annotation next to each one in `safety.py` names the ordinary word that demoted it.
+
+The Scunthorpe problem is handled explicitly: an ordinary English word carries its own meaning,
+so `Analytics` passes and `Analfin` does not. With one subtlety that is easy to get backwards,
+`anal` is in the dictionary too, so a token only suppresses a fragment when it is a real word
+**and strictly longer** than the fragment. Otherwise the fragment suppresses itself and the gate
+never fires on the bare term.
+
+**`generate` and `gold` run the gate with no flag**, and it is not theoretical: scanning 3,840
+candidates from the tool's own generator, it caught `Sanaly`, which the built-in root `sana`
+(health) plus the suffix `ly` produces as `s-anal-y`. The tool was manufacturing them.
+
+**The list is deliberately partial**, and that is the operating instruction rather than an
+apology. It cannot be complete in any language and will never catch a collision in a language
+nobody here reads. It exists to make the obvious failure automatic so the judgement left to a
+person is a real one. One residual false positive is stated rather than hidden: a proper noun
+missing from the system dictionary gets no suppression, so `Scunthorpe` and the surname `Semenza`
+are flagged. Separating those needs a gazetteer, which is a bigger dependency than the problem
+deserves.
 
 ### Bonus: is the TLD itself a safe bet?
 

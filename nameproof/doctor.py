@@ -21,7 +21,7 @@ Run it before trusting a batch of results, and after touching any check.
 import json
 import os
 
-from . import availability, search, seo
+from . import availability, safety, search, seo
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CASES = os.path.join(HERE, "corpora", "calibration.jsonl")
@@ -60,6 +60,18 @@ def run_case(case):
     elif kind == "collision":
         found = seo.brand_collision(name)
         if found and found[0].code == "COLLISION_UNKNOWN":
+            return None, "unknown", found[0].detail
+        observed = "flag" if found else "clean"
+        detail = found[0].detail if found else "no finding"
+    elif kind == "connotation":
+        # Offline half only. A gate that depends on the network is a gate that silently opens
+        # when the network is down, and this is the one check where an open gate is expensive.
+        found = safety.connotation(name)
+        observed = "flag" if any(f.code == "NSFW_FRAGMENT" for f in found) else "clean"
+        detail = found[0].detail if found else "no finding"
+    elif kind == "sense":
+        found = safety.sense_labels(name)
+        if found and found[0].code == "CONNOTATION_UNKNOWN":
             return None, "unknown", found[0].detail
         observed = "flag" if found else "clean"
         detail = found[0].detail if found else "no finding"

@@ -25,6 +25,16 @@ read it as what it means, MSB renewal. Google does not: its results page correct
 an adult creator two edits away, which is what Dylan actually hit. Query that corrected string
 and this module fires immediately, onlyfans.com sitting fourth on both engines.
 
+THE CORRECTION IS VERIFIED, NOT INFERRED, and it is not a locale artifact. Read through a real
+browser on 2026-08-25 with `gl=us&hl=en&pws=0&safe=off`, Google answers the query `msbrenew`
+with the line "These are results for msbreewc / Search instead for msbrenew" and then returns
+Instagram, Pornhub, OnlyFans, X, TikTok, Famous Birthdays, xHamster, t.co, Fansly and XVideos.
+Five adult platforms in the first ten. The first hypothesis on seeing `es.pornhub.com` in the
+original screenshot was that a Spanish Google was to blame; forcing English and US parameters
+disproves it, the rewrite happens either way. One caveat worth keeping: the page footer still
+read "Urubamba, Peru - From your device", so `gl=us` sets the market parameter and does NOT
+override IP geolocation. A true US read needs a US exit address.
+
 READ THAT AS THE LIMIT: this catches a name whose results ARE adult. It does not catch a name
 that Google CORRECTS INTO one, because the engine that does the correcting is the one that cannot
 be read. That residue is why the skill still requires a human browser pass on every finalist, and

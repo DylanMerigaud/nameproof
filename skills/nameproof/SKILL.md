@@ -122,9 +122,12 @@ Sur chaque finaliste, avant de le mettre dans une shortlist, ouvre-le dans le vr
 2. Lis les 5 premiers resultats ET la ligne de correction ("Showing results for X", "Did you mean
    X"). Si Google corrige, refais la recherche sur la chaine corrigee: c'est la que le probleme
    vit.
-3. Interroge la locale du MARCHE cible, pas seulement la tienne. Dylan, sur sa capture: "c'est
-   peut etre google espagnol", et le premier resultat etait `es.pornhub.com`. La machine est
-   geolocalisee au Perou, ce qui change ce qui remonte.
+3. Interroge la locale du MARCHE cible, pas seulement la tienne, MAIS ne compte pas dessus pour
+   disculper un nom. Teste le 2026-08-25 sur `msbrenew`: l'hypothese "c'est peut etre google
+   espagnol" est FAUSSE, avec `gl=us&hl=en&pws=0` Google corrige quand meme vers `msbreewc` et
+   sort Pornhub, OnlyFans, xHamster, Fansly et XVideos dans les dix premiers. Et `gl=us` ne
+   surcharge PAS la geoloc IP: le pied de page disait toujours "Urubamba, Peru - From your
+   device". Un vrai test US demande une sortie reseau US.
 
 Un finaliste qui n'a pas eu cette passe se presente comme "non verifie", jamais comme propre.
 

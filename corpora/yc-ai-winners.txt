@@ -1,0 +1,160 @@
+# AI and machine learning: YC companies that were acquired or went public
+#
+# Y Combinator companies in this market whose outcome resolved POSITIVELY: acquired or gone
+# public. Extracted from nameproof/data/yc_cohort.tsv (built by tools/build_cohort.py from the
+# public YC directory, no API key, read 2026-08-25). Names verbatim, never normalised.
+#
+# WHAT THIS CORPUS IS, and it is not the same thing as the curated lists next to it.
+# `ai-infra.txt` holds the market's known leaders, picked by hand. This one holds every YC company
+# in the market that actually resolved well, which makes it larger (n=145) and unfiltered by
+# anyone's taste. Use it when you want the shape of what WORKED rather than the shape of what is
+# famous.
+#
+# READ `nameproof cohort --market ai` BEFORE ACTING ON THIS. The outcome test over the same
+# data finds that name shape does not predict which companies land here. This corpus describes a
+# convention; it does not promise a result.
+Allure Systems
+Aquarium Learning
+Arcane
+Askdata
+Autotab
+AXDRAFT
+Bandit ML
+BitPatrol
+Bluebirds
+Booth AI
+Brewit
+Browser Buddy
+Bytebot
+Caper
+Cardinal
+Casetext
+Catamaran
+Central
+Chaos Genius
+Chatter
+ClipDrop
+Cohere
+Continue
+CrowdAI
+Cruise
+DAGWorks Inc.
+Dashworks
+Deasy Labs
+Dioptra
+Edwin
+Emerge Tools
+Enable Us
+EzDubs
+Fairway Health
+Fintool
+FitnessAI
+FlowiseAI
+Flutter
+Fountain9
+Friz
+Gander
+garten
+GazeHawk
+Hatch
+Headstart
+Helicone
+HOAi
+HomeRoom
+Humanloop
+HypaHub
+HyperGlue
+Hypermile
+Inari
+Iris Automation
+Jido Maps
+Journey
+JustSpotted
+Kraftful
+Langfuse
+Liftigniter
+Lume
+Lumetric
+Lyrebird
+Matterport
+Memora Health
+Mentum
+Mocha
+Monterey AI
+Mulligan
+mutable.ai
+Naborly
+Nara
+NeoWize
+Nexa Labs
+Nextmv
+No Cap
+Nova
+OfOne
+Omni
+Opearlo
+OpenInt
+OpenPipe
+Outerbase
+Pachama
+Pachyderm
+Palifer
+Paperspace
+Penny
+Percept.AI
+Persana AI
+Phiar
+Phonic
+Pincites
+PipeBio
+Plasticity
+PlayAI
+Pomello
+PowerX
+Promoted.ai
+Pulpix
+Rain Neuromorphics
+Regology
+Remade
+Replicate
+Resonance
+Saleswhale
+ScopeAI
+Scribe
+Searchlight
+Segments.ai
+Semantics3
+Sepal AI
+SharpestMinds
+Shelf Engine
+Shipamax
+SigOpt
+SkyLink
+Sleek
+Smarking
+Soundry AI
+Speck
+Speechly
+StackAI
+StarJar
+Symplex
+TaoFi
+TensorPool
+Tetra
+Theorem
+Thyme
+TigerEye
+Traceloop
+Trieve
+Truva
+Tule
+Tusk
+Typedream
+unSurvey
+Vocode
+Vogent
+Warmly,
+Windsor
+Wit.ai
+Xeol
+Yhat

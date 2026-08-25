@@ -1,0 +1,6205 @@
+# Y Combinator company outcomes, extracted for `nameproof cohort`.
+#
+# Source: https://yc-oss.github.io/api/companies/all.json, a public mirror of the Y Combinator company directory, fetched with no API
+# key. Y Combinator company names and outcomes are third-party facts; names are reproduced
+# VERBATIM here, exactly as each company writes its own, and are never normalised.
+#
+# Built by tools/build_cohort.py. Not fetched at runtime: `nameproof` only ever reads this file.
+#
+# Columns, tab separated: name, batch year, outcome, markets (comma separated, may be empty).
+# Outcome: A=Acquired  P=Public  I=Inactive  L=Live (still active, outcome not yet resolved).
+#
+# READ THE YEAR BEFORE READING THE OUTCOME. Resolution rate falls from about 91% for the 2007
+# batches to 0% for 2026, because a young company has not had time to resolve either way. Any
+# comparison that ignores the batch year measures age, not names.
+# 6190 companies: 809 acquired, 23 public, 1070 inactive, 4288 still active.
+Clickfacts	2005	A	
+Infogami	2005	I	
+Kiko	2005	A	
+Loopt	2005	A	
+Memamp	2005	I	
+Parakey	2005	A	
+Reddit	2005	A	
+Simmery	2005	I	
+TextPayMe	2005	A	
+Audiobeta	2006	I	
+Clustrix	2006	A	
+Flagr	2006	I	
+Inkling	2006	A	
+Jamglue	2006	I	
+Jumpchat	2006	I	
+Likebetter	2006	I	
+OMGPop	2006	A	
+Pollground	2006	I	
+Project Wedding	2006	A	
+Scribd	2006	L	
+Shoutfit	2006	I	
+Snipshot	2006	I	
+Talkito	2006	I	
+Thinkature	2006	I	
+Wufoo	2006	A	
+Xobni	2006	A	
+Zanbazaar	2006	I	
+Anywhere.FM	2007	A	
+Appjet	2007	A	
+Auctomatic	2007	A	
+Biographicon	2007	I	
+Blue Frog Gaming	2007	L	
+Bountii	2007	I	
+Buxfer	2007	L	fintech
+Clickpass	2007	A	
+ContestMachine	2007	I	
+Disqus	2007	A	
+Dropbox	2007	P	
+Eivod	2007	I	
+Fuzzwich	2007	I	
+Hello Chair	2007	I	
+Heysan	2007	A	
+Meetyu	2007	I	
+Octopart	2007	A	
+Reble	2007	I	
+SocialPicks	2007	I	fintech
+Socialmoth	2007	I	
+Songkick	2007	A	
+Splashup	2007	I	
+Tsumobi	2007	I	
+Twitch	2007	A	
+View3	2007	I	
+Virtualmin	2007	L	
+Weebly	2007	A	
+Whitenoise	2007	I	
+WriteWith	2007	I	
+Zenter	2007	A	
+ZumoDrive	2007	A	
+iJigg/Top440	2007	I	
+280 North	2008	A	
+A Thinking Ape	2008	A	
+Anyvite	2008	I	
+BackType	2008	A	
+BitSample	2008	I	
+CO2Stats	2008	I	
+Claimspotting	2008	I	
+Cloudant	2008	A	
+Deluux	2008	I	
+FathomDB	2008	I	
+Frogmetrics	2008	I	
+Heroku	2008	A	
+Insoshi	2008	I	
+Job Alchemist	2008	I	
+Joberator	2008	I	
+JustSpotted	2008	A	ai
+Kirkland North	2008	I	
+Machine Zone	2008	A	
+MightyQuiz	2008	I	
+Mixwit	2008	I	
+Ninite	2008	L	devtools
+OhLife	2008	I	
+Omnisio	2008	A	
+People & Pages	2008	I	
+Picwing	2008	I	
+PlayReader	2008	I	
+Poll Everywhere	2008	L	
+Popcuts	2008	I	
+Posterous	2008	A	
+Precognate	2008	I	
+RescueTime	2008	L	devtools
+Slinkset	2008	I	
+Snaptalent	2008	I	
+Snipd	2008	I	
+Socialbrowse	2008	I	
+Team Apart	2008	I	
+Ticket Stumbler	2008	I	
+Tipjoy	2008	I	fintech
+Treehouse	2008	I	
+Trigger	2008	I	
+Wundrbar	2008	I	
+Youlicit	2008	I	
+YumDots	2008	I	
+AdThrow	2009	I	
+Airbnb	2009	P	
+Bump	2009	A	
+CarWoo	2009	I	
+Cloudkick	2009	A	
+DailyBooth	2009	A	
+Directed Edge	2009	L	ai
+Divvyshot	2009	A	
+Echodio	2009	A	
+Fanchatter	2009	I	
+Flightcaster	2009	A	
+Foodoro	2009	I	
+GraffitiGeo	2009	A	
+Heyzap	2009	A	
+HighlightCam	2009	I	
+Instantq	2009	I	
+Jobspice	2009	I	
+Lingt	2009	L	
+Listia	2009	L	fintech
+Lockitron	2009	A	
+Mixpanel	2009	L	devtools
+Nambii	2009	I	
+NudgePad	2009	I	devtools
+Olark	2009	L	
+PetaSales	2009	I	
+Picurio	2009	I	
+Plurchase	2009	I	
+Recurious	2009	I	
+RentHop	2009	L	
+RethinkDB	2009	A	devtools
+RoboHR	2009	I	
+Skysheet	2009	I	
+Spaces Life	2009	I	
+Stackq	2009	I	
+Stripe	2009	L	fintech
+Tuxebo	2009	I	
+Volantio	2009	L	
+Voxli	2009	I	
+Wakemate	2009	I	
+Wattvision	2009	I	
+WePay	2009	A	fintech
+reMail	2009	A	
+1000Memories	2010	A	
+500Friends	2010	A	
+AdGrok	2010	A	
+AeroFS	2010	A	
+All Screen	2010	A	
+Answerly	2010	I	
+AnyList	2010	L	
+Bitplay	2010	A	
+Brushes	2010	I	
+Cardpool	2010	A	
+Chartio	2010	A	
+Chirply	2010	I	
+Creative Market	2010	A	
+Crocodoc	2010	A	
+Cue	2010	A	
+Data Marketplace	2010	I	
+DemandSphere	2010	L	
+Docker	2010	L	devtools
+Embedly	2010	A	
+Etacts	2010	A	
+Fabricly	2010	I	
+Fanvibe	2010	A	
+Fithub	2010	I	
+Fridge	2010	A	
+FutureAdvisor	2010	A	fintech
+Gamador	2010	I	
+Gantto	2010	I	
+GazeHawk	2010	A	ai
+Habit Labs	2010	I	
+Hipmunk	2010	A	
+Homejoy	2010	A	
+Infoharmoni	2010	I	
+Koduco	2010	I	
+LaunchHear	2010	I	
+Leftronic	2010	A	
+Mertado	2010	A	
+MessageParty	2010	I	
+Mixed Media Labs	2010	I	
+Movity	2010	A	
+Newcope	2010	I	
+Newslabs	2010	I	
+Notifo	2010	I	
+Nowmov	2010	A	
+Optimizely	2010	A	
+Opzi	2010	I	
+OwnLocal	2010	L	
+PadMapper	2010	A	
+PagerDuty	2010	P	devtools
+Post.fm	2010	I	
+Presto	2010	P	
+Pribbit	2010	I	
+Rapportive	2010	A	
+Ready For Zero	2010	I	fintech
+Recurse Center	2010	L	
+Simperium	2010	A	
+Tapzilla	2010	A	
+Teevox	2010	I	
+Upbeat	2010	I	
+Whereoscope	2010	A	
+WorkFlowy	2010	L	
+Zencoder	2010	A	devtools
+Zenedy	2010	I	
+inDinero	2010	L	
+Acunote	2011	L	
+AgileMD	2011	L	ai
+Aisle50	2011	A	
+Apollo	2011	L	devtools
+AppHarbor	2011	I	devtools
+Apportable	2011	A	
+Assembled	2011	I	
+Automatic	2011	A	
+Balanced	2011	I	fintech
+Beetailer	2011	I	
+Caviar	2011	A	
+Citus Data	2011	A	devtools
+Clerky	2011	L	
+Close	2011	L	
+Clutch	2011	A	devtools
+Codecademy	2011	A	
+Compose	2011	A	devtools
+Comprehend	2011	A	
+Convore	2011	I	
+Cryptoseal	2011	A	devtools
+Custora	2011	A	
+Debteye	2011	A	fintech
+DrChrono	2011	A	devtools
+Draft	2011	I	
+Dubjoy	2011	I	
+Earbits	2011	A	
+Embark	2011	A	
+Everyme	2011	I	
+Firebase	2011	A	
+FitFu	2011	I	
+Fivestars	2011	A	fintech
+Flotype	2011	I	devtools
+Fobo	2011	A	
+Freshplum	2011	A	
+GOAT Group	2011	L	
+Genius	2011	A	
+GlassMap	2011	A	
+GoCardless	2011	L	fintech
+HackerRank	2011	L	devtools
+HelloSign	2011	A	
+Hotspots	2011	A	
+Humble Bundle	2011	A	
+Hungry Labs	2011	I	
+Hyperink	2011	I	
+Imgix	2011	L	devtools
+Inporia	2011	I	
+Insight Data Science	2011	I	
+Instapainting	2011	L	
+Interstate	2011	I	
+Kicksend	2011	I	
+Lanyrd	2011	A	
+Launchpad Toys	2011	A	
+LeadGenius	2011	L	ai
+Leaky	2011	I	fintech
+Mailgun	2011	A	devtools
+MarketBrief	2011	I	
+Mino Games	2011	L	
+MixRank	2011	L	
+OneSignal	2011	L	devtools
+Opez	2011	I	
+OrderAhead	2011	A	fintech
+Pagelever	2011	A	
+Parse	2011	A	
+PayDragon	2011	I	
+Pebble	2011	A	
+Perfect Audience	2011	A	
+PhoneSys	2011	I	
+Picplum	2011	I	
+Proxino	2011	I	devtools
+Quad	2011	I	
+Quartzy	2011	L	
+Realm	2011	A	
+Rentobo	2011	I	
+Ridejoy	2011	I	
+Science Exchange	2011	A	
+Segment	2011	A	
+Sendoid	2011	A	
+Siasto	2011	I	
+Sift	2011	L	ai,fintech
+SimplyListed	2011	I	ai
+SingleStore	2011	L	
+Snapjoy	2011	I	
+Storyworth	2011	L	
+Streak	2011	L	
+Stypi	2011	A	
+TalkBin	2011	A	
+Talkable	2011	L	
+TapEngage	2011	A	
+TellFi	2011	I	
+Tremendous	2011	L	fintech
+TrustEgg	2011	I	fintech
+Tumult	2011	L	devtools
+Tutorspree	2011	I	
+Upverter	2011	A	
+Userfox	2011	I	
+Vapor	2011	I	
+Venuetastic	2011	I	
+Verbling	2011	A	
+Videopixie	2011	L	
+Vidyard	2011	L	
+You Got Listings	2011	L	
+Zenbox	2011	I	
+Zerocater	2011	L	
+Zeus	2011	A	
+Zigfu	2011	I	
+42Floors	2012	A	
+99dresses	2012	I	
+9gag	2012	L	
+Airshared	2012	I	
+Amiato	2012	A	
+Amplitude	2012	P	devtools
+Arc	2012	I	
+Ark	2012	I	
+Assorted Bits	2012	I	
+Authy	2012	A	
+BackerKit	2012	L	
+BarSense	2012	I	
+Benchling	2012	L	
+BookSolid	2012	I	
+Boosted	2012	A	
+Brace	2012	I	
+BrainTripping	2012	I	
+BufferBox	2012	A	
+Canopy Labs	2012	I	ai
+Carsabi	2012	I	
+Celery	2012	I	
+Chute	2012	A	
+CircuitHub	2012	L	
+ClassDojo	2012	L	
+Clever	2012	A	
+CleverDeck	2012	L	
+Coco Controller	2012	I	
+CoderWall	2012	A	
+Coinbase	2012	P	fintech
+Collections	2012	I	
+Couple	2012	I	
+Credictive	2012	I	
+Crohnology (by Healthy Labs)	2012	I	
+DataNitro	2012	I	
+Documents.Me	2012	I	
+Double Robotics	2012	L	
+Dreamforge	2012	I	
+Easel	2012	A	
+Eligible	2012	L	devtools
+Everyday.me	2012	I	
+Exec	2012	A	
+FamilyLeaf	2012	A	
+FarmLogs	2012	A	
+FileStack	2012	I	devtools
+Flightfox	2012	L	
+Flutter	2012	A	ai
+Fond	2012	A	fintech
+Framebase	2012	I	devtools
+Fullstack Academy	2012	A	
+FundersClub	2012	L	fintech
+GetGoing	2012	I	
+GiveSpark	2012	I	
+Glider	2012	I	
+GoScale	2012	I	devtools
+Grid	2012	I	
+Grouper	2012	I	
+Gusto	2012	L	
+HackPad	2012	A	
+HealthSherpa	2012	L	
+Hipmob	2012	I	
+Hipset	2012	I	
+Hiptype	2012	I	
+HireArt	2012	L	
+Human Dx	2012	L	
+Imgfave	2012	I	
+Instacart	2012	P	
+Jellyfish Art	2012	I	
+Kamcord	2012	A	
+Keychain Logistics	2012	I	
+Kippt	2012	I	
+Knowmia	2012	A	
+LVL6	2012	I	
+LeanMarket	2012	I	
+LendUp	2012	I	fintech
+Lever	2012	A	
+Light Table/Eve	2012	I	devtools
+Loom	2012	A	
+Make School	2012	I	
+Marft	2012	I	ai,devtools
+Markupwand	2012	I	devtools
+Mattermark	2012	A	fintech
+Mattermost	2012	L	devtools
+Matterport	2012	P	ai
+Medigram	2012	L	
+Medmonk	2012	L	
+MicroEval	2012	I	
+Midnox	2012	A	
+Minefold	2012	I	
+Mth Sense	2012	L	
+MyVR	2012	A	
+Natero	2012	A	
+NewsBlur	2012	L	
+OctaveWealth	2012	L	fintech
+OmniVirt	2012	A	
+Optilly/Installmonetizer	2012	I	
+Parallel Universe	2012	I	devtools
+Partnered	2012	I	
+Per Vices	2012	L	
+Pixate	2012	A	
+Pixelapse	2012	I	
+PlanGrid	2012	A	
+Plivo	2012	L	ai
+Priceonomics	2012	A	
+Profig	2012	I	
+Rainforest	2012	L	devtools
+ReelSurfer	2012	I	
+RegistryLove	2012	I	
+Rescale	2012	L	devtools
+Ridecell	2012	L	ai
+Scoutzie	2012	I	
+Screenleap	2012	L	
+SendHub	2012	A	
+Sendwave	2012	A	fintech
+Shoptiques	2012	L	
+Shopular	2012	A	
+SlidePay	2012	A	devtools,fintech
+SmartAsset	2012	L	fintech
+Socialcam	2012	A	
+SolidStage	2012	I	devtools
+Soylent	2012	A	
+Statwing	2012	A	
+Streem	2012	A	
+Study Edge	2012	A	
+Submittable	2012	L	
+Svbtle	2012	L	
+Swiftype	2012	A	devtools
+Talkray (TiKL)	2012	I	
+Tap to Learn	2012	I	
+Tastemaker	2012	I	
+Testmunk	2012	I	
+The Muse	2012	I	
+Thread	2012	I	
+Tilt	2012	A	
+TomoGuides	2012	I	
+Upwave	2012	L	
+Vastrm	2012	L	
+Vayable	2012	A	
+Viacycle	2012	I	
+Virool	2012	A	
+VoiceGem	2012	A	
+Wave	2012	L	fintech
+WireOver	2012	I	
+YourMechanic	2012	A	
+Zapier	2012	L	
+Zentail	2012	L	
+ZeroMailer	2012	A	
+Zillabyte	2012	I	
+Zipio	2012	I	
+iCracked	2012	A	
+7cups	2013	L	
+Airware	2013	I	
+Amulyte	2013	I	
+Appcubator	2013	I	
+Apptimize	2013	A	
+Arcus	2013	A	fintech
+Asseta	2013	L	
+Audobox	2013	I	
+BeatDeck	2013	I	
+Bitnami	2013	A	devtools
+BloomThat	2013	A	
+Bop.fm	2013	A	
+BuildZoom	2013	L	
+Butter Systems	2013	I	
+Buttercoin	2013	I	
+Casetext	2013	A	ai
+Cheetah	2013	L	
+CircuitLab	2013	L	
+Coin	2013	A	fintech
+CoreOS	2013	A	devtools
+Cratejoy	2013	L	
+CrowdMed	2013	I	
+Crowdery	2013	I	
+Datarank	2013	A	
+DoorDash	2013	P	
+EasyPost	2013	L	
+Echo Locker	2013	A	
+Estimote, Inc.	2013	L	devtools
+Etleap	2013	L	
+Experiment	2013	L	
+FanHero	2013	I	
+Fivetran	2013	L	
+FlightCar	2013	I	
+Floobits	2013	I	
+Glio	2013	I	
+GoComm	2013	I	
+Goldbelly	2013	L	
+Graft Concepts	2013	I	
+GrepData	2013	A	
+Hackermeter	2013	A	
+Heap	2013	A	
+Hum	2013	I	
+InfluxData	2013	L	devtools
+Ixiplay	2013	I	
+Kalibrr	2013	A	
+Kivo	2013	I	devtools
+Lawdingo	2013	L	
+Layer By Layer	2013	A	
+Le Tote	2013	I	
+Lob	2013	L	
+LocalOn	2013	I	
+Logiblock	2013	I	
+Lollipuff	2013	L	
+Lumoid	2013	A	
+MedXT	2013	A	
+Medisas	2013	I	
+Meldium	2013	A	
+Meta	2013	I	
+North	2013	A	
+One Month	2013	I	
+Padlet	2013	L	
+Panorama Education	2013	L	
+PayTango	2013	I	fintech
+Posmetrics	2013	I	
+Prophecy Sciences	2013	I	
+RADAR	2013	L	ai
+RealCrowd	2013	A	
+Reebee	2013	L	
+RoverRide	2013	I	
+Screenhero	2013	A	
+Scuba	2013	A	
+Semantics3	2013	A	ai
+Senic	2013	A	
+SimpleLegal	2013	A	
+SimplyInsured	2013	L	
+SoundFocus	2013	I	
+SpoonRocket	2013	A	
+StackMachine	2013	I	devtools
+Standard Treasury	2013	A	devtools,fintech
+StatusPage	2013	A	
+Strikingly	2013	L	
+StyleUp	2013	L	
+Swapbox	2013	I	
+Swish	2013	I	
+Teespring	2013	A	
+Teleborder	2013	I	
+Trainzen	2013	I	
+True Link	2013	L	fintech
+URX	2013	A	
+VaycayHero	2013	A	
+Watchsend	2013	I	
+Watsi	2013	L	
+WebCake	2013	I	
+Webflow	2013	L	
+Wefunder	2013	L	fintech
+Weilos	2013	A	
+Wevorce	2013	L	
+Zenefits	2013	A	
+42	2014	L	
+Abacus	2014	A	fintech
+AirHelp	2014	L	
+AirPair	2014	I	
+Alchemy	2014	L	
+Algolia	2014	L	devtools
+Ambition	2014	L	
+AptDeco	2014	L	
+Aptible	2014	A	devtools
+Apto Payments	2014	A	fintech
+Avametric	2014	A	
+Awesometalk	2014	I	
+Axoni	2014	A	fintech
+Backpack	2014	L	
+Bannerman	2014	I	
+Bayes Impact	2014	L	
+Beep	2014	I	
+Bellabeat	2014	L	
+Bikanta	2014	I	
+Billforward	2014	I	
+Bitaccess	2014	A	fintech
+Blockspring	2014	A	
+Boostable	2014	A	
+Cambly	2014	L	
+CareMessage	2014	L	
+Carlypso	2014	A	
+Chargehound	2014	A	fintech
+Checkr	2014	L	ai,devtools
+Cheddar	2014	I	fintech
+Clara Labs	2014	A	
+Clear	2014	L	
+CodeCombat	2014	L	
+CodeNow	2014	L	
+Cognito	2014	A	fintech
+Craft Coffee	2014	A	
+Cruise	2014	A	ai
+Dating Ring	2014	I	
+DevCycle	2014	A	
+Doblet	2014	I	
+Drive Pulse	2014	I	
+Dyspatch	2014	L	
+Edyn	2014	I	
+Emailio	2014	L	
+Eventjoy	2014	A	
+Fixed	2014	I	
+Flaviar	2014	L	
+Flexport	2014	L	
+Flytenow	2014	I	
+Framed Data	2014	A	
+Front	2014	L	
+Futureleague	2014	I	
+GBatteries	2014	L	
+Ginkgo Bioworks	2014	P	
+Gobble	2014	A	
+GovPredict	2014	A	
+Greentoe	2014	L	
+Guesty	2014	L	
+HauteDay	2014	I	
+Helion Energy	2014	L	
+Hive	2014	L	
+HoverChat	2014	I	
+Hublo	2014	A	
+Hyperpad	2014	L	devtools
+Immunity Project	2014	L	
+Impraise	2014	A	
+In Your Corner	2014	I	
+Kash	2014	A	fintech
+Kimono Labs	2014	A	
+Kuna Systems	2014	A	
+Lawn Love	2014	A	
+Liftigniter	2014	A	ai
+ListRunner	2014	A	
+MBX	2014	L	
+MTailor	2014	L	ai
+MadeSolid	2014	I	
+MerryMint	2014	I	
+MetricWire	2014	L	
+MixerBox	2014	L	ai
+Motionlead	2014	A	
+Move Loot	2014	I	
+Naytev	2014	I	
+Neptune.io	2014	I	ai,devtools
+Next Caller	2014	A	
+Nightingale	2014	I	
+Noora Health	2014	L	
+Oklo	2014	P	
+One Codex	2014	A	
+One Degree	2014	L	
+OpenCurriculum	2014	L	ai
+Owners Circle	2014	I	
+Paid	2014	I	fintech
+Parenthoods	2014	A	
+Payable	2014	A	fintech
+Permutive	2014	L	
+PersistIQ	2014	A	
+PicnicAI	2014	L	ai
+PiinPoint	2014	L	
+PipelineDB	2014	A	devtools
+Povio	2014	L	
+Product Hunt	2014	A	
+Protocol Labs	2014	L	devtools,fintech
+Pushbullet	2014	L	
+Ravti	2014	A	
+Replenish	2014	A	
+Rickshaw	2014	A	devtools
+Rigetti Computing	2014	P	
+Rocketrip	2014	A	fintech
+Roomstorm	2014	L	
+Roost	2014	I	
+SFOX	2014	L	fintech
+SalesSift	2014	I	ai
+ShipBob	2014	L	
+Shoobs	2014	L	
+Shopagram	2014	I	
+Shout	2014	I	
+SketchDeck	2014	A	
+Sliced Investing	2014	A	fintech
+Snapdocs	2014	L	
+SpotAngels	2014	L	
+SpringWit	2014	I	
+StackLead	2014	A	
+Style Lend	2014	I	
+TAXA Biotechnologies	2014	I	
+Tenjin	2014	A	
+Terravion	2014	I	
+Theorem	2014	A	ai,fintech
+Think Gaming	2014	I	
+Threadable	2014	I	
+Tinker	2014	I	fintech
+TrueVault	2014	L	
+Tule	2014	A	ai
+Two Tap	2014	A	
+Unbabel	2014	A	
+Unicornly	2014	I	fintech
+Unwind Me	2014	A	
+UserGems	2014	L	
+Vidpresso	2014	A	
+VizeraLabs	2014	I	ai
+Weave	2014	P	
+Weave	2014	I	ai
+Whirl	2014	I	fintech
+Whirlscape	2014	I	
+Wit.ai	2014	A	ai,devtools
+Women.com	2014	A	
+Yumbin	2014	I	
+Zenamins	2014	I	
+Zesty	2014	A	
+Zidisha	2014	L	fintech
+Zinc	2014	L	
+Zip Phone	2014	A	
+Zoomer	2014	I	
+ZowPow	2014	I	
+20n	2015	I	ai
+3dot	2015	I	
+80,000 Hours	2015	L	
+Afrostream	2015	I	
+Airmada	2015	I	
+Akido Labs	2015	L	ai
+Apollo Health	2015	I	
+Appcanary	2015	A	
+Assembly	2015	L	
+Auro Robotics	2015	A	
+Automate Ads	2015	I	
+Bagaveev Corporation	2015	I	
+Bankjoy	2015	L	fintech
+Bistrobot	2015	I	
+Bitmovin	2015	L	devtools
+Bizzy	2015	A	
+Blitz Esports	2015	A	
+Bluecrew	2015	A	
+Bluesmart	2015	A	
+Bodyport	2015	L	
+Bonfire	2015	A	
+Booktrope	2015	I	
+Branch8	2015	L	
+Bright	2015	L	fintech
+BuildScience	2015	L	
+Call9	2015	I	
+CareLedger	2015	I	fintech
+Chaldal	2015	L	
+Chariot	2015	A	
+Circle Medical	2015	L	
+Cleanly	2015	L	
+Cloudstitch	2015	A	devtools
+Cofactor Genomics	2015	L	
+Confident LIMS	2015	L	
+Convox	2015	A	
+Cribspot	2015	I	
+CyberFend	2015	A	
+Cymmetria	2015	A	
+Dabble	2015	I	ai
+Dealyze	2015	I	
+Democracy Earth	2015	L	fintech
+DemocracyOS	2015	L	
+Direct Match	2015	I	
+Drip Capital	2015	L	fintech
+Eden	2015	A	
+Eight Sleep	2015	L	
+EquipmentShare	2015	P	
+Fetch	2015	I	
+Final	2015	A	fintech
+Flip	2015	L	
+Flirtey (SkyDrop)	2015	L	
+Font Awesome	2015	L	devtools
+Fountain	2015	L	ai
+Foxpass	2015	A	devtools
+Gemnote	2015	L	
+Gigster	2015	A	
+GitLab	2015	P	devtools
+GiveCampus	2015	L	fintech
+GiveMeTap	2015	L	
+Giveffect	2015	L	
+Glassjar	2015	I	fintech
+Go1	2015	L	
+GroupAhead	2015	I	
+GrubMarket	2015	L	
+HER	2015	A	
+Halolife	2015	I	
+Heroic Labs	2015	L	devtools
+Hickory	2015	I	
+HigherMe	2015	A	
+Human Interest	2015	L	fintech
+Industrial Microbes	2015	L	
+Instavest	2015	I	
+Instawork	2015	L	
+Interviewed	2015	A	
+Ironclad	2015	L	
+Jopwell	2015	A	
+Kickpay	2015	I	fintech
+Klarismo	2015	I	
+L.	2015	A	
+Labdoor	2015	L	
+Leada	2015	I	
+Leaders In Tech	2015	L	
+Level Frames	2015	L	
+Locent	2015	I	
+Lucira Health	2015	P	
+Lugg	2015	L	
+Lully	2015	I	
+Lumi	2015	A	
+Maderight	2015	I	
+Magic	2015	L	ai
+Makrwatch	2015	L	
+Markhor	2015	L	
+Mashgin	2015	L	ai
+Meadow	2015	L	
+Mezmo	2015	L	devtools
+Microhealth	2015	L	
+Mimir	2015	A	
+Mobydish	2015	A	
+Moltin	2015	A	devtools,fintech
+Nebia	2015	A	
+New Story	2015	L	fintech
+NexTravel	2015	A	
+Nextop	2015	I	devtools
+NimbleRx	2015	L	
+Nomiku	2015	I	
+Notable Labs	2015	P	
+Numerion Labs	2015	L	
+Ohm	2015	I	
+Omniref	2015	I	devtools
+Oolu	2015	A	
+Open Listings	2015	A	
+OpenInvest	2015	A	fintech
+Outbound	2015	A	
+Pachyderm	2015	A	ai,devtools
+Pakible	2015	I	
+Paperspace	2015	A	ai
+Paribus	2015	A	fintech
+PartnerStack	2015	A	
+PickTrace	2015	L	
+Pigeonly	2015	I	
+Plate IQ	2015	L	fintech
+PlateJoy	2015	A	
+Platzi	2015	L	
+Pomello	2015	A	ai
+Popular Pays	2015	A	
+Prayas Analytics	2015	I	ai
+Pretty Instant	2015	A	
+Priime	2015	I	
+Quantierra	2015	L	fintech
+Qventus	2015	L	ai
+ROSS Intelligence	2015	I	ai
+Rare Door	2015	I	
+Raven Tech	2015	A	
+Razorpay	2015	L	fintech
+ReSchedule Med	2015	I	
+Reach	2015	L	
+ReadMe	2015	L	devtools
+RedCarpetUp	2015	L	fintech
+Reduced Energy Microsystems	2015	I	ai
+Remix	2015	A	
+Replika	2015	L	
+Rescue Forensics	2015	I	
+Resolve	2015	L	ai
+Roomblocker	2015	I	
+SIRUM	2015	L	
+Saida	2015	I	fintech
+Sails Co.	2015	L	devtools
+Scentbird	2015	L	
+Scope AR	2015	I	
+Second Measure	2015	A	fintech
+Seed	2015	A	fintech
+Serica	2015	I	fintech
+Seva Coffee	2015	I	
+Shape (ShapeScale)	2015	L	ai
+Shasqi	2015	L	
+Shift Labs	2015	A	
+Shift Messenger	2015	I	
+Shotput	2015	I	
+Shred Video	2015	L	
+SigOpt	2015	A	ai
+Smarking	2015	A	ai
+Smyte	2015	A	
+SnapMagic	2015	L	ai,devtools
+SourceDNA	2015	A	
+SparkGift	2015	I	fintech
+Sphere Secure Workspace	2015	A	
+Spire Health	2015	A	
+Spoil	2015	I	
+Standard Cyborg	2015	I	ai,devtools
+Stitch Health	2015	I	
+StyleBee	2015	I	
+SunFarmer	2015	L	
+Tab	2015	L	fintech
+Tara AI	2015	L	ai,devtools
+TeamNote	2015	L	
+Tech in Asia	2015	A	
+Teleport	2015	L	devtools
+Tempo	2015	L	ai
+Tenant Turner	2015	A	
+Tesorio	2015	L	fintech
+TetraScience	2015	L	
+The Human Utility	2015	L	
+The Ticket Fairy	2015	L	
+ThinAir	2015	I	
+Thrive Agritech	2015	L	
+Transcriptic	2015	I	
+Traversal Networks	2015	I	
+Triplebyte	2015	A	
+Underground Cellar	2015	I	
+VOIQ	2015	I	
+Valor Water Analytics	2015	A	
+Vanhawks	2015	A	
+Verge Genomics	2015	L	
+Vernox	2015	I	
+Vest	2015	A	fintech
+VetPronto	2015	I	
+Vive	2015	I	
+WayUp	2015	A	
+Wheelys Café	2015	I	
+Willing	2015	A	fintech
+Wink Health	2015	I	
+WorkLife	2015	A	
+X-Zell	2015	L	
+Xendit	2015	L	fintech
+Xfers	2015	A	fintech
+YesGraph	2015	A	
+Yhat	2015	A	ai
+Zeitview	2015	L	ai
+Zenflow	2015	L	
+Zeplin	2015	L	devtools
+eBrandvalue	2015	L	
+jEugene	2015	I	
+teaBOT	2015	L	
+zPREDICTA	2015	A	
+Able Health	2016	A	
+Abundance Labs	2016	I	
+Airfordable	2016	L	fintech
+Airo Health	2016	I	ai
+Algoriz	2016	I	ai
+AlphaFlow	2016	I	fintech
+AmberBox Gunshot Detection	2016	L	
+Anchor Health	2016	I	
+Apollo.io	2016	L	
+ApolloShield	2016	L	
+Astranis	2016	L	
+Athelas	2016	L	ai
+Bird	2016	L	devtools
+Bonsai	2016	A	
+Boom	2016	L	
+Bulldozair	2016	A	
+Burrow	2016	A	
+Bus.com	2016	I	
+Caper	2016	A	ai
+Carbic	2016	L	
+CareRev	2016	A	
+Castle	2016	I	
+Castle	2016	L	devtools
+Chatfuel	2016	L	
+Chillabit	2016	I	
+Circa	2016	L	
+Clip Health	2016	I	
+CoinTent	2016	I	
+Compgun	2016	I	
+ConstructVR	2016	I	
+Copia	2016	L	
+Coub	2016	I	
+Cover	2016	I	fintech
+CrowdAI	2016	A	ai
+Curtsy	2016	L	
+Daily	2016	L	ai,devtools
+Deako	2016	L	
+Deepgram	2016	L	ai,devtools
+DevColor	2016	L	
+DoseDr	2016	I	
+Drivezy	2016	I	
+Elemeno Health	2016	L	
+Elucify	2016	I	
+Embark Trucks	2016	P	
+Emburse	2016	A	fintech
+Emote	2016	L	
+Enflux	2016	I	
+Envyl	2016	I	
+Expo	2016	L	devtools
+Fabric	2016	A	
+Farmstead	2016	I	ai
+FightCamp	2016	L	
+Flutterwave	2016	L	fintech
+Focal Systems	2016	L	ai
+Function of Beauty	2016	L	
+GTRACK Technologies	2016	I	
+Gecko Robotics	2016	L	ai
+Georgette Packaging	2016	I	
+GetAccept	2016	L	
+Gigwell	2016	L	
+GitPrime	2016	A	devtools
+GoGoGrandparent	2016	L	
+GoLorry	2016	L	
+Goodybag	2016	A	
+Haywheel	2016	I	
+Hellobill	2016	I	fintech
+HiOperator	2016	L	
+Hingeto	2016	A	
+HistoWiz	2016	L	ai
+Hush	2016	I	
+Index	2016	I	
+Inevitable Tech	2016	I	
+InnoVein	2016	I	
+Innov8	2016	A	
+Instrumentl	2016	L	
+Interstate Analytics	2016	I	
+Iris Automation	2016	A	ai
+Joy	2016	L	
+Jumpcut	2016	L	
+Kenota (formerly ExVivo Labs)	2016	I	
+Kip Health	2016	A	
+Kisan Network	2016	I	
+Landed	2016	A	fintech
+Lattice	2016	L	
+Legalist	2016	L	fintech
+LendEDU	2016	A	fintech
+Lendsnap	2016	I	fintech
+Livement	2016	L	
+Looklive	2016	I	
+Loop Genomics	2016	A	
+Luciq (formerly Instabug)	2016	L	devtools
+Luminist Labs	2016	A	
+Lygos	2016	L	
+Lynks	2016	L	
+Magic Instruments	2016	I	
+MagicBus	2016	L	
+MailTime	2016	L	
+Mason	2016	L	
+Meesho	2016	P	
+Metapacket	2016	I	
+Meter Feeder	2016	L	fintech
+Mindori	2016	I	
+MineralSoft	2016	A	
+Mio	2016	L	
+Miso	2016	L	ai
+Modal	2016	I	
+Monthli	2016	I	
+Mosaix.ai	2016	I	ai
+Multiply Labs	2016	L	
+Mux	2016	L	devtools
+NURX	2016	A	
+NeoWize	2016	A	ai
+NetBeez	2016	L	
+Netomi	2016	L	ai
+New Incentives	2016	L	
+Nova	2016	A	ai
+Nova Credit	2016	L	fintech
+NuCypher (aka Threshold Network)	2016	L	
+OMG Digital	2016	L	
+OneChronos	2016	L	ai,fintech
+Open Motors	2016	I	
+Opentrons	2016	L	
+Opsolutely	2016	A	devtools
+Outschool	2016	L	
+Patchwork Security	2016	I	
+Pathmind	2016	I	
+PatientBank	2016	I	
+Pave	2016	L	
+Paystack	2016	A	fintech
+People.ai	2016	L	ai
+Perlara	2016	L	
+Petcube	2016	L	
+PhysioHealth	2016	I	fintech
+Plato	2016	A	
+PocketSuite	2016	L	fintech
+Podium	2016	L	ai,fintech
+Polymail	2016	A	
+Poppy	2016	I	
+Prime Lightworks	2016	L	
+Protonet	2016	L	devtools
+Proxy	2016	A	
+Pulpix	2016	A	ai
+Pursuit	2016	A	
+Quero Education	2016	L	
+Quilt Data	2016	L	
+Qvin	2016	L	
+Rappi	2016	L	fintech
+Raptor Maps	2016	L	
+Ready Education	2016	L	
+Real Artists	2016	I	
+Redspread	2016	A	devtools
+Reebeez	2016	I	
+Relativity Space	2016	L	ai
+Restocks	2016	I	
+Revl	2016	L	ai
+RigPlenish	2016	I	
+Robby Technologies	2016	I	
+RocketLit	2016	L	
+Rose Rocket	2016	L	
+RunKit	2016	A	
+SOUNDBOKS	2016	L	
+Sage Care	2016	I	
+Saleswhale	2016	A	ai
+Salt Security	2016	L	
+Sanitation and Health Rights in India (SHRI)	2016	L	
+Scale AI	2016	L	ai
+Scanate/Fellow	2016	I	devtools
+Seerslab	2016	I	ai
+Selfycart	2016	I	
+Sendbird	2016	L	ai
+Seneca Systems	2016	A	
+Shield Bio	2016	I	
+Silver	2016	I	
+SimpleCitizen	2016	A	
+Sixa	2016	I	devtools
+SkyLights	2016	I	
+SmartPath	2016	L	fintech
+SmartSite	2016	I	
+Squire Technologies	2016	L	
+Starcity	2016	A	
+Starsky Robotics	2016	I	
+Start Closing	2016	I	fintech
+Stealth Worker	2016	L	
+Stilt	2016	A	fintech
+Streamup	2016	I	
+StrongIntro	2016	I	
+Suiteness	2016	L	
+Superside	2016	L	ai
+Sway Finance	2016	I	ai,fintech
+Symple	2016	A	
+Synvivia	2016	L	ai
+TRAC	2016	I	
+Techmate	2016	A	
+The Athletic	2016	A	
+The Flex Company	2016	L	
+Thunkable	2016	L	devtools
+Tovala	2016	L	
+Toymail	2016	I	
+Truebill	2016	A	fintech
+Ubiq	2016	I	
+Unima	2016	I	
+Unnyhog	2016	I	
+UpLabs	2016	I	
+Upgraded	2016	L	fintech
+UroDev Medical	2016	A	
+UtilityScore (formerly Pando)	2016	I	devtools
+VINEBOX (Usual Beverage Co.)	2016	I	
+Validere	2016	L	
+Vetcove	2016	L	
+Vidcode	2016	A	
+Vote.org	2016	L	
+Wakie	2016	L	
+Whyd	2016	I	
+Women Who Code	2016	L	
+WorkRamp	2016	A	
+WorldCover	2016	I	fintech
+Xberts	2016	I	
+Yardbook	2016	L	
+Yoshi Mobility	2016	L	
+Zenysis	2016	L	
+flexEngage	2016	A	
+garten	2016	A	ai
+iSono Health	2016	L	ai
+mRelief	2016	L	
+10 By 10	2017	L	ai
+ACLU	2017	L	
+AON3D	2017	L	
+Advano	2017	L	
+Aecore	2017	L	
+Aella	2017	L	fintech
+Airthium	2017	L	
+AlemHealth	2017	L	ai
+Ambient.ai	2017	L	ai
+Anasen	2017	I	
+And Comfort	2017	I	
+Apozy	2017	L	
+Armory	2017	A	devtools
+Arthena	2017	A	fintech
+Arylla	2017	I	
+AssemblyAI	2017	L	ai,devtools
+Audm	2017	A	
+AutoHub	2017	A	
+BIOS Health	2017	L	ai
+Beek	2017	I	
+Bicycle AI	2017	I	ai
+BillionToOne	2017	P	
+Bitrise	2017	L	devtools
+Bloom Institute of Technology	2017	L	fintech
+BloomAPI	2017	L	
+Bountiful	2017	L	ai
+Breaker	2017	A	
+Brex	2017	A	fintech
+Bulk MRO Industrial Supply	2017	L	fintech
+Bulletin	2017	A	
+Bumpline	2017	I	
+BuyPower	2017	L	fintech
+Caelum Health	2017	I	
+Cairns Health	2017	L	ai
+Cambridge Cancer Genomics	2017	I	
+Candidately	2017	L	
+CarDash	2017	A	
+Carrot Fertility	2017	L	
+Cartcam	2017	I	
+Cashfree Payments	2017	L	fintech
+Clear Genetics	2017	A	
+Clipboard	2017	L	
+CocuSocial	2017	L	
+Collectly	2017	L	fintech
+Commissary Club (formerly 70 Million Jobs)	2017	I	ai
+Covetly	2017	I	
+Cowlar	2017	I	ai
+D-ID	2017	L	ai
+Darmiyan	2017	L	ai
+Delee	2017	L	
+Dharma Labs	2017	A	fintech
+Dost Education	2017	L	
+Dropleaf	2017	I	
+Eduflow	2017	A	
+Elucd	2017	A	
+Entocycle	2017	L	
+Entry	2017	I	ai
+Enzyme	2017	A	
+Escher Reality	2017	A	devtools
+Extern	2017	L	
+FAZZ	2017	L	fintech
+Faire	2017	L	
+Fam	2017	I	
+FastJVM	2017	L	devtools
+Fastpad	2017	I	
+Fat Llama	2017	A	fintech
+Feather	2017	A	
+Fibo	2017	I	
+Fiix	2017	A	
+Firsthand	2017	I	
+Flock Safety	2017	L	ai
+Flowspace	2017	L	
+FloydHub	2017	I	ai
+FollowUpThen	2017	L	ai
+Forever Labs	2017	L	
+Gameday	2017	I	
+Gamelynx	2017	I	
+Gem	2017	L	
+Goodcover	2017	L	fintech
+Goosebump	2017	I	
+Greo	2017	I	
+Guggy	2017	I	ai
+Guilded	2017	A	
+Headstart	2017	A	ai
+Helium Health	2017	L	
+Helix Nanotechnologies	2017	L	ai
+HelpWear	2017	L	
+Hivy	2017	A	
+Hogaru	2017	L	
+Honeydue	2017	A	fintech
+Humi	2017	A	fintech
+Indee Labs	2017	L	
+Indivio	2017	A	
+InnaMed	2017	I	
+Jerry	2017	L	fintech
+Just Appraised	2017	L	
+KidPass	2017	A	
+Ledger Investing	2017	L	fintech
+Leon & George	2017	L	
+LitHit	2017	I	
+Lively, Inc.	2017	L	fintech
+Long Term Stock Exchange	2017	L	fintech
+Loop Support	2017	A	
+LotusPay	2017	A	fintech
+Lyrebird	2017	A	ai
+MDalgorithms Inc.	2017	L	ai
+Marketfox	2017	I	
+May Mobility	2017	L	ai
+Mednet	2017	L	
+Meetingbird	2017	A	
+Mirror AI	2017	L	ai
+Modern Fertility	2017	A	
+Modular Science	2017	I	
+Muzz	2017	L	
+Mystery.org	2017	A	
+Mystro	2017	I	ai
+NanoNets	2017	L	ai,devtools
+Neema	2017	I	fintech
+NextDrop	2017	I	
+Niles	2017	I	
+Nimble	2017	L	ai
+No Lean Season	2017	I	
+Nobell Foods	2017	L	
+Nomba	2017	L	fintech
+Nuvola	2017	L	
+Officely	2017	L	
+Oncobox	2017	L	
+OneFin	2017	L	devtools,fintech
+OneLocal	2017	L	
+Opearlo	2017	A	ai
+Origin	2017	I	
+Passerine Aircraft	2017	I	
+Pathrise	2017	I	
+Pearl	2017	I	
+Peer5	2017	A	
+Penny	2017	A	ai,fintech
+Percept.AI	2017	A	ai
+Piggy	2017	I	fintech
+Pit.AI	2017	I	ai,fintech
+Plane	2017	L	fintech
+Plasticity	2017	A	ai
+Playment	2017	A	
+Polly	2017	I	
+Pop Meals	2017	L	
+PreDxion Bio	2017	I	
+Prelim	2017	L	fintech
+Prism Labs	2017	I	
+PullRequest	2017	A	devtools
+Pulse	2017	I	
+Py	2017	A	
+Pyka	2017	L	
+REZI	2017	L	
+Rabbet	2017	L	fintech
+Rally Tennis	2017	I	
+RankScience	2017	L	ai
+Relationship Hero	2017	L	
+Releaf Earth	2017	L	
+Reliance Health	2017	L	
+Request Network	2017	L	fintech
+Retool	2017	L	devtools
+Rev Genomics	2017	L	
+Ribbon Health	2017	A	devtools
+RideAlong	2017	I	
+Riley	2017	I	
+Rippling	2017	L	
+Roofr	2017	L	
+Routable	2017	L	fintech
+SafeButler	2017	L	fintech
+Sandbox Banking	2017	A	fintech
+Scaphold.io	2017	A	devtools
+ScopeAI	2017	A	ai
+Scribe	2017	A	ai
+Semantix	2017	I	ai
+Shipamax	2017	A	ai
+Sigma Genetics	2017	L	
+Sinovia Technologies	2017	L	
+Sixty	2017	I	
+Skyscrape	2017	L	
+Skyways	2017	L	ai
+Sleep Reset	2017	L	
+Slik	2017	I	
+Smart Alto	2017	I	
+Snappr	2017	L	
+Social Construct	2017	I	ai
+Solugen	2017	L	
+Solve	2017	A	
+Soomgo	2017	A	
+SourceBeacon	2017	I	
+Sourceress	2017	L	ai
+Speak	2017	L	ai
+Spect	2017	I	ai
+Standard AI	2017	L	ai
+Storyboard	2017	I	
+Sudden Coffee	2017	I	
+Sunfolding	2017	I	
+Sunu	2017	I	
+Supr Daily	2017	A	
+Surematics	2017	A	fintech
+Sycamore	2017	I	
+Templarbit	2017	A	
+Terark	2017	A	devtools
+Tesseract	2017	L	
+Tetra	2017	A	ai
+The Centre for Effective Altruism	2017	L	
+The Essential	2017	L	
+Thematic	2017	L	ai
+ThereCraft	2017	L	
+Tizeti	2017	L	
+Token Transit	2017	L	fintech
+Tolemi	2017	L	
+Trade	2017	I	
+Tress	2017	I	
+Truepill	2017	A	
+UpCodes	2017	L	
+UpKeep	2017	A	
+Upcall	2017	L	
+Upfort	2017	L	fintech
+VIDA & Co.	2017	A	
+Value Voting	2017	I	
+VanGo	2017	I	
+VergeSense	2017	L	ai
+Veryfi, Inc.	2017	L	ai,devtools
+Voiceops	2017	L	ai
+Volansi	2017	A	
+Volt Health	2017	I	
+Voodoo Manufacturing	2017	I	
+WATERFX	2017	I	
+Wavy	2017	A	
+WaystoCap	2017	A	
+WheelStreet	2017	I	
+Wifi Dabba, Inc.	2017	L	fintech
+Wildfire	2017	A	
+Wright Electric	2017	L	
+Zendar	2017	L	
+Zinc Platform	2017	I	devtools,fintech
+ZipX	2017	A	
+boxouse	2017	I	
+bxblue	2017	A	fintech
+disclosures.io	2017	A	
+lvl5	2017	A	
+tpaga	2017	L	fintech
+64x Bio	2018	L	ai
+Aalo	2018	I	
+Acely	2018	L	
+Activeloop	2018	L	ai,devtools
+Aerones	2018	L	
+AesculaTech	2018	L	
+Aesthetic	2018	L	ai
+Ajaib	2018	L	fintech
+AlgoSurg Inc	2018	L	
+Allotrope Medical	2018	A	
+Alpha Vantage	2018	L	ai,devtools
+Anima App	2018	L	ai,devtools
+Anjuna	2018	L	
+AnnieCannons	2018	L	
+Apprentice Health	2018	L	
+ArchForm	2018	L	
+AskMyClass, now Soundkins	2018	L	
+Aspire	2018	L	fintech
+Assembly	2018	L	ai
+Atrium	2018	I	
+Avo	2018	I	
+Avro Life Science	2018	L	
+BHRD	2018	I	fintech
+Beanstalk	2018	L	
+Bear Flag Robotics	2018	A	
+Ben	2018	I	fintech
+Berbix	2018	A	
+BioRender	2018	L	
+Biobot Analytics	2018	L	
+BlueCargo	2018	L	
+Blueberry Pediatrics	2018	L	
+Bot MD	2018	L	
+BrainHi	2018	L	ai
+C16 Biosciences	2018	L	
+CB Therapeutics	2018	L	
+CSPA	2018	A	
+California Dreamin	2018	I	
+Calii	2018	L	
+Canary Technologies	2018	L	
+CaptivateIQ	2018	L	
+Circumvent	2018	L	
+Clear Gene	2018	L	
+ClearBrain	2018	A	
+Closer Sports	2018	I	
+CodeStream	2018	A	devtools
+Cognition IP	2018	L	ai
+CoinTracker	2018	L	fintech
+College Pulse	2018	L	
+Contrast	2018	I	devtools
+Coral Genomics	2018	A	
+Correlia Biosystems	2018	I	
+Corvus Robotics	2018	L	
+Cowrywise	2018	L	fintech
+Culdesac	2018	L	
+Culture Biosciences	2018	L	
+Curebase	2018	L	
+Curious Fictions	2018	I	
+Data Driven Bioscience	2018	L	ai
+Dataform	2018	A	
+Dear Brightly	2018	L	
+Demeanor.co	2018	A	
+Dinesafe	2018	L	
+Dorian Therapeutics	2018	A	
+Draftbit	2018	L	devtools
+DreamCraft Entertainment, Inc.	2018	L	devtools
+Duffel	2018	L	devtools
+Easol	2018	L	
+Eden	2018	L	
+Edwin	2018	A	ai
+Embeddables	2018	L	
+EnvKey	2018	I	
+Enveritas	2018	L	
+ErudiFi	2018	L	fintech
+Evolve (makers of Podcast App & Rest)	2018	L	
+Evry Health	2018	A	fintech
+ExceptionALLY	2018	I	
+FREY	2018	I	
+FameGame	2018	I	
+Federacy	2018	I	
+FidoCure®	2018	L	
+Fintual	2018	L	fintech
+Flinto	2018	A	fintech
+Fondo	2018	L	ai,fintech
+Four Growers	2018	L	
+Gainful	2018	L	
+Gerostate Alpha	2018	I	
+Glimpse K12	2018	A	
+Glowing.io	2018	L	
+Goodly	2018	I	fintech
+Grabb-It	2018	I	
+Grin	2018	A	fintech
+Groww	2018	P	fintech
+Haiku	2018	I	devtools,fintech
+HappiLabs	2018	A	
+Helicarrier (prev Buycoins)	2018	L	fintech
+Helloverify	2018	L	ai
+Hepatx	2018	L	
+Hexel	2018	I	fintech
+HeyDoctor	2018	A	
+Honeylove	2018	L	
+Hunter2	2018	A	devtools
+INKHUNTER	2018	I	
+Iambiq Technologies	2018	I	
+Impactive (formerly Outvote)	2018	A	
+Inokyo	2018	I	
+Inscribe	2018	L	ai,fintech
+Ixora	2018	I	
+JITX	2018	L	ai
+Jasper.ai	2018	L	ai
+Jido Maps	2018	A	ai
+Key Values	2018	L	
+Khatabook	2018	L	fintech
+Kinside	2018	A	fintech
+Kobo360	2018	I	
+Kunduz	2018	L	ai
+LUS Brands	2018	L	
+LabelFlow	2018	I	ai
+Lambda Tea	2018	I	
+Lawyaw	2018	A	
+Leena AI	2018	L	ai
+LemonBox	2018	L	ai
+Let's Do This	2018	L	
+Look After My Bills	2018	A	fintech
+Lowkey	2018	A	
+Lucy Goods, Inc	2018	L	
+Macromoltek	2018	L	
+Mark Cuban Cost Plus Drug Company, PBC	2018	L	
+Mayhem	2018	A	
+Medinas Health	2018	I	
+Medumo	2018	A	
+Meitre	2018	L	
+Memora Health	2018	A	ai
+MentalHappy	2018	L	
+Meru Health	2018	L	
+Meson	2018	I	fintech
+Mighty Buildings	2018	I	
+Mind Emulation Foundation	2018	L	
+Modern Health	2018	L	
+Modern Treasury	2018	L	devtools,fintech
+Mojo	2018	A	
+Momentus	2018	P	
+Mutiny	2018	L	ai
+Mylk Guys	2018	I	
+Mytos	2018	L	
+NEXGENT	2018	L	
+Naborly	2018	A	ai,fintech
+Names & Faces	2018	L	
+Necto	2018	I	
+Nectome	2018	L	
+Nestor	2018	L	
+NewCraft	2018	A	devtools
+Newfront	2018	A	fintech
+Nova	2018	A	fintech
+Nutrigene	2018	I	
+Nuvocargo	2018	L	ai
+OSIMple	2018	I	
+OWNY	2018	L	ai,fintech
+Observant AI	2018	L	ai
+Observe.AI	2018	L	ai
+OkCredit	2018	L	fintech
+OneGraph	2018	A	devtools
+OpenSea	2018	L	fintech
+OpenWrench	2018	L	
+Openland	2018	I	
+Optic	2018	A	devtools
+Orangewood Labs	2018	L	ai
+OurMenu	2018	I	
+Ovipost	2018	I	
+Oxygen	2018	L	fintech
+Pagedraw	2018	I	
+Paladin	2018	L	
+Papa	2018	L	
+Passenger AI	2018	I	
+Pelago	2018	L	
+Penta Medical	2018	I	
+Perception Biosystems	2018	I	
+Persephone Biosciences	2018	L	
+Phiar	2018	A	ai
+Pine Park Health	2018	L	
+Players' Lounge	2018	L	
+Plexus	2018	L	
+Pocket Worlds	2018	L	
+Point API	2018	I	ai
+Precious	2018	L	ai
+Prodigal	2018	L	ai,fintech
+Promise	2018	L	ai,fintech
+Proven Group	2018	L	ai
+Psylaris	2018	L	
+Pulse	2018	A	
+Purple Plate	2018	I	
+Quantstamp	2018	L	fintech
+Quickchat AI	2018	L	ai
+Qulture.Rocks	2018	A	
+Quo (fka OpenPhone)	2018	L	
+Radix Labs	2018	I	
+Rain Neuromorphics	2018	A	ai
+Rebellyous Foods	2018	L	
+Regology	2018	A	ai
+Rejuvenation Technologies Inc.	2018	L	
+Replit	2018	L	devtools
+RevenueCat	2018	L	devtools
+Reverie Labs	2018	I	ai
+Rhythmm	2018	I	
+Runa	2018	L	fintech
+SPATE	2018	L	ai
+SRTX	2018	L	
+SafetyWing	2018	L	fintech
+Satchel	2018	I	
+Scanwell Health	2018	A	
+Secured	2018	I	
+Sepsis Scout	2018	A	
+SharpestMinds	2018	A	ai
+Shelf Engine	2018	A	ai
+Shogun	2018	L	
+Shone	2018	I	
+ShopWith	2018	I	
+Simetrik	2018	L	fintech
+Sixfold Bioscience	2018	L	
+Sketchbox	2018	I	
+Skip	2018	I	
+SkydropX	2018	L	
+Slite	2018	L	
+Snackpass	2018	L	
+Sourcify	2018	L	
+Spellbrush	2018	L	ai
+Spero Foods	2018	I	
+Sqreen	2018	A	devtools
+Squad	2018	A	
+Station	2018	I	
+Storyline	2018	I	
+Substack	2018	L	
+Super	2018	L	
+Supermedium	2018	L	
+Swayable	2018	L	ai
+Swipehouse	2018	A	
+Synkrino Biotherapeutics	2018	L	
+TENDERD	2018	L	ai
+Tall Poppy	2018	L	
+Tarjimly (acquired)	2018	L	
+The Buttermilk Company	2018	I	
+The Good Food Institute	2018	L	
+The Supplant Company	2018	I	
+Tilt (f.k.a. Delphia)	2018	L	ai,fintech
+Tingles	2018	I	
+Tipe	2018	I	devtools
+Titan	2018	L	fintech
+Torch	2018	I	
+Tradewind BioScience	2018	L	
+Treasury Prime	2018	L	devtools,fintech
+Tributi	2018	L	fintech
+UBITS	2018	L	
+Universe	2018	L	
+User Hero	2018	I	
+Vanta	2018	L	
+Vathys	2018	I	ai
+Vena Medical	2018	L	
+Veriff	2018	L	fintech
+Verse Medical	2018	L	
+Viaopt	2018	I	
+Vimcal	2018	L	
+Voicery	2018	I	ai
+Warpdrive by Synthetic Minds	2018	I	
+Weekend (fmr. Volley)	2018	L	ai
+Within	2018	L	ai
+Worklytics	2018	L	
+Xkit	2018	I	devtools
+YouTeam	2018	A	
+ZBiotics	2018	L	
+ZiffyHomes	2018	L	
+Zyper	2018	A	
+dNovo	2018	I	
+hypcloud	2018	A	fintech
+iLabService	2018	L	ai
+miru	2018	I	
+numericcal, inc.	2018	I	ai
+onederful	2018	A	
+tEQuitable	2018	L	
+1910	2019	L	
+54Gene	2019	I	
+AI Insurance	2019	L	ai,fintech
+AXDRAFT	2019	A	ai
+Accept.inc (formerly BoardRE)	2019	A	fintech
+AccioJob	2019	L	
+Actiondesk	2019	A	
+Adla	2019	I	
+Adventurous Co	2019	I	
+Alana	2019	I	
+AllSome Fulfillment	2019	L	ai
+Allo	2019	I	
+Allure Systems	2019	A	ai
+Alpaca	2019	L	devtools,fintech
+AmpUp	2019	L	
+Apero Health	2019	L	
+Apurata	2019	L	fintech
+Arpeggio Bio	2019	L	
+Ascen	2019	A	
+Ashby	2019	L	
+Asher Bio	2019	L	
+Askdata	2019	A	ai
+Aspect	2019	L	devtools
+Atlas	2019	L	fintech
+Atomic Alchemy	2019	A	
+AudioFocus	2019	I	
+Aura Vision	2019	L	ai
+AuroraQ	2019	I	
+Autodial prev Qwest	2019	L	ai
+Avalanche	2019	I	
+Avo	2019	L	devtools
+Axel Travel	2019	L	
+Balto	2019	A	
+Banner	2019	L	
+Basement	2019	I	
+Basilica	2019	I	ai,devtools
+Bayes	2019	A	
+Beacons	2019	L	
+Bensen	2019	I	
+Bentocart	2019	L	
+Binks	2019	L	
+Blair	2019	I	fintech
+BlitzIQ	2019	I	
+Blockstamp	2019	I	
+Boost Biomes	2019	I	
+Bottomless	2019	L	
+Bouncer	2019	A	fintech
+BrainKey	2019	L	ai
+Brave Care	2019	I	
+Breadfast	2019	L	
+Brick Health	2019	I	
+BuildStream	2019	I	fintech
+Bun	2019	A	devtools
+Bunkerhill Health	2019	L	ai
+Buy Me a Coffee	2019	L	fintech
+Canix	2019	L	
+Canopy (was Encarte)	2019	L	fintech
+Capture	2019	I	
+CareerTu	2019	I	
+Caribou	2019	L	fintech
+Catch	2019	A	fintech
+Centaur	2019	L	ai
+Chaser	2019	I	
+Cherry	2019	I	fintech
+Cityfurnish	2019	L	fintech
+CoLab	2019	L	
+Coco Wallet	2019	L	fintech
+Cocoon	2019	A	
+Community Phone Company	2019	L	ai
+Compound	2019	A	fintech
+Comradery	2019	I	
+Convex	2019	A	
+Cosmic	2019	L	devtools
+Courier	2019	L	devtools
+Coursedog	2019	A	
+Covela	2019	I	fintech
+CredPal	2019	L	fintech
+Cuanto	2019	L	fintech
+Cuboh	2019	A	
+Curri	2019	L	
+Dagger	2019	L	devtools
+DailyDoctor	2019	I	
+Dashblock	2019	I	ai,devtools
+Data Mechanics	2019	A	devtools
+Datamode	2019	I	
+Deel	2019	L	fintech
+Deepnote	2019	L	ai,devtools
+Demand Curve	2019	L	
+Demodesk	2019	L	ai
+DevFlight	2019	I	
+Dex	2019	L	
+Digi-Prex	2019	L	
+DirectShifts	2019	L	
+Docbot	2019	A	
+Dockup	2019	L	devtools
+Docucharm	2019	I	ai
+Doorport	2019	A	
+Doppler	2019	L	devtools
+Dover	2019	L	
+Downtobid	2019	A	
+Dyneti Technologies	2019	L	fintech
+EARTH AI	2019	L	
+EPIC AEROSPACE	2019	L	
+Eclipse Foods	2019	L	
+Eden Farm	2019	L	
+Edyst	2019	L	
+Elph	2019	A	devtools,fintech
+Elpha	2019	I	
+Embrace	2019	L	ai,devtools
+Emi Labs	2019	L	
+Encepheal Therapeutics	2019	I	
+Endpoint Health	2019	I	
+Ever Loved	2019	L	
+Evo.Do	2019	I	ai
+Excepgen	2019	L	
+Exly	2019	L	
+FIRST	2019	L	
+FLOWER CO.	2019	L	
+FamPay	2019	L	fintech
+FeaturePeek	2019	A	devtools
+Figments	2019	L	ai
+Fit to Form	2019	I	
+Flo	2019	L	
+Flockjay	2019	L	ai
+Flow	2019	I	devtools
+Flowbot	2019	L	ai
+Flux	2019	L	fintech
+Forage	2019	A	
+Freshpaint	2019	L	devtools
+Frubana Inc	2019	I	fintech
+Fuse	2019	I	fintech
+Fuzzbuzz	2019	A	
+Fynn	2019	L	fintech
+GEn1E Lifesciences	2019	L	ai
+Gaiascope	2019	A	
+Gamebytes	2019	L	
+Gather	2019	L	
+Geosite	2019	A	
+GitStart	2019	L	devtools
+Glide	2019	L	ai,devtools
+Globe	2019	L	fintech
+GoLinks	2019	L	
+Gotrade	2019	L	fintech
+Green Canopy NODE	2019	L	
+Green Energy Exchange	2019	I	
+Handle	2019	L	fintech
+Hatch	2019	A	ai
+Hatchways	2019	L	
+Heart Aerospace	2019	L	
+Herald	2019	I	
+Heru	2019	L	fintech
+Hey Healthcare	2019	I	
+Hightouch	2019	L	ai
+Holy Grail	2019	L	
+Hutsy	2019	I	
+Hype and Vice	2019	L	
+Hypnos	2019	I	ai
+InEvent	2019	L	
+Inito	2019	L	
+Insight	2019	A	
+Instapath Inc.	2019	L	
+Intact Therapeutics	2019	L	
+Intelline	2019	L	
+InterPrime	2019	A	fintech
+Intersect Labs	2019	A	
+JetPack Aviation	2019	L	
+Juno College of Technology	2019	L	
+Jupiter	2019	L	
+JuziBot	2019	L	
+Kalshi	2019	L	
+Keeper	2019	L	fintech
+Kern Systems	2019	L	
+Keynua	2019	L	
+Khabri	2019	I	
+Kitekraft	2019	L	
+Kopa	2019	I	
+Kovi	2019	A	
+Kraftful	2019	A	ai
+KubeSail	2019	L	
+LAIKA	2019	L	
+LEAH Labs	2019	L	
+Landed	2019	L	
+Lantern	2019	I	ai
+Latchel	2019	L	
+Legacy	2019	L	
+Lezzoo	2019	L	fintech
+Lightwell	2019	I	
+LineLeap	2019	L	
+Localyze	2019	A	
+Lofty	2019	L	fintech
+Lokal	2019	L	
+Lucid Bots	2019	L	
+Lumineye	2019	I	
+LunaSec	2019	I	devtools
+Mage	2019	I	
+Maitian.ai	2019	I	
+Maple Materials	2019	L	
+Mars Auto	2019	L	ai
+MedCrypt	2019	L	
+Memfault	2019	A	devtools
+Meridian Industries	2019	L	ai
+Method Financial	2019	L	fintech
+Microverse	2019	L	
+Middesk	2019	L	fintech
+Mighty Health	2019	I	
+Million Marker	2019	L	
+Mindset Health	2019	L	
+Mipos.dev	2019	I	devtools
+MoFE	2019	I	
+Mobot	2019	L	devtools
+Mudafy	2019	L	
+Muddy	2019	I	
+Mudrex	2019	L	fintech
+Multis	2019	I	fintech
+MyPetrolPump	2019	A	
+NALA	2019	L	fintech
+Nabis	2019	L	fintech
+Namaste Business	2019	I	
+Narrator	2019	I	
+NaturAll Club	2019	L	
+Nebullam (DBA Clayton Farms)	2019	L	
+Nonu	2019	I	
+Nowports	2019	L	
+Numero	2019	L	fintech
+Obie	2019	A	fintech
+Odeko	2019	L	
+Odin	2019	I	
+Okteto	2019	L	devtools
+OpenReplay	2019	L	devtools
+Our World in Data	2019	L	
+OutRival, Inc.	2019	L	ai,fintech
+Outtalent	2019	L	
+Overview	2019	L	ai
+PNOĒ	2019	L	
+Pachama	2019	A	ai
+Pair Team	2019	L	
+Palifer	2019	A	ai
+Parker	2019	I	fintech
+Path	2019	I	fintech
+PayMongo	2019	L	fintech
+Pengram	2019	I	
+PerShop	2019	I	
+Pillar	2019	L	
+Pippin / Rent the Backyard	2019	I	
+PlayAbly	2019	I	
+Playground	2019	I	ai
+Pools (fka Withfriends)	2019	L	
+PopSQL	2019	A	devtools
+Portal Entryways	2019	I	
+Positive	2019	L	
+Postscript	2019	L	
+Preclusio	2019	I	
+PredictLeads	2019	L	ai
+Preflight	2019	A	devtools
+Prenda	2019	L	
+Probably Genetic	2019	L	ai
+Prolific	2019	L	ai
+Prometheus	2019	L	
+Prompt	2019	I	
+Pronto	2019	L	
+Proof Trading	2019	L	
+Pulse Active Stations Network	2019	L	
+Pyxai	2019	L	
+Rainbow	2019	L	fintech
+Ramen VR	2019	L	ai
+Ravn	2019	L	
+Recidiviz	2019	L	
+Reelables	2019	L	
+ResistanceBio	2019	I	
+Revel	2019	I	
+ReverCare	2019	I	
+Rosebud AI	2019	L	ai,devtools
+Rune	2019	L	
+Rutter	2019	L	devtools,fintech
+Sable	2019	A	fintech
+Safely Finance	2019	I	fintech
+Sapling.ai	2019	L	ai
+Schoolable	2019	L	
+SciTok	2019	L	
+Searchlight	2019	A	ai
+Seawise Capital	2019	A	
+Sequence Bio	2019	L	
+Shef	2019	L	
+Shift Health	2019	L	fintech
+Shiok Meats	2019	A	
+Shipper	2019	L	
+Shiru	2019	L	ai
+Short Story	2019	L	ai
+Simmer	2019	I	
+Skill-lync	2019	L	
+Slapdash	2019	A	devtools
+Sorting Robotics	2019	L	ai
+Soteris	2019	L	ai,fintech
+Souffle Club	2019	I	
+SpaceRyde	2019	I	
+Spice Data	2019	L	
+Spiral Genetics	2019	I	ai
+Spire Law	2019	L	
+Spring in Africa	2019	L	fintech
+Sublime Black	2019	I	ai
+Sunsama	2019	L	
+Superb AI	2019	L	ai
+Supernova	2019	L	devtools
+Superorder	2019	L	ai
+Swadesh	2019	L	fintech
+Switchboard	2019	L	
+Symplex	2019	A	ai
+TRM Labs	2019	L	ai,fintech
+Taali Inc	2019	L	
+Tailor-ED	2019	I	ai
+Tailornova/Couturme	2019	L	ai
+Tandem	2019	I	
+Taobotics	2019	L	
+Taskade	2019	L	ai
+TaxProper	2019	A	fintech
+Tensil	2019	I	ai,devtools
+Termius	2019	L	devtools
+The Juggernaut	2019	L	
+Thrive Agric	2019	L	
+Together Software	2019	A	
+Traces	2019	L	ai
+Tranqui Finanzas	2019	L	fintech
+Traverse Technologies	2019	I	
+Trella	2019	L	
+Trexo Robotics	2019	L	
+Truora	2019	L	
+Ultralight	2019	L	devtools
+Unflow	2019	I	devtools
+Union Apartment	2019	I	
+UpEquity	2019	L	fintech
+Upsolve	2019	L	fintech
+Vahan	2019	L	ai
+Valiu	2019	I	fintech
+Valo	2019	L	
+Vectordash	2019	I	
+Vendr	2019	A	
+Verto	2019	L	devtools,fintech
+Visly	2019	A	devtools
+Vitau	2019	L	
+Vizy	2019	I	
+Volk Wireless	2019	I	
+Volta Labs, Inc.	2019	L	
+Vorticity	2019	L	devtools
+VotingWorks	2019	L	
+Vouch	2019	L	fintech
+Voyage Biomedical	2019	A	
+Wanderlog	2019	L	
+Wasmer	2019	L	devtools
+WeatherCheck	2019	L	fintech
+Well Principled	2019	L	ai
+Windsor	2019	A	ai
+Windwalk	2019	L	
+Wingman	2019	A	
+WorkClout	2019	A	
+Wren	2019	L	
+XGenomes	2019	L	
+YourChoice Therapeutics	2019	L	
+Yummy Future	2019	L	ai
+ZETA SURGICAL	2019	L	ai
+Zeal	2019	L	fintech
+Zergo	2019	I	
+ZeroDown	2019	A	
+ZeroStorefront	2019	A	
+Zippi	2019	L	fintech
+matagora	2019	L	
+rct AI	2019	L	
+spotLESS Materials	2019	L	
+stoic.	2019	L	
+treble.ai	2019	L	
+zeroheight	2019	L	devtools
+99minutos	2020	L	
+AI.Fashion	2020	I	ai
+AIOS	2020	L	
+Abalone Bio	2020	L	ai
+Able	2020	A	
+Accord	2020	L	
+Aden	2020	L	ai,devtools
+Afriex	2020	L	fintech
+Airbyte	2020	L	ai,devtools
+Akiflow	2020	L	
+Algen Biotechnologies	2020	L	ai
+Altay Therapeutics	2020	L	
+Altro	2020	A	fintech
+Alude	2020	L	fintech
+Angle Health	2020	L	
+Ansa Biotechnologies	2020	L	
+Apartio	2020	I	fintech
+Aquarium Learning	2020	A	ai,devtools
+Ardis AI	2020	I	ai
+Arist	2020	L	
+Arketa	2020	L	
+Artifact	2020	I	
+Atmo	2020	L	ai
+Atmos	2020	I	
+AtoB	2020	L	fintech
+Atomic	2020	L	ai,fintech
+Atomized	2020	I	devtools
+Avion	2020	L	
+Awtomic	2020	L	
+BIK	2020	L	ai
+Balance	2020	L	fintech
+Bamboo	2020	L	fintech
+Bandit ML	2020	A	ai
+Basedash	2020	L	ai
+BeGo	2020	L	ai
+Belvo	2020	L	fintech
+Benepass	2020	L	fintech
+Bento	2020	I	
+Bikry	2020	L	
+Biocogniv	2020	A	
+Bits	2020	L	fintech
+Blissway	2020	L	ai
+Blok	2020	I	
+Blue Onion	2020	L	ai
+Breathe Well-being	2020	I	
+Breezeful	2020	L	fintech
+Brevy	2020	A	
+BuildBuddy	2020	L	devtools
+BukuWarung	2020	L	fintech
+Byte	2020	I	
+CARUPI	2020	I	
+Cadence	2020	I	
+Candid Health	2020	L	
+CapWay	2020	I	fintech
+Carbon-12 Labs	2020	I	devtools,fintech
+CarbonChain	2020	L	
+Chaos Genius	2020	A	ai,devtools
+Charityvest	2020	A	fintech
+Checkars	2020	A	fintech
+Chutney Inc	2020	I	
+Clau	2020	L	ai,fintech
+Clayboard	2020	I	ai
+ClearMix	2020	I	
+Clew	2020	A	
+Clover	2020	A	
+Cohere	2020	A	ai
+Command AI	2020	A	
+Conta Simples	2020	L	fintech
+CoreCare	2020	L	ai
+Cortex	2020	L	devtools
+Cradle	2020	L	fintech
+Cron	2020	A	
+CrowdForce	2020	A	fintech
+Current Foods	2020	A	
+Daedalus	2020	L	
+Dashworks	2020	A	ai
+Datafold	2020	L	ai
+Dataland	2020	L	ai
+Datasaur	2020	L	ai
+Datree	2020	I	devtools
+Daybreak Health	2020	L	
+Decentro	2020	L	devtools,fintech
+Deep Meditate	2020	L	
+DeepSource	2020	L	ai,devtools
+Depict	2020	L	
+Dialect	2020	A	fintech
+Ditto	2020	L	devtools
+DocVita	2020	L	
+Draftwise	2020	L	ai
+Drapr	2020	A	
+Dripos	2020	L	fintech
+Dropbase	2020	I	ai,devtools
+Dropprint Genomics	2020	A	
+Duckly	2020	I	devtools
+Duffl	2020	I	
+Easyplan	2020	I	fintech
+Edlyft	2020	I	
+EduRev	2020	L	
+ElectroNeek	2020	L	devtools
+Ello	2020	L	ai
+Enveloop	2020	I	devtools
+Equator Therapeutics	2020	L	
+Eternal	2020	A	
+Exosonic, Inc.	2020	I	
+Explo	2020	L	
+Explorex	2020	L	
+Eze	2020	L	
+FUTURA	2020	L	
+Facio	2020	L	
+Factored Quality	2020	A	
+Fancy	2020	A	
+Farcast	2020	L	
+Farel	2020	L	
+Farmako Healthcare	2020	L	
+Felix Biotechnology	2020	I	
+Fieldguide	2020	L	ai
+Fig	2020	A	devtools
+Finch	2020	L	devtools,fintech
+Finlens	2020	L	ai
+Finmark	2020	A	fintech
+FitnessAI	2020	A	ai
+Flint	2020	L	
+Flowdash	2020	A	
+Flowglad	2020	L	ai
+Fly.io	2020	L	devtools
+Fondeadora	2020	L	fintech
+Foreword	2020	I	
+Formal	2020	L	
+Future Fields	2020	L	
+Gas Pos	2020	L	fintech
+Gather	2020	A	
+Genecis Bio	2020	L	
+General Proximity	2020	L	
+Gilgamesh Pharmaceuticals	2020	L	
+GiveAway	2020	L	
+Glimpse	2020	A	
+Glimpse	2020	L	ai
+Glisten AI	2020	I	ai
+Global Belly	2020	I	
+Grain	2020	L	fintech
+GuruHotel	2020	L	fintech
+H1	2020	L	
+HENRY	2020	L	
+Handl	2020	L	fintech
+Handoff	2020	L	ai,devtools
+Haven	2020	L	fintech
+Healthlane	2020	L	
+Hellometer	2020	L	ai
+Hellosaurus	2020	A	
+HelpNow	2020	I	
+Hent	2020	A	fintech
+Here	2020	I	
+Heron Data	2020	L	ai,fintech
+Hideout	2020	I	
+Hiration	2020	L	
+HireSweet	2020	L	
+Homestead	2020	I	
+Hoss	2020	A	devtools
+Hotplate	2020	L	
+Hubla	2020	L	fintech
+Humanloop	2020	A	ai
+Humanly	2020	L	
+Hyper Online	2020	I	ai
+Hypermile	2020	A	ai
+Hypotenuse AI	2020	L	ai
+In Stock	2020	I	
+Increase	2020	L	fintech
+Infield	2020	L	devtools
+Inspectify	2020	L	
+Intelligent	2020	I	ai
+Isabl	2020	L	
+Jam.gg (formerly Piepacker)	2020	I	
+Jamiphy	2020	I	
+Jeevam Health	2020	I	
+Jeeves	2020	L	fintech
+Jemi	2020	A	
+Jenfi	2020	L	fintech
+Jet Admin	2020	L	devtools
+Jitsu	2020	A	devtools
+Jitter	2020	L	
+Junction	2020	L	devtools
+Justo	2020	L	
+Kaiten	2020	L	
+Karat Financial	2020	L	fintech
+Kernal Biologics	2020	L	ai
+KeyDB	2020	A	devtools
+Kingdom	2020	L	
+Kinter	2020	L	ai
+Known Medicine	2020	A	
+Kosh	2020	L	fintech
+LSK Technologies	2020	A	
+Ladder	2020	A	
+Laguna	2020	I	
+Laserfocus	2020	I	
+Laylo	2020	L	
+Legionfarm	2020	L	ai
+Lendtable	2020	L	fintech
+Letter	2020	I	fintech
+Letterdrop	2020	L	ai
+Lightdash	2020	L	devtools
+Lilia	2020	I	
+Linkana	2020	L	
+Living Carbon	2020	L	
+Liyfe	2020	L	
+Logarithm Labs	2020	L	devtools
+Loop Health	2020	L	fintech
+Lume	2020	I	
+Luminai	2020	L	
+Mailwarm	2020	L	
+MarketForce	2020	L	fintech
+Matter	2020	L	
+MedPiper Technologies, Inc	2020	L	fintech
+Medicare Vox (fka Fair Square)	2020	L	fintech
+Memberstack	2020	L	devtools,fintech
+Memo	2020	I	
+Menten AI	2020	L	
+Mesh	2020	L	
+Metamanagement	2020	I	devtools
+Metaplane	2020	A	devtools
+MilkRun	2020	I	
+Milo	2020	I	ai
+MindsDB	2020	L	ai,devtools
+Mini Exhibitions	2020	I	
+Minimum	2020	L	fintech
+Mito	2020	L	ai,devtools
+Mobius Materials	2020	L	
+Modernbanc	2020	L	ai,fintech
+Momence	2020	A	fintech
+Monosi	2020	I	devtools
+Morphle Labs	2020	L	
+Motion	2020	L	ai
+Mozart Data	2020	L	
+Mozper	2020	L	fintech
+Multiverse	2020	I	
+Nabla Bio	2020	L	
+Nephrogen	2020	L	
+Nestybox	2020	A	devtools
+Nextera Robotics | DIDGE.ai	2020	L	ai
+Nextmv	2020	A	ai
+Nextstore	2020	I	
+Nexu	2020	L	fintech
+Nimbus	2020	I	
+Nomic Bio	2020	L	
+Notabene	2020	L	fintech
+Nototo	2020	I	
+Novel	2020	L	fintech
+Nugget	2020	I	
+Ochre Bio	2020	L	
+Oda	2020	L	ai
+Oico	2020	I	
+Okay	2020	A	devtools
+Omni	2020	A	ai
+OneKey	2020	I	
+OpenBiome	2020	L	
+OpenUnit	2020	L	
+Openbase	2020	I	devtools
+Operator.io	2020	L	ai
+Ophelia	2020	L	
+Orange Health Labs	2020	L	
+Orbiter	2020	I	ai
+Orchata	2020	I	
+Osmind	2020	L	
+Overfit	2020	I	ai
+PANADATA	2020	L	
+Pahamify	2020	L	
+Paneau	2020	I	
+Pantheon	2020	I	
+Parade	2020	I	
+Paragon	2020	L	devtools
+Pardes Biosciences	2020	P	
+Parrot Software 🦜	2020	L	fintech
+Pashi	2020	I	devtools
+Pave	2020	L	fintech
+Pay Swifter	2020	A	fintech
+Payflow	2020	I	fintech
+Peg (formerly Paymobil)	2020	I	fintech
+Perceptive Technologies	2020	L	ai
+Phonic	2020	A	ai
+Photoroom	2020	L	ai,devtools
+PillarPlus	2020	I	ai
+Plerk	2020	A	fintech
+Plura (formerly Bloom Community)	2020	L	
+Polytomic	2020	L	
+Porter	2020	L	devtools
+PostEra	2020	L	ai
+PostHog	2020	L	devtools
+PowerUs	2020	L	
+PowerX	2020	A	ai
+Prelay	2020	I	
+Protobase	2020	I	
+Pulley	2020	L	
+Quell	2020	I	ai
+QueryPie AI	2020	L	ai
+QuestDB	2020	L	devtools
+Queue	2020	I	
+Quickcard	2020	I	
+Quill	2020	L	devtools
+RTCanary	2020	I	
+Racer	2020	I	
+Rally	2020	L	
+Ramani	2020	L	
+Rarebird	2020	L	
+Raycast	2020	L	devtools
+Ready	2020	L	fintech
+Recall.ai	2020	L	ai,devtools
+Recurrency	2020	L	ai
+Reflect	2020	A	devtools
+Release	2020	L	devtools
+Replicate	2020	A	ai,devtools
+Reploy	2020	I	devtools
+Response	2020	L	
+Revenir	2020	L	fintech
+RingMD	2020	L	
+Riogrande	2020	A	
+Riot	2020	L	
+Riya Collective	2020	I	
+RoboTire	2020	I	
+Roboflow	2020	L	ai,devtools
+Rume	2020	I	
+SEND	2020	L	
+SINAI	2020	L	
+SOMATIC	2020	L	
+STARK BANK	2020	L	fintech
+SafeBase	2020	A	
+Safepay	2020	L	devtools,fintech
+Sakneen	2020	L	
+Salesform	2020	L	
+Sameplan	2020	A	
+Savvy	2020	A	fintech
+Sayana	2020	A	
+Scout	2020	I	ai,devtools
+Scrimba	2020	L	
+Seal	2020	L	
+Seam	2020	L	devtools
+Segmed	2020	L	ai
+Shuttle	2020	I	ai,devtools
+SiPhox Health	2020	L	
+Signadot	2020	L	devtools
+Simple Strips	2020	I	
+Skio	2020	A	fintech
+Skypher	2020	L	ai
+Snapboard	2020	I	
+SockSoho	2020	L	
+Sonar	2020	I	fintech
+Speedscale	2020	L	devtools
+Spenmo	2020	L	fintech
+Spenny	2020	L	fintech
+SprintAI	2020	I	ai
+Stable	2020	L	
+Stacker	2020	L	
+StartPlaying.Games	2020	L	
+Statiq.	2020	L	
+StayQrious	2020	L	
+StratumAI	2020	L	ai
+Streamdal	2020	I	devtools
+Strive School	2020	A	fintech
+Supabase	2020	L	devtools
+SuperTokens	2020	L	devtools
+Swif.ai	2020	L	
+Swipe Technologies	2020	L	fintech
+Synapsica Healthcare	2020	I	
+Synapticure	2020	L	
+Syncro	2020	I	
+TANGObuilder	2020	I	
+TagMango	2020	L	
+Taiv	2020	L	ai
+Tajir	2020	L	
+Taktile	2020	L	ai,fintech
+Talyn Air	2020	A	
+Tambua Health	2020	L	
+Tappity	2020	L	
+Tasker AI	2020	L	ai
+Teleo	2020	A	
+Tella	2020	L	
+Termii	2020	L	devtools
+Terrasoft	2020	L	ai
+Terusama	2020	A	
+The Mercer Club	2020	I	
+Thndr	2020	L	fintech
+Thunderpod	2020	I	
+Tienda Crypto	2020	L	fintech
+ToDesktop	2020	L	
+Todos Comemos	2020	L	
+Together Video Chat	2020	A	
+Tough Commerce	2020	L	
+Trident Bioscience	2020	I	ai
+TrueNorth	2020	L	fintech
+Turing Labs Inc.	2020	L	ai
+Tydo	2020	I	fintech
+TyltGO	2020	L	
+Typedream	2020	A	ai
+Ukama	2020	L	devtools
+Unfaze AI	2020	I	
+Upflow	2020	L	fintech
+UrbanKisaan	2020	L	ai
+Valienta	2020	I	fintech
+Vectrix	2020	A	
+Vena Vitals	2020	L	
+VenoStent	2020	L	
+Verifiable	2020	L	devtools
+Virtually	2020	I	
+Visual One	2020	I	ai
+Vitable Health	2020	L	
+Viya	2020	I	
+Volopay	2020	L	fintech
+Volumetric	2020	A	
+Vori	2020	L	
+WareIQ	2020	L	
+Warmly,	2020	A	ai
+Weav	2020	A	devtools,fintech
+Welcome	2020	I	
+Whatnot	2020	L	
+Workbase	2020	A	
+Workpay	2020	L	fintech
+Yassir	2020	L	
+Yotta	2020	L	fintech
+Zaam	2020	I	fintech
+Zaraz	2020	A	
+Zeo Route Planner	2020	L	
+Zip	2020	L	
+Zitara Technologies, Inc.	2020	L	
+Zuddl	2020	L	
+Zumo Labs	2020	I	ai
+Zynq	2020	A	
+adyn	2020	L	ai
+borong	2020	L	
+buildspace	2020	I	
+delt.ai	2020	A	fintech
+doola	2020	L	fintech
+farmtheory	2020	L	
+goDutch	2020	I	fintech
+inFeedo AI	2020	L	ai
+inSoma Bio	2020	L	
+onetool	2020	I	
+twoplus fertility	2020	L	
+webapp.io	2020	A	devtools
+yBANQ	2020	A	fintech
+yearend	2020	L	fintech
+AI Tech Packs	2021	L	
+AOA Dx	2021	L	
+ARQ	2021	L	fintech
+AXAR AI	2021	I	ai,devtools
+Abacum	2021	L	
+Abatable	2021	L	
+Abbot	2021	I	devtools
+Abhi	2021	L	fintech
+Abstra	2021	L	ai
+Adaptyv	2021	L	
+Adni	2021	L	ai
+Adravision	2021	L	ai
+Advantage Club	2021	L	
+Aer	2021	A	fintech
+Aerotime	2021	I	
+Affogato AI	2021	L	ai
+Agapé	2021	L	
+AgendaPro	2021	L	
+Ahazou	2021	L	fintech
+Akudo	2021	I	fintech
+Akute Health	2021	L	
+Alba Orbital	2021	L	
+Albedo	2021	L	
+Aleph	2021	L	
+Aleph Solutions (Alephee)	2021	L	
+AlgoUniversity	2021	L	
+AlgoViral	2021	L	
+Algofi	2021	I	fintech
+Alinea	2021	L	ai,fintech
+Alltruists	2021	I	
+Alokai	2021	L	devtools
+Alpas	2021	L	
+Amenli	2021	L	fintech
+Anakin	2021	L	ai,devtools
+Ananya Health	2021	L	
+Ancana	2021	L	
+Anima	2021	L	
+Apollo	2021	I	fintech
+AppX	2021	L	
+Aqua	2021	L	fintech
+Archbee	2021	L	devtools
+Arengu	2021	A	devtools
+Arpio	2021	L	
+Arrow	2021	L	fintech
+Artillery	2021	L	devtools
+Astek Diagnostics	2021	L	
+Atlas	2021	L	
+Atmana	2021	L	
+Atomic Industries	2021	L	ai
+Atrato	2021	L	fintech
+Aurabeat	2021	L	
+Auricle	2021	L	
+Authologic	2021	L	
+Avenue	2021	A	devtools
+Aviator	2021	L	devtools
+Avion School	2021	I	
+Aviron Interactive	2021	L	
+Avocado	2021	L	ai,fintech
+Awari	2021	A	
+Awesomic	2021	L	
+Axiom.ai	2021	L	
+Axle Health	2021	L	
+Axolo	2021	L	devtools
+BLUUMBIO	2021	L	
+Baraka	2021	L	fintech
+Baubap	2021	L	ai
+BeWell Digital	2021	I	
+Beau	2021	L	
+Beeper	2021	A	
+Betterhalf	2021	L	
+Bimaplan	2021	L	fintech
+Biodock	2021	L	ai
+Birdie	2021	L	
+Bite Ninja	2021	L	ai
+BlackOakTV	2021	I	
+Blink	2021	I	
+Blixo	2021	L	fintech
+Bloom	2021	L	fintech
+Bluelight	2021	L	
+BoldVoice	2021	L	
+Bolster	2021	L	fintech
+BotBuilt	2021	L	
+Breadcrumbs.io	2021	A	
+Bree	2021	L	fintech
+BrioHR	2021	L	
+Bristle	2021	L	
+Brite	2021	L	
+Broad	2021	L	fintech
+Bueno Finance	2021	A	fintech
+Buoyant Aero	2021	L	
+Buró de Ingresos	2021	L	devtools
+BusinessOnBot	2021	L	ai
+Buzzle	2021	I	
+Byte Kitchen	2021	A	
+Bytebot	2021	A	ai
+Cabal	2021	L	
+Cache	2021	I	
+Café	2021	L	
+Caire Health	2021	L	ai
+Camber	2021	L	
+Camlist	2021	L	
+Camp	2021	L	devtools,fintech
+Canopi	2021	I	fintech
+Carbonfact	2021	L	
+Care Weather	2021	L	
+Careerist	2021	L	fintech
+Cartpanda	2021	L	
+CashBook	2021	L	fintech
+Catena Biosciences	2021	L	
+CellChorus	2021	L	ai
+Cero	2021	L	ai
+Charge Robotics	2021	L	
+Charge Running	2021	I	
+Chari	2021	L	fintech
+Chatwoot	2021	L	devtools
+Cheqout	2021	I	fintech
+Chipax	2021	L	fintech
+Chorus Sleep	2021	L	
+Clay	2021	I	
+Clear	2021	L	
+ClipDrop	2021	A	ai
+Cloudanix	2021	L	devtools
+Cloudthread	2021	A	devtools
+CoLoop	2021	L	ai
+CoVerified	2021	I	
+Coast	2021	L	devtools
+Cococart	2021	L	
+Codeball	2021	I	ai,devtools
+Coderhouse	2021	L	
+Codingal	2021	L	
+Coinrule	2021	L	ai,fintech
+Comet Health	2021	I	
+Commery	2021	I	
+Compose.ai	2021	L	ai
+Concord Materials	2021	L	ai,fintech
+Confido	2021	L	ai,fintech
+Contalink	2021	L	
+ContraForce	2021	L	ai
+ControlHub	2021	I	fintech
+Coulomb AI	2021	L	ai
+Covie	2021	I	fintech
+Crew	2021	L	
+Cumbuca	2021	L	devtools,fintech
+Curvenote	2021	L	devtools
+Customily	2021	L	
+Cyble	2021	L	ai
+Dailybot	2021	L	ai,devtools
+Darrow	2021	L	
+Dashlabs.ai	2021	L	
+Dataherald	2021	I	ai
+Datlo	2021	L	
+Datrics	2021	L	ai
+Dayra	2021	L	fintech
+Deed	2021	A	
+Degrees of Freedom	2021	I	ai
+Deskimo	2021	L	
+DigiBuild	2021	L	ai
+Digistain	2021	L	
+Dime	2021	I	
+Djamo	2021	L	fintech
+Dots 💸	2021	L	devtools,fintech
+Double	2021	L	fintech
+DreamWorld	2021	L	
+Dressd	2021	I	
+Dyte	2021	A	devtools
+Eat Blueprint	2021	I	
+Echoes HQ	2021	L	devtools
+Emerge Tools	2021	A	ai,devtools
+Enable Us	2021	A	ai
+Encord	2021	L	ai,devtools
+Encuadrado	2021	L	fintech
+Endla	2021	L	
+Enerjazz	2021	L	
+Enode	2021	L	devtools
+Enso	2021	L	devtools
+Entelexo Biotherapeutics	2021	L	
+Epinoma	2021	L	
+Epsilon3	2021	L	
+Equipt Health	2021	L	
+Estoca	2021	L	
+Evidence	2021	L	devtools
+Evidently AI	2021	L	ai,devtools
+Exa	2021	L	ai,devtools
+Examedi	2021	L	
+Expent Inc	2021	L	ai
+Fable	2021	I	
+Faction	2021	I	
+FastFarma	2021	I	
+Fathom	2021	L	ai
+Female Invest	2021	L	fintech
+Feroot Security	2021	L	
+Ferveret	2021	L	
+FifthTry	2021	L	devtools
+Filadd	2021	L	
+Filta	2021	L	fintech
+Finantier	2021	I	fintech
+Finary	2021	I	fintech
+Finary.com	2021	L	fintech
+Fingo Africa	2021	A	fintech
+Finley	2021	A	fintech
+Fintoc	2021	L	devtools,fintech
+FirstIgnite	2021	A	
+FirstQuadrant	2021	I	ai
+FirstSupport.ai	2021	L	ai
+Firstbase.io	2021	L	
+FitHub	2021	L	
+Fitia	2021	L	
+Flextock	2021	L	
+Float	2021	L	fintech
+Floatpays Inc	2021	L	fintech
+Flok	2021	A	
+Flow Club	2021	L	
+FlowEQ	2021	L	devtools
+Flowbo	2021	I	fintech
+Flowly	2021	L	
+FlutterFlow	2021	L	
+Flux	2021	L	fintech
+Flux Auto	2021	L	ai
+Forage	2021	L	fintech
+Forage Mail	2021	I	ai
+Forcyte Biotechnologies	2021	I	
+Formance	2021	L	devtools,fintech
+Foster	2021	L	
+Fountain9	2021	A	ai
+Fractional	2021	L	fintech
+Freterium	2021	L	
+Friz	2021	A	ai,devtools
+FrontPage	2021	L	fintech
+FunctionUp (FanPlay)	2021	A	
+Furmacy	2021	A	
+Galaxy	2021	I	devtools
+GamerPay	2021	A	fintech
+Genomelink	2021	L	
+Genuity	2021	L	
+Geostar	2021	L	
+Gerald Technologies, Inc	2021	L	fintech
+GetDot	2021	L	ai
+Gigs	2021	L	ai,devtools,fintech
+Gigs Live	2021	I	
+GimBooks	2021	L	fintech
+Glitzi	2021	L	
+GoBuild (fka Brick)	2021	I	fintech
+Gobillion	2021	I	
+Gonddo	2021	I	
+Goodkind	2021	A	
+Govly	2021	L	
+Gradia Health	2021	L	
+GreaseBoss	2021	L	
+Great Question	2021	L	
+Greywing	2021	L	
+Gridware	2021	L	
+GroMo	2021	L	fintech
+H3X Technologies	2021	L	
+HEO Robotics	2021	L	
+HUBUC	2021	L	devtools,fintech
+Hapi	2021	L	fintech
+Harmonic Discovery	2021	L	
+Haystack	2021	L	
+Hedgehog	2021	I	fintech
+Heimdal	2021	I	
+Hera	2021	I	
+Hermes Robotics	2021	L	
+HeyCharge	2021	L	
+Hilos	2021	A	
+Hirebolt	2021	L	
+HitPay	2021	L	fintech
+Hive Health	2021	L	fintech
+HomeBreeze	2021	I	
+Homebase	2021	L	fintech
+Houm	2021	L	
+Howdy.com	2021	L	
+Huddlefire	2021	I	
+Hudson Labs (formerly Bedrock AI)	2021	L	ai,fintech
+Hudu	2021	L	
+Humaans	2021	L	ai
+Humance	2021	L	ai
+Humane Genomics	2021	L	
+Hyper	2021	A	fintech
+HyperGlue	2021	A	ai
+HyperTrader	2021	L	fintech
+Hyperbrowser	2021	L	ai,devtools
+Hypercontext	2021	I	
+Hypercore	2021	L	fintech
+Hyperseed	2021	I	fintech
+Infer	2021	L	
+Infina	2021	L	fintech
+Infiuss Health	2021	L	
+Inflow	2021	A	
+Infracost	2021	L	devtools
+InpharmD	2021	L	ai
+InstaKin	2021	L	fintech
+Instacrops	2021	L	
+Intellect	2021	L	
+Inversion Space	2021	L	
+Invoid	2021	I	ai
+Ivella	2021	I	fintech
+Ivy Homes	2021	L	
+JABU	2021	L	
+Jestor	2021	L	ai
+Jetdocs	2021	L	
+Jiga	2021	L	
+JoinSub	2021	I	fintech
+Journey	2021	A	ai
+Jovian	2021	L	ai,devtools
+Juicy Marbles	2021	L	
+June	2021	I	
+Jupe	2021	I	
+KaiPod Learning	2021	L	
+Kalam Labs	2021	L	ai
+Kanda	2021	L	fintech
+Kapacity.io	2021	A	
+Karbon Card	2021	L	fintech
+Kaya	2021	L	ai
+Keyri	2021	A	
+Kidato	2021	L	
+Kilobaser	2021	L	
+Kindamagical	2021	I	
+Kitemaker	2021	A	devtools
+Kiwi Biosciences	2021	L	
+Kiwify	2021	L	
+Kodda	2021	I	
+Kodex	2021	L	
+Kodo	2021	L	fintech
+Konta.com	2021	L	ai,fintech
+Koshex	2021	L	fintech
+Krab	2021	I	fintech
+Kredi	2021	L	fintech
+Kurios	2021	L	
+Lago	2021	L	devtools,fintech
+Lalabox	2021	I	
+Lamar Health	2021	L	ai
+Lariat Data	2021	I	ai
+Laudable	2021	A	
+Laudspeaker	2021	A	devtools
+Launcher Labs	2021	I	fintech
+Legion Health	2021	L	ai
+LemFi	2021	L	fintech
+Lendflow	2021	L	
+Level	2021	A	fintech
+Levo	2021	I	fintech
+Levro	2021	L	fintech
+LightTwist	2021	L	ai
+Lightly	2021	L	ai
+Lion Pose	2021	L	
+Litnerd	2021	L	
+Liv Labs	2021	L	
+LiveFlow	2021	L	ai
+Lobby	2021	I	
+Locale	2021	L	
+Logica	2021	L	fintech
+LogisticsOS	2021	L	devtools
+LootRush	2021	L	fintech
+Lovd	2021	I	
+Luable	2021	L	fintech
+Luminate	2021	L	
+Lunatic	2021	I	devtools
+Lygg	2021	L	
+Mable	2021	A	
+Mach9	2021	L	ai,devtools
+Machine26	2021	L	
+MadEats	2021	A	
+MagicBell	2021	L	devtools
+Mailmodo	2021	A	
+Makani Science	2021	L	
+Malga	2021	L	fintech
+Malloc Inc	2021	L	ai
+Manara	2021	L	
+MarcoPolo	2021	I	
+Maroo	2021	A	fintech
+MarqVision	2021	L	ai
+Matidor.com	2021	L	
+Matrubials	2021	L	
+Mayan	2021	L	
+Measured	2021	L	
+Mecho Autotech	2021	L	
+MedMe Health	2021	L	
+Medium Biosciences	2021	L	ai
+MeetAnyway	2021	I	
+Membo	2021	I	
+Mendel	2021	L	fintech
+Mentorcam	2021	I	
+Mentum	2021	A	ai
+Mergent	2021	L	devtools
+Meru.com	2021	L	fintech
+Meticulous	2021	L	devtools
+Mezli	2021	I	
+Micro Meat	2021	I	
+Milk Video	2021	I	ai
+Milky Way AI	2021	I	ai
+MindFi	2021	L	ai
+MindPortal	2021	I	ai
+Mindee	2021	L	ai,devtools
+Mindmesh	2021	I	
+Mindstate Design Labs	2021	L	ai
+Mine	2021	I	ai,fintech
+Miniloop	2021	L	ai
+Mixr	2021	I	
+MobileBoost	2021	L	ai,devtools
+ModernLoop	2021	L	
+Moichor	2021	L	
+Momo Medical	2021	L	
+Monet	2021	L	fintech
+Mono	2021	A	fintech
+Monto	2021	L	fintech
+Moonshot Brands	2021	I	
+Moonvalley	2021	L	
+Morada Uno	2021	L	fintech
+Moving Parts	2021	I	devtools
+Moxion Power Co.	2021	I	
+My NextDerma	2021	L	
+Mystic	2021	L	ai,devtools
+Mythia	2021	I	fintech
+Nano Technologies	2021	L	fintech
+Nasdisc	2021	A	
+Nash	2021	L	
+Navattic	2021	L	
+Neodocs	2021	L	ai
+Neverland	2021	I	
+NextPay	2021	L	fintech
+Nexus	2021	I	fintech
+Nimbus	2021	I	ai,devtools
+Nino Foods	2021	I	
+Nirva	2021	L	
+Noble	2021	I	fintech
+Noloco	2021	L	devtools
+Nomod	2021	L	fintech
+Nourish	2021	L	
+Novatr	2021	L	
+Noya	2021	I	
+Nuntius Therapeutics	2021	L	
+ODWEN	2021	L	
+Observa	2021	I	
+OctiFi	2021	A	fintech
+Odys Aviation	2021	L	
+Okani	2021	L	
+OlaClick	2021	L	
+Ollama	2021	L	ai,devtools
+OneSchema	2021	L	ai
+OneShop	2021	I	
+OneStopKitchen	2021	I	ai
+Onebrief	2021	L	
+Onfolk	2021	A	
+Onsite Pro	2021	I	
+Ontop	2021	L	fintech
+OpenCode	2021	L	devtools
+Openlayer	2021	L	ai,devtools
+Opkit	2021	I	
+Orbillion Bio	2021	A	
+Orderli	2021	L	
+Outfit	2021	I	
+Output Biosciences	2021	L	ai
+PAYZE	2021	I	fintech
+Pactima	2021	A	
+Pagaloop	2021	L	fintech
+PaletteHQ	2021	L	
+Palla	2021	L	
+Pandai	2021	L	
+Pangea.app	2021	L	ai
+Parallel Bio	2021	L	
+Parsagon	2021	L	ai
+Partnered	2021	A	
+Patterns	2021	I	
+Payflow	2021	L	fintech
+Payhippo	2021	L	fintech
+Pensil	2021	I	
+Per Diem	2021	L	fintech
+Perfekto	2021	I	
+Pesto	2021	L	fintech
+Phoenix	2021	L	
+Phykos	2021	L	
+Pibit.ai	2021	L	ai,fintech
+Pide Directo	2021	L	
+Pideaky	2021	L	fintech
+Pillar	2021	L	
+PingPong	2021	A	
+PipeBio	2021	A	ai
+Pipekit	2021	L	devtools
+Pirouette Pharma	2021	L	
+Plai	2021	L	
+Planet A Foods	2021	L	
+Platypus	2021	I	ai
+Playmaker	2021	I	
+Pluggy	2021	L	devtools,fintech
+Poliglota	2021	L	
+Popl	2021	L	ai
+Portão 3	2021	L	fintech
+Positional	2021	A	
+Potion	2021	L	ai
+PowerRouter	2021	L	
+Pragmatic Leaders (Ankai Inc)	2021	L	ai
+Preki	2021	A	
+Prendea	2021	I	
+Prequel	2021	L	
+Procoto	2021	A	fintech
+Promakhos Therapeutics	2021	L	
+Promoted.ai	2021	A	ai
+PropReturns	2021	I	fintech
+Prospa	2021	L	fintech
+Protego	2021	I	
+Protex AI	2021	L	ai
+Pry Financials	2021	A	fintech
+Purpose Finance	2021	I	fintech
+Pylon	2021	L	
+Pyroscope	2021	A	devtools
+Quadrant Eye	2021	I	ai
+Quadrant Health	2021	L	ai
+Queenly	2021	I	
+Quest	2021	I	
+Quicknode	2021	L	devtools,fintech
+QuotaBook	2021	L	fintech
+R2	2021	A	fintech
+REGENT	2021	L	
+REPROSENT	2021	L	
+RGI Labs	2021	L	ai
+RMFG	2021	L	
+ROGER	2021	L	
+Reclaim Protocol	2021	L	ai
+Recover	2021	L	
+Redbean	2021	L	ai
+Redcliffe Lifetech	2021	L	
+Reframe	2021	L	
+Rejoy Health	2021	L	ai
+Remora	2021	L	
+RendaloMaq	2021	L	
+Replo	2021	L	ai,devtools
+Repool	2021	L	fintech
+Reshape Biotech	2021	L	
+Resquared	2021	L	
+Rethoric	2021	L	
+Revery AI	2021	I	ai
+Revolve Surgical	2021	L	
+Rinse	2021	L	
+Rinsed	2021	L	ai
+Rivia.AI	2021	L	
+RocketSDR	2021	L	ai
+Roin Technologies	2021	A	
+Rootly	2021	L	ai,devtools
+Routine	2021	L	ai
+Rulebricks	2021	L	devtools
+Runway	2021	L	
+Ruta Health	2021	I	
+Ruth Health	2021	I	
+SBX Robotics	2021	I	ai
+SFA Therapeutics	2021	L	
+SafeBeat	2021	L	
+Safer Management	2021	L	ai
+SalaryBook	2021	L	fintech
+SalaryBox	2021	L	ai
+Satsuma	2021	A	devtools,fintech
+Scispot	2021	L	ai
+Scratch Data	2021	I	devtools
+Secoda	2021	L	ai
+Seer	2021	L	
+Segments.ai	2021	A	ai,devtools
+Sendbox	2021	L	
+SenpAI.GG	2021	I	ai
+Sensible Biotechnologies	2021	L	
+Sentiyen	2021	L	ai
+Sequin	2021	L	ai
+Serna Bio	2021	L	
+Shape	2021	L	ai
+Shepherd	2021	L	fintech
+Shimmer	2021	L	
+ShipBlu	2021	L	ai
+SigNoz	2021	L	devtools
+Siglo	2021	L	fintech
+SigmaOS	2021	L	
+Simplify	2021	L	ai
+Sirka	2021	L	
+Sitenna	2021	L	
+Sivo	2021	L	ai,fintech
+Slash	2021	L	fintech
+SlashAuth	2021	I	fintech
+Sleek	2021	A	ai
+Slope	2021	L	ai,fintech
+Smartcuts	2021	L	
+SnapCalorie	2021	L	ai
+Soco	2021	L	ai
+SolarMente	2021	I	
+Solo	2021	L	fintech
+Somos	2021	L	
+Soraban	2021	L	
+Spark Studio	2021	L	ai
+Spline	2021	L	ai
+Spoken	2021	I	ai
+Spokn	2021	L	
+Sproutfi	2021	A	fintech
+SpruceID	2021	L	devtools,fintech
+Squire.ai	2021	I	ai,devtools
+Stacksi	2021	A	
+Stardex	2021	L	
+Stayflexi	2021	L	
+Stepful	2021	L	
+Stipop	2021	L	
+Stoke Space	2021	L	
+Storylane	2021	L	
+Stownest	2021	L	
+StrideQ	2021	L	
+Striga	2021	A	fintech
+Strive Math	2021	L	
+StudyStream	2021	L	
+Sully.ai	2021	L	ai
+Supadock	2021	L	ai
+Superwall	2021	L	ai,devtools,fintech
+Suplias	2021	L	fintech
+Svix	2021	L	devtools
+Swadesi Way	2021	L	
+SwiftSku	2021	L	fintech
+Swipe	2021	L	ai,fintech
+Synder	2021	L	
+TAG	2021	L	fintech
+Tablevibe	2021	A	
+Talentdrop	2021	I	
+Taloflow	2021	L	devtools
+Talus Bio	2021	L	
+TaoFi	2021	A	ai
+Tarsal	2021	A	
+Taste	2021	I	
+Tavus	2021	L	ai,devtools
+TechBiz	2021	A	
+Telivy	2021	A	
+Telmai	2021	L	ai
+Tenyks	2021	L	ai
+Terapify	2021	L	
+Terra API	2021	L	
+Text Blaze	2021	L	
+The Breakaway	2021	L	
+The Third Place	2021	L	
+Therify	2021	L	
+Tilt	2021	L	
+Tint	2021	L	ai,devtools,fintech
+Tiriel AI	2021	L	ai
+Titipku	2021	L	
+Toku	2021	L	fintech
+Topkey	2021	L	fintech
+Topline Pro	2021	L	
+Tractian	2021	L	ai
+TransAstra Corporation	2021	L	
+Treinta	2021	L	ai
+Trela	2021	L	
+Trendpop	2021	A	
+Trestle Biotherapeutics	2021	L	
+Triomics	2021	L	
+Triplit	2021	I	devtools
+True3D	2021	L	ai,devtools
+Truss	2021	L	fintech
+Tuli Health	2021	L	
+Tupelo	2021	L	fintech
+Turing College	2021	L	
+Turion Space	2021	L	
+UPchieve	2021	L	
+Udhaar App	2021	L	fintech
+Uiflow	2021	A	devtools
+Unfurl	2021	I	
+Union54	2021	L	fintech
+Unschool	2021	L	
+V-Flow Medical	2021	I	
+Valink Therapeutics	2021	L	
+Vapi	2021	L	ai
+Varos	2021	L	
+VedaBio	2021	L	
+Veera Health	2021	L	
+Vendease	2021	L	
+Venu AI	2021	L	ai
+Verak	2021	A	fintech
+Verano Health	2021	A	
+Verde	2021	I	fintech
+Verihubs	2021	L	ai
+Version Story Compare	2021	L	ai
+Vibe Kanban	2021	L	ai,devtools
+Vinco	2021	L	
+Vogent	2021	A	ai
+Voosh	2021	L	
+Wabi	2021	I	
+WarpBuild	2021	L	ai,devtools
+Warpfy	2021	L	ai
+Warrant	2021	A	devtools
+Wasp	2021	L	devtools
+Waterplan	2021	L	ai
+Waydev	2021	L	ai
+Waypoint	2021	L	
+Webiny	2021	L	devtools
+Weekday	2021	L	
+Whalesync	2021	L	
+Whaly	2021	L	
+Worksphere	2021	A	
+Writesonic	2021	L	ai
+Wyndly	2021	L	
+Yemaachi Biotechnology	2021	L	
+YourQuote	2021	I	
+Yummy	2021	L	
+Z1	2021	L	fintech
+ZOKO	2021	L	ai
+Zage	2021	I	fintech
+Zaz OS	2021	L	ai,devtools
+Zealth	2021	L	
+Zeit Medical	2021	L	
+Zen	2021	L	
+Zensors	2021	L	ai
+Zepto	2021	L	
+Ziina	2021	L	fintech
+Zoios.	2021	L	
+Zuma	2021	L	ai
+aSim	2021	L	ai
+arnata	2021	L	ai
+authzed	2021	L	ai,devtools
+boitas.com	2021	I	
+clicOH	2021	L	
+cloud humans	2021	L	ai
+eqtble	2021	A	
+fluke	2021	L	
+gaiia	2021	L	
+hoop.dev	2021	L	devtools
+hotglue	2021	L	devtools
+idemeum	2021	L	
+inBalance	2021	A	
+inai	2021	A	fintech
+lapzo	2021	L	
+marketfeed	2021	L	fintech
+noHQ	2021	I	fintech
+outloud.ai	2021	I	ai
+peopleCQ	2021	L	
+testRigor	2021	L	devtools
+trii	2021	L	fintech
+unSurvey	2021	A	ai
+weweb.io	2021	L	devtools
+zingbus	2021	L	
+100x	2022	L	ai
+ALT TEX	2022	L	
+AYC Fund	2022	L	ai,fintech
+AccessOwl	2022	L	
+Actipulse Neuroscience	2022	L	
+Activepieces	2022	L	ai,devtools
+Agave	2022	L	
+Agency	2022	L	
+Agentnoon	2022	L	
+AiPrise	2022	L	fintech
+AiSupervision	2022	I	
+AirMyne	2022	L	
+Airhart Aeronautics	2022	L	
+Airtrain AI	2022	I	ai,devtools
+Airwork	2022	L	ai
+Aklimate	2022	I	
+Albiware Inc.	2022	L	fintech
+Aldara	2022	L	fintech
+Alfie	2022	A	
+Alga Biosciences	2022	L	
+AlgoTest	2022	L	fintech
+Alima	2022	I	
+Alixia	2022	L	
+Alma	2022	I	fintech
+Almond	2022	I	
+Alterya	2022	A	devtools,fintech
+Amal Invest	2022	L	fintech
+Anchor	2022	L	devtools,fintech
+Andi	2022	L	ai,devtools
+Andson Biotech	2022	L	
+Anfin	2022	L	fintech
+Anja Health	2022	A	
+Ankr Health	2022	L	ai
+AntWalk	2022	I	
+AnythingLLM	2022	L	ai,devtools
+Apollo	2022	L	fintech
+Apply Design	2022	L	ai
+Aragorn AI	2022	L	
+Arc	2022	A	fintech
+Argo	2022	L	devtools,fintech
+Argovox	2022	I	ai,fintech
+Argument Computer Corporation	2022	L	fintech
+Arintra	2022	L	
+Armilla AI	2022	L	ai,fintech
+Arpari	2022	L	fintech
+Array Labs	2022	L	
+Artemis Search	2022	L	ai
+Aspora	2022	L	fintech
+AstroForge	2022	L	
+Atlas	2022	L	
+Atlas	2022	L	ai
+Attack Capital	2022	L	ai
+Attain	2022	L	
+Aurelian	2022	L	ai
+AvairSense	2022	I	ai
+AviaryAI	2022	L	ai,fintech
+Avina	2022	L	ai
+Avocademy	2022	L	
+Axis	2022	L	ai
+Axle	2022	L	ai,devtools,fintech
+Axross Pte Ltd	2022	L	ai
+BBy	2022	L	
+Bakool	2022	L	
+Ballerine	2022	L	
+Banabo	2022	L	
+Beam	2022	L	ai,devtools
+Bemlo	2022	L	ai
+Benson	2022	L	fintech
+Better Opinions	2022	L	fintech
+Beyond Aero	2022	L	
+BharatX	2022	A	fintech
+Bifrost	2022	I	fintech
+BiggerPicture	2022	L	
+Birch Biosciences	2022	L	ai
+Bitstack	2022	L	fintech
+Blaze	2022	L	
+Blee	2022	L	ai,fintech
+Blink	2022	L	ai
+Blitz	2022	L	ai,devtools
+Blitzllama	2022	A	
+Blockscope	2022	L	
+BlueHill Payments	2022	L	fintech
+Boardcave	2022	L	
+Bobidi	2022	L	ai
+Boostly	2022	L	
+BotCity	2022	L	ai,devtools
+Botin	2022	I	fintech
+Boton	2022	L	ai
+Boya	2022	L	fintech
+Bracket	2022	A	
+Brainboard	2022	L	devtools
+BricksAI	2022	I	devtools
+Bridgecard	2022	I	devtools,fintech
+Broccoli AI	2022	L	ai
+Brown Foods	2022	L	
+Bunkyr	2022	L	devtools,fintech
+Bunting Labs	2022	L	ai
+CAPSULE	2022	I	ai
+CODEXA	2022	L	ai,fintech
+CUTR	2022	L	
+Cambio	2022	L	ai
+Capix	2022	L	fintech
+Capuchin	2022	L	ai
+Carbon Crusher	2022	L	
+Cardda	2022	L	fintech
+Cash Flow Portal	2022	L	
+Cashboard	2022	L	fintech
+Cashmere	2022	I	fintech
+Castia	2022	I	fintech
+Castled.io	2022	I	
+Cellbyte	2022	L	ai
+Cerebrium	2022	L	ai,devtools
+Cerrion	2022	L	ai
+Champ	2022	L	ai
+Chariot	2022	L	fintech
+Cherry Recommends	2022	I	ai
+Chordio	2022	L	
+Chowdeck	2022	L	
+Cinapse	2022	L	
+Cinder	2022	L	ai
+Circular	2022	L	fintech
+Ciro	2022	L	ai
+Cisterna Biologics	2022	L	
+Clearline	2022	L	ai
+Clinikally	2022	L	
+Clupp	2022	L	fintech
+Cobbery	2022	L	ai
+CodeCrafters	2022	L	devtools
+Codec	2022	L	ai
+Cofactr	2022	L	
+CoffeeAI	2022	I	ai
+Cogram	2022	L	ai
+CompUp	2022	L	
+Complete	2022	L	
+Complif	2022	L	fintech
+Compra Rápida	2022	L	fintech
+Cone	2022	L	
+Convoy	2022	L	devtools
+Coris	2022	L	ai,fintech
+Corveus Medical	2022	L	
+Cotera	2022	L	ai
+Coupl	2022	L	fintech
+Courtyard.io	2022	L	
+Coverage Cat	2022	L	ai,fintech
+Cozmo AI	2022	L	ai,fintech
+Craniometrix	2022	L	
+Craze	2022	L	ai
+CrediBook	2022	L	
+Creizer	2022	L	fintech
+Criya	2022	I	ai
+Curacel	2022	L	ai,fintech
+CustomerOS	2022	I	ai
+Cypher	2022	L	fintech
+Darsel	2022	L	
+Dart	2022	L	ai
+Dealls – Jobs & Mentoring	2022	L	
+Decent	2022	A	devtools,fintech
+Delegasi	2022	I	fintech
+Delfino AI	2022	L	ai
+Demo Gorilla	2022	I	
+Denormalized	2022	I	devtools
+Dev Tools AI	2022	I	ai
+Devyce	2022	L	
+Dialect	2022	I	ai
+DimOrder	2022	L	fintech
+Dioptra	2022	A	ai
+Disclo	2022	L	
+Dittofeed	2022	L	devtools
+Diversion	2022	L	devtools
+Dojah Inc	2022	L	devtools
+Dr. Treat	2022	L	
+Drahim 💰	2022	L	fintech
+Drip	2022	I	
+Drivingforce	2022	I	fintech
+Duplo	2022	L	
+Durioo	2022	L	
+Dynamo AI	2022	L	ai
+Eazipay Inc.	2022	L	fintech
+Ekho	2022	L	fintech
+Elementary	2022	L	devtools
+Elessar	2022	L	ai
+Elevate (formerly Bloom)	2022	L	fintech
+Elphinstone, Inc.	2022	L	fintech
+Emerge Career	2022	L	
+Emigre	2022	I	fintech
+Emobi	2022	L	ai,devtools
+Engage Bio	2022	A	
+Enlightra	2022	L	
+Entvin	2022	L	
+EthosX	2022	L	fintech
+Eugit Therapeutics	2022	L	
+Eventual	2022	L	ai
+Evoly	2022	L	
+Express Building	2022	L	fintech
+Feather	2022	L	ai
+Fello	2022	I	fintech
+Fetii	2022	L	ai
+Fieldproxy	2022	L	
+FinFlx	2022	L	fintech
+Findly	2022	L	ai
+Fini	2022	L	ai
+Finku	2022	L	ai,fintech
+Finnix	2022	L	fintech
+Finnt	2022	I	ai
+Fintelite	2022	L	ai,fintech
+Firecrawl	2022	L	ai,devtools
+Firezone	2022	L	devtools
+Flagright	2022	L	ai,fintech
+Flair Labs	2022	L	ai,fintech
+FlatX	2022	L	
+Fleek	2022	L	
+Fleetzero	2022	L	
+Flike	2022	I	ai
+Float Health	2022	L	
+FlowDeploy	2022	I	devtools
+FlyCode	2022	L	ai,fintech
+Fogbender	2022	L	
+FoodCourt	2022	L	
+Fresh Factory	2022	L	
+Fuell	2022	A	fintech
+GIMO	2022	L	fintech
+Gauss	2022	L	fintech
+Glep	2022	L	fintech
+Glow Energy	2022	A	
+GoJom	2022	L	ai,fintech
+GoSats	2022	L	
+GovDash	2022	L	ai
+Grai	2022	I	devtools
+Grey	2022	L	fintech
+GrowthBook	2022	L	devtools
+Guardian Bio	2022	L	
+Gullak Money	2022	L	fintech
+Gym Class	2022	L	ai
+HOAi	2022	A	ai
+HOKALI	2022	L	
+HOMLI	2022	L	ai
+Happl	2022	L	fintech
+Hedgehog	2022	L	ai
+Heptabase	2022	L	ai
+Heyfood	2022	L	
+HippoBuild	2022	L	
+HomeRoom	2022	A	ai
+Housewarming	2022	L	ai
+Hubble Network	2022	L	devtools
+Humand	2022	L	ai
+Hydra	2022	A	devtools
+HypaHub	2022	A	ai
+Hype	2022	L	fintech
+HyperDX	2022	A	devtools
+Hyperbeam	2022	L	devtools
+Hypestream	2022	L	
+IMT Care	2022	L	fintech
+IOMETE	2022	L	
+Illuminant Surgical	2022	L	
+Impossible Metals	2022	L	ai
+Impractical	2022	L	ai
+InVision Medical Technology	2022	L	ai
+Industrial Next	2022	L	ai
+InferEdge	2022	L	ai,fintech
+Instalab	2022	L	ai
+Instant	2022	L	devtools
+Instant Labs	2022	L	
+Integrated Reasoning	2022	L	ai,devtools
+Integration Labs	2022	I	devtools
+Intuned	2022	L	ai,devtools
+Invert	2022	L	ai
+Invofox	2022	L	ai,fintech
+IoTFlows Inc	2022	L	ai
+Iron Leap	2022	L	ai
+Jamble	2022	L	
+Jamsocket	2022	A	devtools
+Jasmine Energy	2022	I	ai
+Joe	2022	A	fintech
+Joon Health	2022	L	
+Juicebox	2022	L	ai
+Julius	2022	L	ai
+JumpWire	2022	A	devtools
+Jutsoo	2022	L	fintech
+Kaagaz	2022	L	
+Kable	2022	I	devtools
+Kamion	2022	L	
+Kapital Bank	2022	L	fintech
+Karate Labs	2022	L	devtools
+Kashin	2022	L	fintech
+Kaso	2022	L	ai
+KemNet	2022	L	
+Kenobi	2022	L	ai
+Keylika	2022	L	
+Knowtex	2022	L	ai
+Koala	2022	L	
+Koko	2022	L	
+Kombo	2022	L	
+KorrAI	2022	L	ai,fintech
+Krave Mart	2022	L	
+Kular	2022	L	
+Lamin	2022	L	ai,devtools
+LanceDB	2022	L	ai,devtools
+Landeed	2022	L	ai,fintech
+Latent Space	2022	L	ai
+Layerup	2022	L	ai
+Lenk	2022	L	fintech
+Levers	2022	L	
+Lexter.ai	2022	L	ai
+LifeAt	2022	L	
+Lifecast	2022	I	ai
+Lightmeter	2022	L	
+Livedocs	2022	I	
+Lizza	2022	L	
+Loops	2022	L	
+Lotus	2022	I	devtools,fintech
+Lovage	2022	L	ai
+Lumina	2022	L	ai
+LunaJoy Health	2022	L	
+Lyra	2022	L	fintech
+Magic	2022	I	
+Magna	2022	A	
+Mahaana Wealth	2022	L	fintech
+Makeasite	2022	L	ai
+Malama Health	2022	L	
+Manatee	2022	I	
+Marathon Education	2022	I	
+Markaz Technologies	2022	L	
+Massdriver	2022	L	devtools
+Materee	2022	L	
+Material Depot	2022	L	
+MaverickX	2022	L	
+Maya Labs	2022	L	ai
+Mederva	2022	L	
+Medplum	2022	L	devtools
+Mercator	2022	I	ai
+Metriport	2022	L	ai,devtools
+Midplane	2022	L	ai
+Miggos	2022	L	fintech
+Mindbase	2022	L	
+Mintlify	2022	L	devtools
+Mistle	2022	L	ai,devtools
+Momento	2022	L	ai,fintech
+Moneco	2022	L	fintech
+Mono	2022	L	fintech
+Monterey AI	2022	A	ai
+Moots	2022	L	ai
+Morf Health	2022	L	
+MosaicVoice	2022	L	ai
+MovingLake	2022	L	devtools
+Munily	2022	L	
+MySivi	2022	L	
+Myria	2022	L	
+NFTScoring	2022	I	
+Namecard.ai	2022	L	ai
+Nara	2022	A	ai
+Nash	2022	L	fintech
+NearWave	2022	L	ai
+Neosync	2022	A	devtools
+Nest Genomics	2022	L	
+Netmaker	2022	L	devtools
+NewsCatcher	2022	L	ai
+Nira Energy	2022	L	
+Nophin	2022	I	ai
+Northwind	2022	I	
+Notebook Labs	2022	I	fintech
+Novig	2022	L	fintech
+NuMind	2022	L	ai
+Nullstone	2022	L	devtools
+Numida	2022	L	fintech
+Nyckel	2022	L	ai,devtools
+Offbeast	2022	L	
+Ole	2022	I	
+Olympian Motors	2022	L	
+Omoi (formerly Azuki)	2022	L	
+Onboard.io	2022	L	
+Oneleet	2022	L	ai
+Onyx Private	2022	A	fintech
+Optery	2022	L	
+Orca	2022	L	fintech
+Ordinary Seafood	2022	I	
+Origami Therapeutics, Inc.	2022	L	
+Oto	2022	L	
+Overwatch	2022	L	ai
+Ozone	2022	I	
+PINA	2022	L	ai,fintech
+Paces	2022	L	ai
+Palitronica Inc	2022	L	
+Pana	2022	L	fintech
+Pantore Pay	2022	L	fintech
+Paragon AI	2022	L	ai
+Partna	2022	L	fintech
+Pasito	2022	L	ai,fintech
+PayCaddy	2022	L	fintech
+PayCrunch	2022	L	fintech
+Payfura	2022	I	fintech
+Payload	2022	A	devtools
+PeakPath	2022	I	
+Peakflo	2022	L	fintech
+Pelm	2022	I	devtools
+Penguin AI	2022	I	ai
+Peoplebox.ai	2022	L	ai
+Perl Street	2022	L	
+PermitFlow	2022	L	ai
+Phase Biolabs	2022	L	
+Phind	2022	I	ai
+Phoenix Hydrogen	2022	I	
+Pigeon	2022	I	fintech
+Pina Earth	2022	A	
+Ping	2022	L	fintech
+Pivo Technology Inc	2022	I	fintech
+Ploomber	2022	I	ai,devtools
+Plumter	2022	L	fintech
+Pluralith	2022	L	devtools
+Pluto.markets	2022	L	fintech
+Plutto	2022	L	fintech
+Poko	2022	L	devtools,fintech
+PolicyFly	2022	L	ai,fintech
+Poly	2022	L	ai,devtools
+Polymath Robotics	2022	L	ai
+Ponyrun	2022	L	ai
+Popsy	2022	L	ai
+Posh	2022	L	
+Postal	2022	L	ai
+Powerdocs	2022	L	ai
+Powerhouse AI	2022	L	
+Prembly (formerly Identitypass)	2022	L	devtools
+PrimeVault	2022	L	devtools,fintech
+PromptLoop	2022	L	ai
+PropelAuth	2022	L	devtools
+Proper	2022	A	fintech
+Provision	2022	L	ai
+Pulppo	2022	A	
+Pump.co	2022	L	ai,fintech
+Pursuit	2022	I	
+Pyrls	2022	L	
+QUIK	2022	L	
+Quan	2022	A	
+Query Vary	2022	L	ai,devtools
+Quindar	2022	L	
+Quinn	2022	L	ai
+RDash	2022	L	devtools
+REVER	2022	L	fintech
+RTHM	2022	L	ai
+Railbird	2022	A	fintech
+Rally	2022	L	
+Rank (formerly Moni)	2022	L	fintech
+Ranla	2022	L	
+Raven	2022	L	ai
+Ravion	2022	L	devtools
+Reality Defender	2022	L	ai
+Rebill	2022	L	fintech
+RecordBook	2022	L	
+RedBrick AI	2022	L	ai
+Redbird	2022	L	
+RefineTrain AI	2022	L	ai
+Reforged Labs	2022	L	ai
+Rehook.ai	2022	L	
+Relate	2022	L	
+Relay Health	2022	L	
+Relevium Medical	2022	L	
+Remedial Health	2022	L	fintech
+Remi	2022	L	
+Requestly	2022	A	devtools
+Reviving Mind	2022	L	
+Revoy	2022	L	
+Rider	2022	A	
+Rima AI (formerly Garage)	2022	L	ai
+Rio	2022	L	fintech
+Roforco	2022	L	
+Rome	2022	L	
+Rosebud Biosciences	2022	L	
+Rownd	2022	L	ai,devtools
+Roxels	2022	L	ai
+Ruleset	2022	I	fintech
+SALT	2022	L	fintech
+SNAB	2022	L	fintech
+SOTERI SKIN	2022	L	
+Samos Insurance	2022	L	fintech
+Sanifu	2022	L	ai
+Sarus	2022	A	
+SaveIN	2022	L	fintech
+Scout	2022	L	
+Sculpt	2022	L	
+Seabound	2022	L	
+Seaflight Technologies	2022	L	
+Sei AI	2022	L	ai
+Seis	2022	I	fintech
+Sekilo	2022	L	
+Selia	2022	L	
+Sendme, Inc	2022	I	ai
+Sendo	2022	I	devtools
+Serif Health	2022	L	ai,devtools
+Serinus Biosciences	2022	L	
+Sero	2022	L	
+Shaped	2022	L	ai
+Shinkei Systems	2022	L	
+Shipmates	2022	L	
+Shuttle Central	2022	L	
+Sieve	2022	L	ai,devtools
+Siftly	2022	L	ai
+SigmaMind AI	2022	L	ai
+Signatur Biosciences	2022	L	
+SilkChart	2022	L	ai
+SimpleHash	2022	A	devtools,fintech
+Simplifyd Systems	2022	L	
+Skillza	2022	I	
+SkyLink	2022	A	ai
+Slauth.io	2022	I	devtools
+Slidely AI	2022	L	
+Slingshot	2022	A	
+SmartHelio	2022	L	ai
+SnapTrade	2022	L	devtools,fintech
+Solum Health	2022	L	
+Sonnet	2022	I	ai
+Soon	2022	L	fintech
+Sophys	2022	L	ai
+Sota2	2022	L	ai
+Spade	2022	L	ai,fintech
+SpadeWorks	2022	L	
+Speechly	2022	A	ai,devtools
+Sphere	2022	L	ai
+Spinach AI	2022	L	ai
+Spot Health	2022	L	
+Sprites	2022	L	ai
+Stably AI (Orca)	2022	L	ai,devtools
+Stackshine	2022	A	
+Stackup	2022	L	devtools,fintech
+StafBook	2022	L	
+Stairs Financial	2022	L	fintech
+Star	2022	L	ai
+Starling	2022	L	ai
+Status	2022	L	ai
+Stellar	2022	I	
+Stock Unlock	2022	L	fintech
+Strac	2022	L	ai
+Streak	2022	L	fintech
+Stream	2022	L	fintech
+Strong Compute	2022	L	ai,devtools
+SubscriptionFlow	2022	L	ai,fintech
+Suggestr	2022	I	
+Sunlight	2022	L	devtools,fintech
+Sunpia	2022	L	devtools
+Superbar	2022	L	
+Superpowered AI	2022	I	ai,devtools
+Supertone	2022	I	
+Syrona Health	2022	L	
+Sytex	2022	L	
+T3 Chat	2022	L	ai,devtools
+TAI	2022	A	fintech
+TYBR Health	2022	L	
+Tailor	2022	L	devtools
+Take App	2022	L	
+Talentropy.ai	2022	L	ai
+Tank Payments	2022	L	fintech
+Taro	2022	A	devtools
+TeamOut	2022	L	
+Ten Lives	2022	L	
+Tendo	2022	L	fintech
+The Ankler	2022	L	
+Theneo	2022	L	ai,devtools
+Thera	2022	L	ai,fintech
+TigerEye	2022	A	ai
+Toko	2022	L	ai
+Tola	2022	A	fintech
+Top Road	2022	L	ai,fintech
+Topship	2022	L	
+Torpedo Therapeutics	2022	L	
+Touch and Pay Technologies Limited	2022	L	fintech
+Trackingplan	2022	L	
+Tranch	2022	A	fintech
+Transfez	2022	L	fintech
+Trellus	2022	L	ai
+Trendex - Connect with stars	2022	L	
+TrueBiz	2022	L	fintech
+Trueplace	2022	L	
+Trusty	2022	L	
+Truva	2022	A	ai
+Trébol	2022	L	fintech
+Tuva Health	2022	L	
+Two Dots	2022	L	ai,fintech
+TypeLess	2022	L	ai,devtools
+Typewise	2022	L	ai,devtools
+UNISON	2022	L	
+Uberduck	2022	I	
+Unlayer	2022	L	ai,devtools
+Unravel Carbon	2022	L	
+Unsaddl	2022	A	
+Unthread	2022	L	ai
+UpBanx	2022	L	fintech
+UpLink	2022	A	
+Valari	2022	I	devtools,fintech
+VantedgeAI	2022	L	ai,fintech
+Vecindario	2022	I	fintech
+Velontra	2022	L	
+Velt	2022	L	ai,devtools
+Vendoo	2022	L	
+Vendy	2022	L	fintech
+Venue.ink	2022	L	fintech
+Versa	2022	L	fintech
+Versable	2022	L	ai
+Vessel	2022	I	devtools
+Vimmerse	2022	L	ai,devtools
+Vinci Games	2022	L	
+Vizzly	2022	A	devtools
+Vobi	2022	L	
+Voltic	2022	L	
+WANTD	2022	L	
+Wagetap	2022	L	fintech
+Wand Solar	2022	L	
+WeReno	2022	L	ai
+Weltio	2022	I	fintech
+WhiteLab Genomics	2022	L	ai
+Whiz	2022	I	fintech
+Wibond	2022	L	fintech
+Windmill	2022	L	devtools
+Wingback	2022	I	devtools,fintech
+Winter	2022	A	fintech
+Wolfia	2022	L	ai
+Wondercraft	2022	L	ai
+Workflow86	2022	L	ai
+Wyvern	2022	L	
+Yezza	2022	L	
+Zoltar Labs	2022	I	
+Zorba	2022	L	
+amiloz	2022	L	fintech
+autone	2022	L	
+beU delivery	2022	L	
+digi	2022	L	
+erad	2022	L	fintech
+goodfin	2022	L	ai,fintech
+haddock	2022	L	ai,fintech
+ilumadata	2022	I	devtools
+mutable.ai	2022	A	ai,devtools
+ngrow.ai	2022	I	
+nsave	2022	L	fintech
+voize	2022	L	ai
+yhangry	2022	L	
+1stCollab	2023	L	ai
+222	2023	L	ai
+AIVideo.com	2023	L	
+Accend	2023	L	ai,fintech
+Adri AI	2023	L	ai
+Adventris Pharmaceuticals	2023	L	
+Affinity	2023	L	fintech
+AgentCollect	2023	L	ai,fintech
+Aglide	2023	L	
+AiSDR	2023	L	ai
+Airgoods	2023	L	
+Alaan	2023	L	fintech
+Alguna	2023	L	ai,fintech
+Alloy	2023	L	
+Alphawatch AI	2023	L	ai
+Andromeda Surgical	2023	L	ai
+Apoxy	2023	L	
+Arcimus	2023	L	ai
+Ariglad	2023	L	
+Arroyo	2023	A	devtools
+Artie	2023	L	devtools
+Atla	2023	I	ai,devtools
+Atmeto	2023	L	
+Automat	2023	L	ai,devtools
+Automorphic	2023	L	ai,devtools
+Autotab	2023	A	ai
+Avoca	2023	L	
+Backdrop	2023	L	ai,fintech
+Baserun	2023	L	ai,devtools
+Benchmark	2023	L	ai,fintech
+Berry	2023	L	ai
+Bland AI	2023	L	
+Bluebirds	2023	A	ai
+Bluedot	2023	L	fintech
+Blyss	2023	I	ai
+Bolto	2023	L	ai
+Booth AI	2023	A	ai
+Boundary	2023	L	ai,devtools
+Branch AI	2023	I	ai
+Bretton AI	2023	L	ai,fintech
+Brewit	2023	A	ai
+Briefer	2023	I	devtools
+Bronco AI	2023	L	ai
+BuildJet	2023	L	devtools
+Bujeti	2023	L	fintech
+CORE	2023	L	ai,devtools
+Cair Health	2023	L	ai
+Cakework	2023	I	devtools
+Campfire	2023	L	ai,fintech
+CandorIQ	2023	L	
+Capi Money	2023	L	fintech
+Cardinal	2023	A	ai
+Cardinal Gray	2023	L	ai
+CareOasis	2023	L	
+Cargo	2023	L	
+Casca	2023	L	ai,fintech
+Catamaran	2023	A	ai,fintech
+Cedalio	2023	L	ai,fintech
+Cedana	2023	L	ai,devtools
+Cembla	2023	L	
+Cercli	2023	L	
+Certainly Health	2023	L	
+Chart	2023	L	fintech
+Chatter	2023	A	ai,devtools
+CheqUPI	2023	A	fintech
+Chima	2023	L	ai,devtools
+Choppy!	2023	I	
+Chow Central Inc	2023	L	
+Clad	2023	L	
+Clearest Health	2023	L	ai
+Clearspace	2023	L	
+ClickPe	2023	L	fintech
+Cloudchipr	2023	L	devtools
+Clueso	2023	L	ai
+Coba	2023	L	fintech
+Cobblestone	2023	A	fintech
+CodeParrot AI	2023	I	ai,devtools
+CodeStory	2023	I	ai,devtools
+Cognitio Labs	2023	L	ai
+Coldreach	2023	L	ai
+CombineHealth	2023	L	ai
+Common Paper	2023	L	devtools
+Concourse	2023	L	ai,fintech
+Conduit	2023	L	ai
+Constant	2023	L	
+Constructable	2023	L	ai
+Continue	2023	A	ai,devtools
+Contour	2023	L	ai
+Converge	2023	L	devtools
+Coperniq	2023	L	
+Corgea	2023	L	ai,devtools
+Corgi Labs	2023	L	ai,fintech
+Cosine	2023	L	ai,devtools
+CraftOS	2023	I	
+Craftwork	2023	L	
+CreatorML	2023	I	ai
+Credal.ai	2023	L	ai
+DAGWorks Inc.	2023	A	ai,devtools
+Dashdive	2023	A	
+DataShare	2023	L	devtools
+DataSuite	2023	L	ai,devtools
+Dataglade	2023	L	ai,fintech
+Deasy Labs	2023	A	ai,devtools
+Decoda Health	2023	L	ai
+Decohere	2023	L	ai
+Defer	2023	I	devtools
+Demospace	2023	I	ai
+Depot	2023	L	devtools
+Designbase	2023	L	ai,devtools
+Dialtone	2023	L	ai
+Diffuse Bio	2023	L	ai
+Diligent	2023	L	ai,fintech
+Dill	2023	L	
+Dioxus Labs	2023	A	
+DisputeNinja	2023	L	ai,fintech
+Docsum	2023	L	ai
+Double – Coding Copilot	2023	L	ai,devtools
+DrDroid	2023	L	devtools
+Dream3D	2023	L	ai
+Echo	2023	I	ai
+Eden Care	2023	L	devtools,fintech
+Edge	2023	L	
+EdgeBit	2023	A	devtools
+Electric Air	2023	L	
+Elyos AI	2023	L	ai
+Elythea	2023	L	ai
+Empirical Health	2023	L	ai
+Energent AI	2023	L	ai
+Envelope	2023	L	fintech
+Epsilla	2023	L	ai,devtools
+Epsilon	2023	L	ai
+Escape	2023	L	devtools
+Every	2023	L	
+Extend	2023	L	ai,devtools
+EzDubs	2023	A	ai,devtools
+Fabius	2023	I	ai
+FactIQ	2023	L	ai,fintech
+Fairway Health	2023	A	ai
+Fastgen	2023	L	devtools
+Feanix Biotechnologies	2023	L	
+Fern	2023	A	devtools
+Fetchr	2023	I	ai
+Fiber AI	2023	L	ai
+Finic	2023	L	ai
+Finni Health	2023	L	
+Finta	2023	L	
+Fintool	2023	A	ai
+Finvest	2023	L	
+FleetWorks	2023	L	ai
+Flex	2023	L	fintech
+FlexDesk	2023	L	
+FlexWash	2023	L	
+Flint	2023	L	ai
+Flower	2023	L	
+FlowiseAI	2023	A	ai,devtools
+Floworks	2023	L	ai
+Fluid Markets	2023	L	
+Fortuna Health	2023	L	
+Foundation	2023	L	ai
+Fragment	2023	A	
+Frigade	2023	L	ai
+Giga	2023	L	ai
+Glade	2023	L	ai
+Glass Health	2023	L	ai
+Gleam	2023	L	ai
+Glide	2023	A	devtools,fintech
+Gluetrail	2023	I	ai
+GoodCourse	2023	I	
+Gooseworks	2023	L	ai
+GovEagle	2023	L	
+GreenTally	2023	I	ai
+Guac	2023	L	ai
+Hadrius	2023	L	ai
+Hammr	2023	L	
+HappyRobot	2023	L	ai
+Haven	2023	L	ai
+Health Harbor	2023	L	ai
+Healthtech 1	2023	L	
+Hegel AI	2023	L	
+Helicone	2023	A	ai,devtools
+Helios	2023	L	ai
+Hindsight	2023	L	ai
+Hippo Scribe	2023	L	ai
+Hiro	2023	L	devtools
+HockeyStack	2023	L	
+Homeflow	2023	I	
+Hona	2023	L	
+Honeydew	2023	L	
+HyLight	2023	L	
+Hyperbound	2023	L	
+IcePanel	2023	L	devtools
+Iliad	2023	L	ai
+Inari	2023	A	ai
+Inconvo	2023	L	ai,devtools
+Indexical	2023	I	ai,devtools
+Infinia	2023	L	fintech
+Infisical	2023	L	devtools
+Inkeep	2023	L	ai,devtools
+Inlet	2023	L	
+Interlock	2023	I	ai
+Inventive AI	2023	L	ai
+Invitris	2023	L	
+Invopop	2023	L	fintech
+KV Cash	2023	L	ai,devtools,fintech
+Keep	2023	A	devtools
+Khoj	2023	L	ai,devtools
+Kino AI	2023	L	ai
+Kips Health	2023	I	ai
+Kite	2023	L	ai
+Kivo Health	2023	L	
+Kobalt Labs	2023	L	fintech
+Koywe	2023	L	fintech
+Kyber	2023	L	ai,fintech
+Laminate	2023	L	devtools,fintech
+Langdock	2023	L	ai
+Langfuse	2023	A	ai,devtools
+Latent	2023	L	ai,fintech
+Lavo Life Sciences	2023	I	ai
+Layup	2023	I	ai
+Leafpress	2023	I	devtools
+Letter AI	2023	L	
+Letterbook	2023	L	ai
+Lifelike	2023	I	ai
+LifestyleRx	2023	L	
+Lightski	2023	L	ai,devtools
+Linc.	2023	L	
+Line.Build	2023	I	fintech
+LinkGrep	2023	L	ai
+Linum	2023	L	ai
+Lio (formerly askLio)	2023	L	
+LiteLLM	2023	L	ai,devtools
+Littio	2023	L	fintech
+Loula	2023	L	
+Luca	2023	I	ai
+Lume	2023	A	ai,devtools
+Lynx	2023	I	ai,devtools
+Lysto	2023	I	ai
+MICSI	2023	L	ai
+Magic Loops	2023	L	ai
+Magic Patterns	2023	L	
+Magicflow 𐂂	2023	I	ai,devtools
+MagnaPlay	2023	L	
+Maintouch	2023	L	
+Mandel AI	2023	L	ai
+MantleBio	2023	I	
+Mantys	2023	L	
+Margin	2023	L	
+Matano	2023	L	devtools
+Maven Bio	2023	L	ai
+Maxi	2023	L	ai,fintech
+MediSearch	2023	L	ai
+Mercoa	2023	L	devtools,fintech
+Metal	2023	L	ai,fintech
+Metal	2023	L	fintech
+Metalware	2023	L	devtools
+Metoro	2023	L	ai,devtools
+Middleware	2023	L	ai
+Midrender	2023	L	ai
+Milio	2023	L	fintech
+Minded	2023	L	ai,devtools
+Miracle	2023	L	
+Mocha	2023	A	ai
+Modulari-T	2023	L	
+Mogara	2023	I	
+Morph	2023	L	ai,devtools
+Movley	2023	I	ai
+Muffin Data	2023	A	
+Mulligan	2023	A	ai,fintech
+Nango	2023	L	devtools
+Nanograb	2023	L	
+Narrative	2023	L	ai
+Nectar	2023	L	
+Neptyne	2023	I	ai
+No Cap	2023	A	ai,fintech
+Novelcare	2023	L	ai
+Nowadays	2023	L	ai
+Noya Software	2023	L	
+Numen	2023	L	ai
+Numeral	2023	L	fintech
+Obento Health	2023	L	ai
+Odigos Technologies Inc.	2023	L	
+OfOne	2023	A	ai
+Ohm	2023	L	ai
+Ohmic Biosciences	2023	L	
+Olio Labs	2023	L	
+Omnistrate	2023	L	devtools
+OneText	2023	L	fintech
+Onshore	2023	L	
+Onward	2023	I	
+OpenInt	2023	A	ai,devtools
+OpenMeter	2023	A	
+OpenPipe	2023	A	ai,devtools
+OpenSight	2023	I	ai
+OpenTools	2023	L	ai
+Opensteer	2023	L	ai,devtools
+Ora AI	2023	L	ai
+Orbio Earth	2023	L	ai
+Orchid	2023	L	ai
+Osium AI	2023	L	
+OutSail Technologies	2023	I	
+Outerbase	2023	A	ai,devtools
+Outset	2023	L	ai
+Overflux	2023	I	
+Overlord	2023	L	
+Pair AI	2023	L	ai
+Palomma	2023	L	ai,fintech
+Pando Bioscience	2023	L	ai
+Paperplane	2023	I	ai,fintech
+Parabolic	2023	I	ai
+ParadeDB	2023	L	devtools
+Parea	2023	L	ai,devtools
+Peeba	2023	I	fintech
+PeerDB	2023	A	devtools
+Persana AI	2023	A	ai
+Persist AI	2023	L	ai
+Pier	2023	L	ai,fintech
+Pierre	2023	L	devtools
+Pigeon	2023	L	
+Pincites	2023	A	ai
+Pirros	2023	L	
+PlayAI	2023	A	ai,devtools
+Pledge Health	2023	L	
+Plutis	2023	L	
+Pointhound	2023	L	ai,fintech
+PoloTab	2023	L	fintech
+PoplarML	2023	L	ai,devtools
+Portalform	2023	L	
+Proglix	2023	L	
+Proof of Human	2023	L	
+PropRise	2023	L	ai
+Propexo	2023	L	devtools
+Prosper	2023	L	ai
+Punchcard	2023	L	ai
+Pure	2023	L	
+Pylon	2023	L	ai
+Quill Bills	2023	L	ai
+RUUF	2023	L	
+Radical	2023	L	
+Rainmaker	2023	L	
+Rally Tax	2023	L	fintech
+Rankai	2023	L	ai
+Read Bean	2023	L	
+Readily	2023	L	ai
+RecipeUI	2023	L	devtools
+Reflex	2023	L	ai,devtools
+Relace	2023	L	
+Remy	2023	I	ai
+Repacket	2023	L	
+Repaint	2023	L	ai
+Resend	2023	L	
+Retape	2023	L	ai
+Revamp	2023	L	
+Reworkd	2023	L	ai,devtools
+Rimward	2023	L	ai
+Rivet	2023	L	devtools
+Roame	2023	L	ai
+Rollstack	2023	L	ai
+Rubber Ducky Labs	2023	I	ai
+Rubbrband	2023	L	ai
+Ruby Card	2023	L	
+SID	2023	L	ai,devtools
+Saatvy	2023	I	ai
+SafetyKit	2023	L	fintech
+Sage AI	2023	L	ai,devtools
+Salient	2023	L	ai,fintech
+Sameday	2023	L	ai
+Santé	2023	L	fintech
+Sanvivo	2023	L	
+Scanbase	2023	L	ai
+Scout	2023	L	
+Second	2023	I	ai,devtools
+Sendblue	2023	L	
+SensorSurf	2023	I	ai,devtools
+Serial	2023	I	
+Serra	2023	L	ai
+Shadeform	2023	L	
+Shasta Health	2023	L	ai
+Shekel Mobility	2023	L	fintech
+Sherloq	2023	L	ai
+ShortLoop	2023	L	ai
+Shortbread	2023	L	ai
+Sidenote	2023	I	ai
+Silimate	2023	L	ai,devtools
+Simbie AI	2023	L	ai
+Singularity	2023	L	
+Sirdab	2023	L	
+Skyhook	2023	L	devtools
+Skyvern	2023	L	ai,devtools
+Slicker	2023	L	ai,fintech
+Smobi	2023	L	devtools
+Sohar Health	2023	L	ai,devtools
+Sola	2023	L	ai
+Solve Intelligence	2023	L	
+Sorted	2023	I	
+SpecCheck	2023	L	devtools,fintech
+Speedy Labs	2023	L	
+Spine AI	2023	L	ai
+StackAI	2023	A	ai
+Stellar Sleep	2023	L	
+Storyboarder	2023	L	
+Strada	2023	L	ai,fintech
+Stralis Aircraft	2023	L	
+Struct	2023	I	fintech
+Structured Labs	2023	I	ai,devtools
+Studdy	2023	L	ai
+Subsets	2023	L	ai
+Suger	2023	L	
+SuperAPI	2023	L	devtools
+SuperKalam	2023	L	ai
+Surface Labs	2023	L	ai
+Sweep	2023	L	ai,devtools
+Sweetspot	2023	L	
+Synch	2023	I	ai
+Syncly	2023	L	ai
+SyntheticFi	2023	L	
+TableFlow	2023	L	ai
+Tagsafe	2023	L	
+Talc	2023	L	ai
+Tempo	2023	L	ai,devtools
+Tennr	2023	L	
+Terminal	2023	L	devtools
+Terracotta AI	2023	L	ai,devtools
+Texel.ai	2023	L	
+Theya	2023	L	fintech
+Tiptap	2023	L	ai,devtools
+Traceloop	2023	A	ai,devtools
+Trackstar	2023	L	
+Trainy	2023	L	ai,devtools
+Trayd	2023	L	fintech
+Tremor	2023	A	
+Trigger.dev	2023	L	ai,devtools
+Trigo	2023	A	devtools,fintech
+Truewind	2023	L	ai,fintech
+Turntable	2023	I	
+Twenty	2023	L	devtools
+Twine	2023	L	ai
+Type	2023	L	ai
+Unhaze	2023	I	ai
+Unify	2023	L	ai,devtools
+Univerbal	2023	L	
+Unstatiq	2023	L	
+Untether Labs	2023	L	
+Upfront	2023	I	ai
+Upstream	2023	L	
+Vaero	2023	L	ai
+Vango AI	2023	I	ai,devtools
+Variance	2023	L	ai
+VaultPay	2023	L	fintech
+Vector	2023	L	ai
+VectorShift	2023	L	ai
+Vellum	2023	L	
+Velos	2023	L	ai
+Vendah	2023	L	
+Vendora	2023	L	ai,fintech
+Venta AI	2023	L	ai
+Verata	2023	L	ai,fintech
+Versive	2023	L	ai
+Versori	2023	A	devtools
+VetRec	2023	L	ai
+Viddy	2023	A	
+Vitalize	2023	L	
+Vizly	2023	I	ai
+Vocode	2023	A	ai,devtools
+Vooma	2023	L	
+Wallbit	2023	L	fintech
+Warp	2023	L	ai
+Watto AI	2023	A	
+Wattson Health	2023	L	ai
+Waza	2023	L	fintech
+Webhound	2023	L	ai
+Wild Moose	2023	L	ai,devtools
+Xeol	2023	A	ai
+Y/n	2023	L	
+Yuma AI	2023	L	ai
+Zelos Cloud	2023	L	
+ZeroDev	2023	L	fintech
+co.dev	2023	L	ai,devtools
+coil inc.	2023	L	ai
+compliant-llm	2023	L	
+dili	2023	L	ai,fintech
+highlight.io	2023	A	devtools
+inBuild	2023	L	fintech
+infra.new	2023	L	ai,devtools
+kapa.ai	2023	L	ai
+loopfour	2023	L	ai
+moonrepo	2023	I	devtools
+nunu.ai	2023	L	
+refine	2023	L	devtools
+rex.fit	2023	L	ai
+rift	2023	I	
+sizeless	2023	L	ai
+sudocode	2023	L	ai,devtools
+truemetrics	2023	L	ai
+zudo.work	2023	L	ai
+&AI	2024	L	
+1849 bio	2024	L	
+ACX	2024	L	
+Abel	2024	I	ai
+Abel Police	2024	L	
+Abundant	2024	L	ai,devtools
+Adapted	2024	L	ai
+Aedilic	2024	I	ai
+Affil.ai	2024	L	ai
+Aftercare	2024	L	
+Afternoon.co	2024	L	
+Agentic Labs	2024	L	ai,devtools
+Aidy	2024	L	
+Alai	2024	L	ai
+Alex	2024	L	ai
+Alex	2024	L	
+Aluna	2024	L	ai
+AminoAnalytica	2024	L	
+Anara	2024	L	ai
+Andon Labs	2024	L	ai
+Andy AI	2024	L	ai
+Anglera	2024	L	ai
+Anthrogen	2024	L	ai
+Apolink	2024	L	
+Apten	2024	L	ai
+Aqua Voice	2024	L	ai
+Arcane	2024	A	ai
+ArchiLabs	2024	L	ai
+Archil	2024	L	ai,devtools
+Ares Industries	2024	L	
+Argil	2024	L	ai
+Argon AI, Inc.	2024	L	
+Arini	2024	L	ai
+Artisan	2024	L	ai
+Artos	2024	L	
+Arva AI	2024	L	ai,fintech
+Asha Health	2024	L	
+Assembly HOA	2024	L	ai,fintech
+Astro Mechanica	2024	L	
+Attunement	2024	L	ai
+AutoComputer	2024	L	ai
+AutoPallet Robotics	2024	L	ai
+Autumn Labs	2024	L	
+AveryIQ	2024	L	ai
+Avora	2024	L	
+Azalea Robotics Corporation	2024	L	
+Basalt	2024	L	ai
+Baseline AI	2024	I	ai
+Basepilot	2024	L	ai,fintech
+Bayesline	2024	L	ai,fintech
+BeeBettor	2024	L	
+Beglaubigt.de	2024	L	
+Benchify	2024	L	ai,fintech
+BetterBasket	2024	L	ai
+Bilanc	2024	L	
+Biocartesian	2024	L	
+BiteSight	2024	L	
+Bits to Atoms	2024	L	
+Blacksmith	2024	L	
+Blaze	2024	L	ai,fintech
+Blume Benefits	2024	I	ai
+Brainbase Labs	2024	L	ai
+Breez Labs	2024	L	ai
+Brighterway	2024	L	ai
+Browser Buddy	2024	A	ai
+BrowserOS	2024	L	ai
+Bucket Robotics	2024	L	ai
+CTGT	2024	L	ai
+Callback	2024	L	ai
+Candle	2024	L	ai
+Canvas	2024	L	
+Capitol AI	2024	L	ai
+Capy	2024	L	ai
+Careforce	2024	L	ai
+Carma	2024	L	ai
+Carousel Technologies	2024	L	
+Cartage	2024	L	ai
+Cekura	2024	L	devtools
+Celest	2024	I	devtools
+Centauri AI	2024	L	ai,devtools
+Central	2024	A	ai,fintech
+Centralize	2024	L	ai
+Cerulion	2024	L	
+Charm	2024	L	fintech
+Cheers	2024	L	ai
+Circleback	2024	L	
+ClaimSorted	2024	L	
+Clarion	2024	L	ai
+Clarum	2024	L	ai,fintech
+Clarus	2024	L	
+Clearly AI	2024	L	ai
+Cleva	2024	L	fintech
+CloudCruise	2024	L	
+Cloudglue	2024	L	ai,devtools
+CoCrafter	2024	L	
+CodeAnt AI	2024	L	
+CodeViz	2024	L	ai,devtools
+Codes Health	2024	L	ai
+CollectWise	2024	L	
+Comfy Deploy	2024	L	
+CommodityAI	2024	L	ai
+Conductor	2024	L	ai,devtools
+Conductor Quantum	2024	L	ai
+Conduit	2024	L	ai
+Consul	2024	L	fintech
+Consus	2024	L	ai,devtools
+Conveo	2024	L	
+Copper Health	2024	L	ai
+Cora	2024	L	ai
+Corgi Insurance	2024	L	ai,fintech
+Coval	2024	L	ai,devtools
+CreativeMode	2024	L	ai
+Crouton	2024	L	
+CrowdVolt	2024	L	devtools
+Crustdata	2024	L	
+Curo	2024	L	
+DGI Apparel	2024	I	
+Darkgrade	2024	L	ai
+Datacurve	2024	L	
+Dataleap	2024	L	ai
+David AI	2024	L	
+Dayflow	2024	L	ai
+Decipher AI	2024	L	ai,devtools
+Decisional AI	2024	L	ai
+Deep24	2024	L	ai
+DeepSim, Inc.	2024	L	ai
+Deepnight	2024	L	ai
+Dench.com	2024	L	ai,devtools
+Dexter	2024	L	
+Diana	2024	L	ai
+Diffusion Studio	2024	L	ai
+DigitalCarbon	2024	L	ai
+Dime	2024	L	
+Dimely	2024	L	
+Diode Computers, Inc.	2024	L	
+Distro	2024	L	ai
+Dodo	2024	L	ai
+Domu Technology Inc.	2024	L	ai
+Doublezero	2024	L	ai,devtools
+Downlink	2024	L	ai,devtools
+Draft The Record	2024	L	ai
+Draftaid	2024	L	ai
+Dragoneye	2024	L	ai,devtools
+DreamRP	2024	L	ai
+Drillbit	2024	L	ai
+Driver	2024	L	
+Dropback	2024	L	
+DryMerge	2024	L	ai
+Duckie	2024	L	ai
+Durate	2024	L	
+Ecliptor	2024	L	ai
+EdgeTrace	2024	L	ai
+Educato	2024	L	ai
+Eggnog	2024	L	ai
+Elayne	2024	L	ai,fintech
+Elevate	2024	L	ai
+Ellipsis	2024	L	ai,devtools
+Elodin	2024	L	
+Ember	2024	L	
+Ember Robotics	2024	L	devtools
+Emergent	2024	L	ai
+Endstack	2024	L	ai,devtools
+Engines	2024	I	
+Entangl	2024	L	ai
+Entropy	2024	L	
+Eris Biotech	2024	L	
+Event Horizon Labs	2024	L	ai,fintech
+Evolvere BioSciences	2024	L	ai
+FINNY AI	2024	L	ai,fintech
+Fazeshift	2024	L	ai,fintech
+Feldy	2024	L	ai
+Ficra	2024	L	ai
+Fileforge	2024	I	devtools
+Finosu	2024	L	fintech
+Firebender	2024	L	ai
+FirstWork	2024	L	ai
+Fluently	2024	L	ai
+Flyflow	2024	I	
+Focal	2024	L	ai
+Forerunner AI	2024	L	ai
+Forge	2024	L	ai
+Forge Rewards	2024	L	ai
+Formula Insight	2024	L	fintech
+Fractal Labs	2024	L	
+Freebuff	2024	L	ai,devtools
+Freestyle	2024	L	devtools
+Freestyle	2024	L	ai
+Fresco	2024	L	
+FurtherAI	2024	L	fintech
+Fuse	2024	L	ai,fintech
+FutureClinic	2024	L	
+Gait	2024	I	ai,devtools
+Galini	2024	L	ai
+Gander	2024	A	ai
+Garage	2024	L	
+Gauge	2024	L	ai
+Gecko Security	2024	L	ai
+General Learning	2024	L	
+GetCrux	2024	L	ai
+Getcho	2024	L	
+Givefront	2024	L	
+Glasskube	2024	L	
+Glimmer	2024	I	ai
+GloGlo	2024	L	ai
+GovernGPT	2024	L	
+Granza Bio	2024	L	
+Greenboard	2024	L	ai,fintech
+Greptile	2024	L	ai,devtools
+Guardian RF	2024	L	
+Guide Labs	2024	L	ai
+Gumloop	2024	L	
+HYBRD	2024	L	ai
+Hamming AI	2024	L	
+Handled	2024	L	ai
+Haplotype Labs	2024	L	
+Happenstance	2024	L	ai
+Hatchet	2024	L	devtools
+Haystack	2024	L	ai,devtools
+Hazel	2024	L	ai
+Healia	2024	L	
+HealthSpark	2024	L	ai
+HeartByte	2024	L	ai
+Helium	2024	L	
+Henry	2024	L	ai
+HeroUI	2024	L	ai,devtools
+Hestus, Inc.	2024	L	
+Hexclave	2024	L	
+Hey Revia	2024	A	
+HumanLayer	2024	L	ai,devtools
+Hyrex	2024	L	ai,devtools
+ISSEN	2024	L	ai
+InQuery	2024	L	ai,fintech
+Indemni	2024	L	
+Infinity	2024	L	fintech
+Innate	2024	L	ai,devtools
+InspectMind AI	2024	L	ai
+Integuru	2024	L	ai,devtools
+Intryc	2024	L	
+Invaria	2024	I	ai,devtools
+Ionworks	2024	L	
+Junction Bioscience	2024	L	
+JustAI	2024	L	ai
+K-Scale Labs	2024	I	ai
+Kabilah	2024	L	ai
+Karmen	2024	L	
+Kastle	2024	L	
+Keet	2024	L	ai
+Kenley	2024	L	ai
+Keye	2024	L	ai,fintech
+Keystroke	2024	L	ai,devtools
+Kilvin	2024	L	ai,devtools
+Kontigo	2024	L	
+Kopra Bio	2024	L	
+Kura AI	2024	L	ai
+Laminar	2024	L	ai,devtools
+Laminar	2024	L	ai
+Lantern	2024	I	ai,devtools
+Latted	2024	L	ai
+Leaping	2024	L	ai,devtools
+LedgerUp	2024	L	ai
+Legora	2024	L	ai
+LemonSlice	2024	L	ai
+Lighthouz AI	2024	L	ai
+Lightscreen AI	2024	L	
+Ligo Biosciences	2024	L	ai
+Lilac Labs	2024	I	
+Lingo.dev	2024	L	ai,devtools
+Loombotic	2024	L	
+Lore	2024	L	ai
+Lucible	2024	L	fintech
+Lucite	2024	L	
+Lumetric	2024	A	ai
+Lumona	2024	I	ai
+Luthor	2024	L	ai
+Mage Legal	2024	L	ai
+MagiCode	2024	L	ai,devtools
+Magic Hour	2024	L	ai
+Maia	2024	L	
+Maitai	2024	L	ai,devtools
+Mango Health	2024	I	
+Manifold Freight	2024	L	ai
+Marblism	2024	L	ai
+Marr Labs	2024	L	ai
+Matcha	2024	L	ai
+Mathos	2024	L	ai
+Melder	2024	L	ai
+Mem0	2024	L	ai,devtools
+Merlin AI	2024	L	ai
+Meticulate	2024	L	ai
+Metofico	2024	L	
+Metreecs	2024	L	ai
+Mica AI	2024	L	
+Miden	2024	L	fintech
+Midship	2024	A	
+Million	2024	L	ai
+Mineflow	2024	L	
+MinusX	2024	L	ai
+Miru	2024	L	devtools
+Mito Health	2024	L	ai
+Model ML	2024	L	ai
+Modus	2024	L	ai
+Momentic	2024	L	ai,devtools
+Monumint	2024	L	ai,fintech
+Moonset Health	2024	L	
+Moonshine	2024	L	ai
+Moreta	2024	L	fintech
+NanoCorp	2024	L	ai
+Navier AI	2024	L	ai
+NetworkOcean	2024	L	ai,devtools
+Newton	2024	L	
+No Logo	2024	L	ai
+Nuanced	2024	L	ai,devtools
+Octolane AI	2024	L	
+Ocular AI	2024	L	ai
+OddsView	2024	L	
+Odo	2024	L	ai
+OffDeal	2024	L	ai,fintech
+Offstream	2024	L	
+Oma Care	2024	L	
+OneGrep	2024	L	ai,devtools
+Ontra Mobility	2024	L	ai
+Onyx	2024	L	ai,devtools
+Open	2024	L	ai
+OpenFoundry	2024	L	ai,devtools
+Openbenchmarks	2024	L	ai
+Opencall	2024	L	
+Openmart	2024	L	ai
+Opslane	2024	L	ai,devtools
+Orca Client	2024	L	ai
+OrgOrg	2024	L	
+Origami	2024	L	
+Outerport	2024	L	
+Overeasy	2024	L	ai
+Overlap	2024	L	ai
+Oway	2024	L	ai,devtools
+Paasa	2024	L	fintech
+Palmier	2024	L	ai
+PandasAI	2024	L	ai
+Panelytic	2024	L	ai
+Panora	2024	L	ai,devtools
+Paradigm	2024	L	
+Parahelp	2024	L	ai
+Parallel	2024	L	ai
+ParcelBio	2024	L	
+Parley	2024	L	ai
+PartnerHQ	2024	L	
+Patched	2024	L	
+Patchwork	2024	I	ai
+PathPilot	2024	L	ai
+Pax	2024	L	
+Pazi	2024	L	ai,devtools
+Pearson Labs	2024	L	ai
+Penciled	2024	L	
+PermitPortal	2024	L	ai
+Pharos	2024	L	ai
+Phonely	2024	L	
+Pinnacle	2024	L	devtools
+Pipeshift	2024	L	ai,devtools
+Piramidal	2024	L	ai
+Pivot Robotics	2024	L	ai
+Planbase	2024	L	ai
+Plume	2024	L	ai
+PointOne	2024	L	ai
+Poka Labs	2024	L	ai
+Polar	2024	L	fintech
+Polished	2024	L	ai,devtools
+Polymet	2024	L	ai
+Powder	2024	L	
+Praxos	2024	L	ai
+Pre	2024	I	fintech
+Precip	2024	L	ai,devtools
+Preloop	2024	L	ai,devtools
+Presti AI	2024	L	ai
+Pretzel AI	2024	L	ai,devtools
+ProSights	2024	L	ai,fintech
+ProhostAI	2024	L	ai
+Promi	2024	L	
+PromptArmor	2024	L	ai
+Propaya	2024	L	ai
+Proxis	2024	L	ai
+Pulse	2024	L	
+Quary	2024	I	ai
+Quetzal	2024	L	ai
+Quivr	2024	L	
+ROE	2024	L	ai,fintech
+RadMate AI	2024	I	ai
+Raindrop	2024	L	ai
+Random Labs	2024	L	ai,devtools
+Rastro	2024	L	ai
+Raycaster	2024	L	ai
+ReactWise	2024	L	
+Redouble AI	2024	L	ai
+Reducto	2024	L	ai
+Refactor	2024	L	
+Reform	2024	L	ai
+Relari	2024	L	
+Relvy AI	2024	L	ai,devtools
+Remade	2024	A	ai
+RentFlow	2024	L	ai,fintech
+Reprompt	2024	L	
+Rescript	2024	L	ai
+Resonance	2024	A	ai
+Respan	2024	L	ai,devtools
+RetailReady	2024	L	ai
+Retell AI	2024	L	ai
+Reticular	2024	L	ai
+RetroFix	2024	L	
+Revi	2024	L	
+Revyl	2024	L	ai,devtools
+Rewbi	2024	L	devtools
+RiskAngle	2024	I	ai,fintech
+RiskCube	2024	L	ai,fintech
+Risotto	2024	L	ai
+Riveter	2024	L	ai
+Roger	2024	L	
+Roundabout Technologies	2024	L	
+Rove	2024	L	ai,fintech
+Rowboat Labs	2024	L	ai,devtools
+Rulebase	2024	L	
+RunLocal AI	2024	L	ai,devtools
+Ryse	2024	L	ai,fintech
+Ryvn	2024	L	devtools
+Saga AI	2024	L	ai
+Sagaland	2024	L	ai
+Sage Care	2024	L	ai
+Saldor	2024	L	
+Salvy	2024	L	ai
+Sample	2024	A	
+Sandra AI	2024	L	ai
+Saphira AI	2024	L	ai
+Saturn	2024	L	ai,fintech
+Scape	2024	L	ai,devtools
+SchemeFlow	2024	L	
+Scout	2024	L	
+Scritch	2024	L	ai
+Seals AI	2024	L	ai
+Selera Medical	2024	I	
+Sensei	2024	L	ai
+Senso	2024	L	ai
+Sepal AI	2024	A	ai
+Sharpe	2024	L	ai
+Shepherd	2024	L	ai
+Shiboleth	2024	L	
+Silogy	2024	L	ai,devtools
+Silurian	2024	L	ai,fintech
+SimCare	2024	L	
+Simple AI	2024	L	ai
+Simplex	2024	L	ai
+Smooth	2024	L	
+Soff	2024	L	ai
+Solari AI	2024	L	ai
+Sonatoria	2024	L	
+Sonauto	2024	L	
+Sonia	2024	L	ai
+Sorcerer	2024	L	ai
+Soundry AI	2024	A	ai
+Spaceium Inc	2024	L	
+Spark	2024	L	ai
+Speck	2024	A	ai
+Spherecast	2024	L	
+Sphinx	2024	L	
+Spur	2024	L	ai,devtools
+Stacksync	2024	L	
+StarJar	2024	A	ai
+Starcloud	2024	L	ai,devtools
+Stardrift	2024	L	ai
+Stempad	2024	L	
+Stewdio	2024	L	ai
+Stitch Technologies	2024	I	devtools
+Storia AI	2024	L	ai,devtools
+Streamable	2024	L	ai
+Struct	2024	L	ai,devtools
+Substrate	2024	L	
+Sunset	2024	L	fintech
+Superagent	2024	L	ai,devtools
+Superunit	2024	L	ai
+SureBright	2024	L	ai,fintech
+SuretyNow	2024	L	fintech
+Surge	2024	L	devtools
+Symphony	2024	L	ai
+Synnax	2024	L	
+SynsoryBio	2024	L	
+Synth	2024	L	ai
+Syntra	2024	L	ai
+Tabula	2024	L	
+Tamarind Bio	2024	L	ai
+Tandem	2024	L	
+TaxGPT	2024	L	ai,fintech
+Tekton Dynamics	2024	L	ai
+Terrakotta	2024	L	
+Tesseral	2024	I	devtools
+The Forecasting Company	2024	L	ai
+The New Money Company	2024	L	fintech
+The Synthesis Company	2024	L	
+Theseus	2024	L	
+Thorntale	2024	I	ai
+Thunder Compute	2024	L	ai,devtools
+Thyme	2024	A	ai,fintech
+Tiny	2024	L	
+Tivara	2024	L	ai
+Toma	2024	L	ai
+Toolify	2024	I	ai,devtools
+Topo	2024	L	ai
+Tower	2024	L	ai
+Tracecat	2024	L	ai,devtools
+TradeFlow	2024	L	ai,fintech
+Trellis AI	2024	L	ai,devtools
+Trieve	2024	A	ai,devtools
+Triply	2024	L	fintech
+TrueClaim	2024	L	
+Tuesday Labs	2024	L	ai
+Tusk	2024	A	ai,devtools
+Typa	2024	L	ai
+Ubicloud	2024	L	ai,devtools
+Ultra	2024	L	ai
+Unbound	2024	L	ai
+Undermind	2024	L	ai
+Understood Care	2024	L	ai
+Unsloth AI	2024	L	ai,devtools
+Unusual	2024	L	ai
+Upsolve AI	2024	L	ai,devtools
+Usul	2024	L	ai
+Variant	2024	L	ai,devtools
+Vaya	2024	L	
+Veles	2024	L	ai
+Velorum Therapeutics	2024	L	
+Vendra	2024	L	
+Vera Health	2024	L	ai
+Verse Therapy	2024	A	
+Vespper	2024	L	ai,devtools
+Vibe	2024	L	ai,devtools
+Vibrant Labs	2024	L	ai,devtools
+VideoGen	2024	L	ai,devtools
+Village Labs	2024	L	fintech
+Vista Power	2024	L	
+Voicepanel	2024	L	
+Void	2024	L	ai,devtools
+Voker	2024	L	ai,devtools
+Vortexify	2024	L	ai
+VoxOps AI	2024	L	ai
+Wavelength	2024	L	
+Weave Robotics	2024	L	
+Weel	2024	L	ai
+Whip	2024	L	ai
+Wordware	2024	L	ai,devtools
+Wuri	2024	I	
+XTraffic	2024	L	
+Yarn	2024	L	ai
+Yenmo	2024	L	fintech
+Yondu	2024	L	ai
+Yoneda Labs	2024	L	
+Zaymo	2024	L	
+Zeit AI	2024	L	ai
+Zep AI	2024	L	ai,devtools
+ZeroPath	2024	L	ai,devtools
+Zeroframe	2024	I	ai
+Zettascale	2024	L	ai,devtools
+Zoa Research	2024	L	ai
+Zuni	2024	L	ai
+atopile	2024	L	
+attimet	2024	L	ai
+autarc	2024	L	ai
+bluedoor	2024	L	devtools
+camelAI	2024	L	ai
+camfer	2024	L	ai
+cmux	2024	L	ai,devtools
+crmCopilot	2024	I	ai
+d_model	2024	L	
+deepsilicon	2024	I	ai
+ego	2024	L	ai
+et al.	2024	L	ai
+expand.ai	2024	L	devtools
+floatingpoint	2024	L	
+ideate.xyz	2024	L	ai,devtools
+ion design	2024	L	ai
+kater.ai	2024	L	ai
+malibou	2024	L	
+mdhub	2024	L	
+nCompass Technologies	2024	L	ai,devtools
+omnidock	2024	L	
+pap!	2024	L	ai,fintech
+renderlet	2024	L	devtools
+supercontrast	2024	I	ai
+sync.	2024	L	
+telli	2024	L	
+vly.ai	2024	L	ai
+winfunc	2024	L	ai
+x1	2024	L	ai,devtools
+xPay	2024	L	
+Ångström AI	2024	L	ai
+10x	2025	L	
+A1Zap by A1Base	2025	L	
+Absurd	2025	L	ai
+Acolite	2025	L	ai,fintech
+Acrely	2025	L	
+Adam	2025	L	ai
+Adaptional	2025	L	ai,fintech
+Adentris	2025	L	ai
+Aegis	2025	L	
+AfterQuery	2025	L	ai
+AgentMail	2025	L	devtools
+Agentin AI	2025	L	ai
+AirCaps	2025	L	
+Airweave	2025	L	
+Alara	2025	L	ai
+Albacore Inc.	2025	L	
+Aleph Lab	2025	L	ai
+Alice.tech	2025	L	ai
+Alkali	2025	L	ai
+Allus AI	2025	L	ai
+Almond	2025	L	ai
+Alpha Research	2025	L	
+Alter	2025	L	ai,devtools
+Altrina	2025	I	
+Altur	2025	L	ai
+Ambral	2025	L	
+Amby Health	2025	L	
+Amera	2025	L	
+Amika	2025	L	ai,devtools
+Anana	2025	L	ai
+AnswerThis	2025	L	
+Antigen	2025	L	ai
+Anto Biosciences	2025	L	ai
+Aravolta	2025	L	devtools
+Archon	2025	L	devtools
+Artifact	2025	L	
+Artificial Societies	2025	L	ai
+Aside	2025	L	ai
+Aspect	2025	L	
+Asteroid	2025	L	ai
+Astor	2025	L	ai,fintech
+Astro	2025	L	ai
+AthenaHQ	2025	L	
+AtlasGrid	2025	L	
+Atlog	2025	L	
+Attune	2025	L	devtools
+Atum Works	2025	L	
+Auctor	2025	L	ai
+Automax.ai	2025	L	
+Autonomous Technologies Group	2025	L	ai
+Autosana	2025	L	ai,devtools
+Autumn	2025	L	
+Avallon AI	2025	L	
+Avelis Health	2025	L	
+Avent	2025	L	
+Aviro	2025	L	
+Axal	2025	L	
+Axial	2025	L	ai
+Axiom	2025	L	fintech
+Beluga	2025	L	ai
+Besimple AI	2025	L	ai
+Better Auth	2025	L	devtools
+Bezel	2025	L	ai
+Bild AI	2025	L	
+Bindwell	2025	L	
+BitBoard	2025	L	ai
+BitPatrol	2025	A	ai,devtools
+Bizzy AI	2025	L	ai
+Blank Bio	2025	L	
+Blaxel	2025	L	ai,devtools
+BlindPay	2025	L	devtools,fintech
+Bloom	2025	L	
+Blue	2025	L	ai
+Bluebook	2025	L	ai,fintech
+Bluejay	2025	L	ai
+Blueshoe	2025	L	ai
+Bluma	2025	L	
+Bolna AI	2025	L	ai,devtools
+Bond	2025	L	ai
+Boom AI	2025	L	ai
+Boost Robotics	2025	L	ai,devtools
+BootLoop	2025	L	
+Bramante	2025	L	ai
+Bravi	2025	L	ai
+Brickanta	2025	L	ai
+Brickwise	2025	L	
+Bron	2025	L	ai
+Browser Use	2025	L	ai,devtools
+Bud	2025	L	
+Butter	2025	L	
+Bystreet	2025	L	
+CLODO	2025	L	ai
+Cactus	2025	L	ai
+Cactus Compute	2025	L	ai,devtools
+Caddy	2025	L	ai
+Calltree	2025	L	ai
+Candor	2025	L	ai
+Candor	2025	L	ai
+Capacitive	2025	L	devtools
+Cardamon	2025	L	ai,fintech
+CareSwift	2025	L	
+Cartpole	2025	L	ai
+Cascade Space	2025	L	
+Casco	2025	L	
+Caseflood.ai	2025	L	ai
+Casey	2025	L	
+Caucus	2025	I	
+Cedar	2025	L	
+Cenote	2025	L	ai
+Certus AI	2025	L	ai
+Channel3	2025	L	ai
+Char	2025	L	ai,devtools
+Chestnut	2025	L	ai,fintech
+Chiron	2025	L	devtools
+Cifrato	2025	L	ai
+Clad Labs	2025	L	devtools
+Claim Health	2025	L	
+Clarm	2025	L	ai
+Clerked	2025	L	ai,fintech
+Clicks Health	2025	L	ai
+Clidey	2025	L	ai,devtools
+Closera	2025	L	ai
+Closure	2025	L	ai
+Coasts	2025	L	devtools
+Code Four	2025	L	ai
+Codyco	2025	L	ai
+Cohesive	2025	L	ai
+Combinely	2025	L	
+Comena	2025	L	
+ComplyDo	2025	L	ai
+Compyle	2025	L	ai,devtools
+Confident AI	2025	L	ai,devtools
+Conntour	2025	L	
+ContextFort	2025	L	ai
+Contrario	2025	L	ai
+Convexia	2025	L	
+Conviction	2025	L	
+CopyCat	2025	L	ai,fintech
+Corsair	2025	L	devtools
+Cortex AI	2025	L	ai
+Costream	2025	L	
+Cotool	2025	L	
+Cranston AI	2025	L	
+Crimson	2025	L	ai
+Crunched	2025	L	
+Cua	2025	L	devtools
+Cuckoo Labs	2025	L	ai
+Cyberdesk	2025	L	ai,devtools
+Dalus	2025	L	
+Dartboard	2025	L	ai
+Datafruit	2025	L	ai
+Dedalus Labs	2025	L	ai,devtools
+DeepAware AI (Robotics Center of Silicon Valley)	2025	L	ai
+DeepGrove	2025	L	
+Deeptrace	2025	L	
+Delineate	2025	L	ai
+Den	2025	L	
+Denki	2025	L	ai
+Design Arena	2025	L	ai
+Dex	2025	L	ai
+Digipals	2025	L	ai
+DiligenceSquared	2025	L	ai
+Docket	2025	L	ai,devtools
+Doe	2025	L	ai
+Dollyglot	2025	L	ai
+Dome	2025	I	
+Duranium	2025	L	
+Edexia	2025	L	ai
+Efference	2025	L	ai
+EffiGov	2025	L	ai
+Egress Health	2025	A	
+Elip AI	2025	L	ai
+Eloquent AI	2025	L	ai,fintech
+Embedder	2025	L	ai,devtools
+Enhanced Radar	2025	L	
+Epicenter	2025	L	ai,devtools
+Ergo	2025	L	ai
+Everest	2025	L	
+Excellence Learning	2025	L	
+Exin Therapeutics	2025	L	
+Exla	2025	L	ai,devtools
+Exonic	2025	L	
+Expected Parrot	2025	L	ai,devtools
+F2	2025	L	ai
+F4 Industries	2025	L	
+Fastshot	2025	L	ai,devtools
+Fernstone	2025	L	
+Feyn	2025	L	ai,devtools
+Fifth Door	2025	L	ai
+Finto	2025	L	ai,fintech
+Fira	2025	L	
+Flai	2025	L	
+Fleetline	2025	L	ai
+Flick	2025	L	ai
+Floot	2025	L	ai
+Flott HQ	2025	L	ai
+Flowtel	2025	L	
+Flywheel AI	2025	L	
+Forge Automation	2025	L	
+Forge Robotics	2025	L	
+Foundation Industries	2025	L	
+Freeport Markets	2025	L	ai,fintech
+Freesolo	2025	L	ai
+Frekil	2025	L	ai
+Freya	2025	L	
+Frizzle	2025	L	ai
+Fulcrum	2025	L	
+Fuse AI	2025	L	
+G LNK	2025	L	ai
+GETASAP	2025	L	
+Gale	2025	L	ai
+Galen AI	2025	A	
+General Trajectory	2025	L	ai
+GhostEye	2025	L	ai
+Godela	2025	L	ai
+Goldbridge	2025	L	ai,fintech
+Golf	2025	L	ai,devtools
+Golpo	2025	L	
+GroundControl	2025	L	
+HABIT	2025	L	ai
+HUD	2025	L	ai
+Halluminate	2025	L	
+Hanji	2025	L	ai,devtools
+Harbera	2025	L	ai
+Harper	2025	L	ai,fintech
+HealthKey	2025	L	
+HelixDB	2025	L	ai,devtools
+Helonic	2025	L	ai
+Hemut	2025	L	ai
+Hera	2025	L	
+Hey Telo	2025	L	
+Human Behavior	2025	L	ai,devtools
+Humoniq	2025	L	ai
+Hypercubic	2025	L	
+Hyperspell	2025	L	ai
+IRBC	2025	L	ai,fintech
+Icarus	2025	L	
+Imagine AI	2025	L	ai
+Imprezia	2025	L	
+Infinite	2025	L	devtools,fintech
+Instinct Space	2025	L	
+Interface	2025	L	ai
+Interfere	2025	L	ai,devtools
+Inversion Semiconductor	2025	L	
+Invo	2025	L	
+Iron Grid	2025	L	
+IronLedger.ai	2025	L	
+Janet AI	2025	L	
+Jarmin	2025	L	
+Jeevy Fabrication	2025	L	
+Juxta	2025	L	
+KERNEL	2025	L	ai,devtools
+Kaelio	2025	L	ai,devtools
+Kaigo Health	2025	L	
+Kairos	2025	L	ai
+Kaizen	2025	L	
+Kalinda	2025	L	
+Kalpa Labs	2025	L	
+Kanava AI	2025	I	ai
+Karoo	2025	L	fintech
+Karsa	2025	L	fintech
+Karumi	2025	L	
+Kashikoi	2025	L	ai,devtools
+Kestral	2025	L	ai
+Kestrel AI	2025	L	ai,devtools
+Kestroll	2025	L	ai
+Kirana AI	2025	L	ai
+Klavis AI	2025	L	
+Knowlify	2025	L	ai
+Koyal	2025	L	ai
+LLM Stats	2025	L	ai,devtools
+Labric	2025	L	
+Lakonia	2025	L	ai
+Lanesurf	2025	L	ai
+Lapis	2025	L	ai
+Lark	2025	L	ai,devtools
+Layers	2025	L	ai
+Leadbay	2025	L	ai
+Leaping AI	2025	L	ai
+Leeroo	2025	L	
+Lemma	2025	L	ai,devtools
+Lexi	2025	L	ai
+Libretto	2025	L	
+Lightberry	2025	L	
+Lilac	2025	L	ai,devtools
+Liquid Compute	2025	L	ai,devtools,fintech
+Liva AI	2025	L	ai
+Locata	2025	L	
+Locus	2025	L	ai
+Logical	2025	L	ai
+LogosGuard	2025	L	ai
+Lopus	2025	L	ai
+Lotas	2025	L	ai,devtools
+Lua Global Inc	2025	L	
+Lucid	2025	L	
+Lucidic AI	2025	L	ai,devtools
+Lucis	2025	L	ai
+Lumari	2025	L	ai
+Luminal	2025	L	ai,devtools
+LunaBill	2025	L	ai
+Lunavo	2025	L	ai
+MOVEdot	2025	L	ai
+MSPilot	2025	L	ai,devtools
+Macadamia	2025	L	
+MadeThis	2025	L	ai
+Magnetic	2025	L	
+Magnitude	2025	L	ai,devtools
+Maive	2025	L	ai
+MangoDesk	2025	L	ai
+Manufact	2025	L	ai,devtools
+Maritime Fusion	2025	L	
+MarkIt	2025	L	ai
+Mastra	2025	L	ai,devtools
+Maximal	2025	L	ai
+Mayflower	2025	L	
+Mbodi AI	2025	L	ai
+Mecha Health	2025	L	ai
+Mentra	2025	L	ai,devtools
+Mercura	2025	L	
+Mesh	2025	L	ai,fintech
+Mesmer	2025	L	ai
+Meteor	2025	L	ai
+Metis	2025	A	
+Metorial	2025	L	
+Mimos	2025	L	ai
+MindFort	2025	L	
+Minerva	2025	L	
+Minimal AI	2025	L	
+Miniswap	2025	L	
+Minro	2025	L	
+Misprint	2025	L	
+Mixy	2025	L	ai
+Miyagi Labs	2025	L	
+Moby Analytics	2025	L	ai
+Modelence	2025	L	ai,devtools
+Monarcha	2025	L	ai
+Monte	2025	L	ai,devtools
+Morphik	2025	L	ai
+MorphoAI	2025	L	ai
+Mosaic	2025	L	
+Moss	2025	L	ai,devtools
+Motives	2025	L	ai
+Multifactor	2025	L	
+Mundo AI	2025	L	ai
+Munify	2025	L	fintech
+NODI Energy	2025	L	
+NOSO LABS	2025	L	ai
+Narrative	2025	L	ai
+Nautilus	2025	L	
+Naïve	2025	L	ai,devtools
+Nessie	2025	L	
+Nexa Labs	2025	A	ai
+Nexus	2025	L	ai
+Nimbic AI	2025	L	ai
+Nitrode	2025	L	ai
+Nixo	2025	L	
+Nomi	2025	L	ai
+Nori	2025	L	ai
+Normal	2025	L	ai
+Norra	2025	L	ai
+Notte	2025	L	ai,devtools
+Novaflow	2025	L	
+Novoflow	2025	L	
+Nox Metals	2025	L	
+Nozomio	2025	L	ai,devtools
+Nucleo	2025	L	
+Null Labs	2025	L	
+Nuntius	2025	I	ai
+Oki	2025	L	ai
+Okibi	2025	L	ai,devtools
+Olive	2025	L	ai
+Omnara	2025	L	ai,devtools
+OnDeck AI	2025	L	ai
+Onlook	2025	L	ai,devtools
+OpenIntake	2025	L	
+Opennote	2025	A	
+Openroll	2025	L	ai
+Operand	2025	L	
+Optifye.ai	2025	L	ai
+Opusense AI	2025	L	
+Orange Slice	2025	L	
+Orbital Operations	2025	L	
+Orchid	2025	L	ai
+Osmosis	2025	L	ai,devtools
+Outlit	2025	L	ai
+Outship	2025	L	ai
+Overstand Labs	2025	L	ai
+Ovlo	2025	L	ai
+PARES AI	2025	L	ai
+PAX Markets	2025	L	
+Pally	2025	L	ai
+Paloma	2025	L	ai
+Panels	2025	L	
+Pangolin	2025	L	devtools
+Panoptive	2025	L	ai,devtools
+Paper Instruments	2025	L	ai
+ParaQuery	2025	L	devtools
+Paragon	2025	L	
+Parametric	2025	L	
+Paratus Health	2025	L	
+Parrot	2025	L	
+Parse	2025	L	devtools
+Parsewise	2025	L	ai,devtools,fintech
+Partcl	2025	L	
+Patent Watch	2025	L	ai
+Pave Robotics	2025	L	
+Pelica	2025	L	ai
+Peppr AI	2025	L	
+Percival	2025	I	ai,devtools
+Permitify	2025	L	ai
+Perseus	2025	L	ai
+Perseus Defense	2025	L	
+Perspectives Health	2025	L	
+PgDog	2025	L	devtools
+Phases	2025	L	ai
+Philon	2025	L	ai
+Photonium	2025	L	ai
+Physical Turing	2025	L	ai
+Pickle	2025	L	ai
+Piggy Robotics	2025	L	ai
+Pinch	2025	L	ai
+Pingo	2025	L	
+Pixley AI	2025	L	ai
+Play Health	2025	L	
+Playgent	2025	L	ai,devtools
+Pleom	2025	L	ai
+Plexe	2025	L	ai
+Praxim	2025	L	ai,devtools
+Preseen	2025	L	
+Prism	2025	L	devtools
+Probo	2025	L	
+ProcIndex	2025	L	ai,fintech
+Proception Inc	2025	L	ai
+Proliferate	2025	L	ai,devtools
+Promptless	2025	L	ai,devtools
+Propolis	2025	A	
+Prox	2025	L	ai
+QFEX	2025	L	fintech
+QualGent	2025	L	ai
+Quantstruct	2025	L	ai,devtools
+Quotain	2025	L	ai
+Radius	2025	L	ai,devtools
+Rally	2025	L	ai,fintech
+Ralo	2025	L	ai,fintech
+ReJot	2025	L	devtools
+Reacher	2025	L	ai
+RealRoots	2025	L	
+Rebolt	2025	L	ai
+Rebulk	2025	L	ai
+Red Barn Robotics	2025	L	
+Redapto	2025	L	ai
+Reditus Space	2025	L	
+Refresh	2025	L	
+Relaw	2025	L	ai
+Relling	2025	L	ai
+Remedy	2025	A	
+Retrofit	2025	L	
+Revise Robotics	2025	L	
+Rimba	2025	L	ai
+Risely AI	2025	L	
+Riverbank	2025	L	ai
+Rivet	2025	L	ai
+Riviera	2025	L	ai
+Roark	2025	L	ai
+Rocketable	2025	L	
+Rovi Health	2025	L	
+Rovr	2025	I	ai,devtools
+RowFlow	2025	L	ai
+RunRL	2025	L	
+Ruvo	2025	L	fintech
+SAMMY Labs	2025	L	
+SF Tensor	2025	L	
+SalesPatriot	2025	L	ai
+Sapien	2025	L	ai
+Sava	2025	L	
+Scalar Field	2025	L	
+Sciloop	2025	L	ai
+Scoop	2025	L	ai
+Scott AI	2025	L	
+Scout	2025	L	ai
+Selfin	2025	L	fintech
+SellRaze	2025	L	ai
+Semble AI	2025	L	ai
+Semiotic	2025	L	
+Sennu AI	2025	L	ai
+Serafis	2025	L	ai,fintech
+Shor	2025	L	
+SigmanticAI	2025	L	ai
+Sim	2025	L	ai
+Sira	2025	L	
+Sixtyfour	2025	L	ai,devtools
+Slashy	2025	L	ai
+Socratix AI	2025	L	
+Solidroad	2025	L	
+Solva	2025	L	
+Sorce	2025	L	ai
+Soren	2025	L	ai
+Sourcebot	2025	L	ai,devtools
+Specific	2025	L	ai,devtools
+Specific Labs	2025	L	ai
+Splash Inc.	2025	L	
+Spotlight Realty	2025	L	ai
+Spott	2025	L	ai
+Stamp	2025	L	
+StarSling	2025	L	ai,devtools
+Steinmetz	2025	L	
+Stellon Labs	2025	L	ai
+Stillwind	2025	L	ai
+Stockline	2025	L	ai
+Stormy	2025	L	ai
+Structured AI	2025	L	ai
+SubImage	2025	L	
+Sublingual	2025	I	ai,devtools
+Subtrace	2025	L	
+Sureform	2025	L	ai
+Swerve	2025	L	ai
+Sygaldry Technologies	2025	L	
+Sylvian	2025	I	ai
+Synthetic Society	2025	L	
+Synthio Labs	2025	L	ai
+TamLabs	2025	L	ai
+TectoAI	2025	L	ai
+Tee Time Tommy	2025	L	
+Tegore	2025	L	ai
+Tell if AI	2025	L	ai
+TensorPool	2025	A	ai,devtools
+Tergle	2025	L	ai
+Terrain	2025	L	ai
+Tesora	2025	L	ai,devtools,fintech
+Text.ai	2025	L	ai
+The Context Company	2025	L	ai,devtools
+The Hog	2025	L	
+The Prompting Company	2025	L	
+The Robot Learning Company	2025	L	ai
+Theora	2025	L	
+Theorem	2025	L	ai
+Thesis	2025	L	ai
+Theta	2025	L	ai
+Third Chair	2025	L	
+Ticket Wallet	2025	L	
+Tinfoil	2025	L	ai,devtools
+Tire Swing	2025	L	
+Toothy AI	2025	L	ai
+Topological	2025	L	ai
+Tornyol	2025	L	
+Trace	2025	L	ai
+TraceRoot.AI	2025	L	ai,devtools
+TrainLoop	2025	L	ai,devtools
+Trapeze	2025	L	
+Trata	2025	L	ai,fintech
+Trava	2025	L	ai
+Trelium	2025	L	ai
+Trim	2025	L	ai
+Truffle AI	2025	L	ai,devtools
+Tweeks.io	2025	L	ai
+TwentyTwo	2025	L	ai
+Uncommon Therapeutics	2025	L	
+Units	2025	L	ai
+Unsiloed AI	2025	L	ai,devtools
+Uplane	2025	L	ai
+Uplift AI	2025	L	
+ValueMate	2025	L	
+Vantel	2025	L	fintech
+Vassar Robotics	2025	L	
+Velvet	2025	L	ai
+Verbiflow	2025	L	ai
+Veria Labs	2025	L	ai
+Veritus	2025	L	ai,fintech
+Verne Robotics	2025	L	
+Vesence	2025	L	
+Vetnio	2025	L	ai
+VibeFlow	2025	L	ai,devtools
+Vision Lab	2025	L	ai
+Vocality Health	2025	L	ai
+VoiceOS	2025	L	
+Vulcan Technologies	2025	L	
+Vybe	2025	L	
+Wafer	2025	L	ai
+Waffle	2025	L	ai
+Wardstone	2025	L	
+Wavedash	2025	L	ai
+Wayline	2025	L	
+Waypoint Transit	2025	L	
+Weave	2025	L	ai
+Wedge	2025	L	
+Wildcard	2025	L	ai
+Willow	2025	L	ai
+Woz	2025	L	ai
+YouShift	2025	L	ai
+Zalos	2025	L	
+Zarna	2025	L	ai
+Zavo	2025	L	ai,fintech
+Zeon Systems	2025	L	ai
+Zephyr Fusion	2025	L	
+ZeroEntropy	2025	A	
+a0.dev	2025	L	ai,devtools
+args	2025	L	devtools
+assistant-ui	2025	L	ai,devtools
+awen	2025	L	ai
+b12 Labs	2025	L	
+bitrig	2025	L	
+burnt	2025	L	ai
+careCycle	2025	L	
+chrt	2025	L	
+cocreate	2025	L	
+cubic	2025	L	devtools
+dari.dev	2025	L	devtools
+finbar	2025	L	fintech
+hillclimb	2025	L	
+idler	2025	L	
+item	2025	L	ai
+mlop	2025	L	ai,devtools
+nao Labs	2025	L	ai,devtools
+neoncoral	2025	L	ai
+s2.dev	2025	L	devtools
+sieve	2025	L	fintech
+stagewise	2025	L	
+stratify	2025	L	ai
+superglue	2025	L	ai,devtools
+throxy	2025	L	ai
+truthsystems	2025	L	ai
+/dev/fast	2026	L	
+10x Science	2026	L	ai
+21st	2026	L	
+6thSense	2026	L	
+83 Sciences	2026	L	ai
+9 Mothers	2026	L	
+AICE	2026	L	
+ANORIA	2026	L	
+ARC Prize Foundation	2026	L	
+AbInitio Bio	2026	L	
+Adialante	2026	L	
+Advanced Metal Research	2026	L	
+Aemon	2026	L	
+Aerogen Systems	2026	L	
+Agency Tool Company	2026	L	devtools
+Agent FM	2026	L	ai,devtools
+AgentPhone	2026	L	
+Agentcard	2026	L	fintech
+Agentic Fabriq	2026	L	ai
+Agnost AI	2026	L	ai,devtools
+Akkari	2026	L	
+Akon Labs	2026	L	ai
+Aktoria Robotics	2026	L	
+Alchemize	2026	L	devtools
+Alkera AI	2026	L	ai,devtools
+Allia Health	2026	L	ai
+Alloovium	2026	L	ai
+Allowance	2026	L	
+Almanac	2026	L	ai
+Alt-X	2026	L	
+Amboras	2026	L	
+Amorphic Labs	2026	L	ai
+Amulet	2026	L	ai,devtools
+Anchorhead	2026	L	
+Andco	2026	L	
+Andustry	2026	L	
+Antropi Robotics	2026	L	
+Apollo Atomics, Inc.	2026	L	
+Applied Electrodynamics, Inc.	2026	L	
+Approxima	2026	L	ai,devtools
+AquaShield	2026	L	
+Ara	2026	L	devtools
+Arbital	2026	L	ai,fintech
+Archal	2026	L	ai,devtools
+Archer	2026	L	ai,fintech
+Arctic Health	2026	L	
+Arden	2026	L	
+Ardent	2026	L	
+Arga Labs	2026	L	
+Arlo Industries	2026	L	
+Armature	2026	L	
+Arzana	2026	L	
+Asendia AI	2026	L	
+Aseon Labs	2026	L	
+Ashr	2026	L	
+Asimov	2026	L	
+Assemble	2026	L	ai
+Aster	2026	L	
+Astraea	2026	L	
+Async	2026	L	ai
+Atlas Discovery	2026	L	
+Atlia	2026	L	ai
+Atomarine	2026	L	
+Atrisa	2026	L	
+Audun	2026	L	ai,fintech
+Aurorin CAD	2026	L	
+AutoSitu	2026	L	
+Autostep	2026	L	
+Autumn AI	2026	L	
+Auxos	2026	L	
+Avea Robotics	2026	L	
+Avoca Systems	2026	L	
+Avoice	2026	L	
+Axelrod	2026	L	ai
+AxionOrbital Space	2026	L	
+Axis	2026	L	
+Balance	2026	L	
+BaseFrame	2026	L	
+Baud	2026	L	ai
+Beacon Health	2026	L	
+BeeSafe AI	2026	L	
+Belvedir	2026	L	ai,devtools
+BentoLabs AI	2026	L	
+Bernard	2026	L	ai
+Beyond Reach Labs	2026	L	
+Bidflow	2026	L	ai,devtools
+Billow AI Labs	2026	L	ai
+BioStack Platforms	2026	L	
+Bizmark	2026	L	ai
+Bloom	2026	L	
+Bloomy	2026	L	ai
+Booko	2026	L	
+Brumby (Formerly GrazeMate)	2026	L	ai
+Bubble Lab	2026	L	ai
+Buildbox	2026	L	ai
+Burt	2026	L	
+Button Computer	2026	L	
+Byteport	2026	L	
+COACH	2026	L	ai
+Cajal	2026	L	
+Callab AI	2026	L	
+Callbook AI	2026	L	ai
+Canary	2026	L	
+Captain	2026	L	devtools
+Capveon	2026	L	
+CarSignal	2026	L	ai
+Cardboard	2026	L	
+Cardinal	2026	L	
+Care GP	2026	L	ai
+Caretta	2026	L	
+Carrot Labs	2026	L	ai
+Cascade	2026	L	
+CatchBack Cards	2026	L	
+Caution	2026	L	devtools
+CellType	2026	L	
+CentralComs	2026	L	
+Cerenovus	2026	L	
+Chamber	2026	L	
+CharacterQuilt	2026	L	
+Chasi	2026	L	
+Chert	2026	L	
+Chromie	2026	L	
+Chronicle Labs	2026	L	
+Cignara	2026	L	
+ClaimGlide	2026	L	ai
+Clara	2026	L	
+Clawvisor	2026	L	
+Click	2026	L	ai,devtools
+CoArena	2026	L	ai
+Codag	2026	L	devtools
+CodeWisp	2026	L	
+Cofia	2026	L	
+Cohesion	2026	L	
+Collar	2026	L	ai
+Complir	2026	L	
+Compresr	2026	L	
+Computable	2026	L	ai,devtools
+Condor Energy	2026	L	
+Confluence Labs	2026	L	
+Congruent	2026	L	
+Conifer	2026	L	ai,devtools
+Constellation Space	2026	L	
+Context.dev	2026	L	ai
+Control Seat	2026	L	
+Copperlane	2026	L	
+Corelayer	2026	L	ai,devtools
+Corvera	2026	L	ai
+Cosmic Robotics	2026	L	
+Cova	2026	L	ai
+Covera	2026	L	ai
+Crosslayer Labs	2026	L	
+Crow	2026	L	
+Cumulus Labs	2026	L	
+DAIVIN!	2026	L	
+Daqstra	2026	L	ai
+Datoric	2026	L	ai
+Dawn Industries	2026	L	ai
+Dayjob	2026	L	
+Decawork	2026	L	ai,devtools
+Deep Interactions	2026	L	
+DeepReach Inc.	2026	L	ai
+Definite	2026	L	ai,fintech
+Degla Inc	2026	L	ai
+Denta	2026	L	fintech
+Derya	2026	L	ai
+Dialogus	2026	L	
+Didit	2026	L	
+Dipole Labs	2026	L	ai
+Discovered Materials	2026	L	ai
+Dispatch	2026	L	
+Ditto Biosciences	2026	L	
+Dock	2026	L	ai
+Docura Health	2026	L	
+Donkey	2026	L	ai
+Doomersion	2026	L	
+Drafted	2026	L	
+Dreach	2026	L	
+Dream	2026	L	ai
+ED1TH	2026	L	ai
+Earendil Robotics	2026	L	
+Eden Robotics	2026	L	
+Edgerun	2026	L	
+EdotEnv	2026	L	
+Edviro	2026	L	
+Egoist Machines	2026	L	ai,devtools
+EigenPal	2026	L	
+Ekho Labs	2026	L	
+Ekpa	2026	L	
+Elyra	2026	L	
+Emdash	2026	L	
+Enact	2026	L	ai
+End Close	2026	L	
+Enjamb Labs	2026	L	ai
+Envariant	2026	L	
+Eos AI	2026	L	
+Erinys	2026	L	ai
+Ethos Space Resources	2026	L	
+Evergrove	2026	L	ai
+Executor	2026	L	ai
+Exosat	2026	L	
+Expanse	2026	L	devtools
+Experiential Labs	2026	L	ai,devtools
+Fabraix	2026	L	ai
+Familiar	2026	L	ai
+Fed10	2026	L	
+Fenrock AI	2026	L	ai,fintech
+Fern	2026	L	devtools
+FinalDose	2026	L	ai
+Financial Datasets	2026	L	ai,fintech
+Fixture	2026	L	
+Floracene	2026	L	
+Florin	2026	L	ai,fintech
+FlowManual	2026	L	
+Foaster	2026	L	
+Foreman	2026	L	ai
+Foresight	2026	L	
+Fort	2026	L	
+Forum	2026	L	
+Forward	2026	L	ai,fintech
+Framewise Health	2026	L	
+Fuchsia	2026	L	
+FullSeam	2026	L	
+GUILD	2026	L	ai
+Galactic Resource Utilization Space, Inc. (GRU Space)	2026	L	
+Gamgee	2026	L	ai
+General Astronautics	2026	L	
+General Aviation	2026	L	
+General Instinct	2026	L	
+General Legal	2026	L	
+Gigacatalyst	2026	L	
+GitCafe	2026	L	devtools
+Glen	2026	L	ai
+GodHands	2026	L	ai,devtools
+Gojiberry AI	2026	L	
+GovGuard	2026	L	
+Grade	2026	L	ai,fintech
+Graphify Labs	2026	L	devtools
+Gravy	2026	L	
+Greypoint Industries	2026	L	
+Grip	2026	L	
+Grocalo	2026	L	ai
+Gutgutgoose	2026	L	
+HERA	2026	L	
+HEVN, inc	2026	L	
+Haladir	2026	L	ai
+Harbor	2026	L	
+Hebbian Robotics	2026	L	ai,devtools
+Hedge	2026	L	ai,fintech
+Hemlock	2026	L	
+Hessian	2026	L	
+Hexa	2026	L	
+HeyClicky	2026	L	
+Hilstart	2026	L	devtools
+Hlabs	2026	L	
+Hop Aero	2026	L	
+Hoplite	2026	L	ai,devtools
+Hub	2026	L	ai,devtools
+Hubble	2026	L	
+Human Archive	2026	L	
+Humwork	2026	L	
+Huscarl	2026	L	
+Hyper	2026	L	
+HyperProbe	2026	L	ai,devtools
+IMPACT Drones	2026	L	ai
+Illume Labs	2026	L	ai
+Imperfect	2026	L	ai
+InLoop Robotics	2026	L	
+Incandor	2026	L	
+IncidentFox	2026	L	ai,devtools
+Induction Labs	2026	L	ai
+Infera	2026	L	ai
+Inkbox	2026	L	ai,devtools
+InsForge	2026	L	
+InstaAgent	2026	L	
+Instance	2026	L	ai
+Instaplay	2026	L	ai
+Instinct	2026	L	ai
+Insurf	2026	L	ai,fintech
+Intelligence Factory	2026	L	
+Interfaze	2026	L	
+Inth	2026	L	ai,devtools
+InventoryQuant	2026	L	ai,fintech
+Inviscid AI	2026	L	
+Isengard Industries Inc	2026	L	ai
+Jcode	2026	L	ai,devtools
+Jinba	2026	L	
+Juno	2026	L	
+Kara	2026	L	
+Kebra	2026	L	ai
+KelAI	2026	L	
+Keyframe Labs	2026	L	ai,devtools
+Khotan (formerly Pollinate)	2026	L	
+Kimpton AI	2026	L	
+Kinect	2026	L	
+Kinro	2026	L	
+Kita	2026	L	ai,fintech
+Klaimee	2026	L	
+Klarify	2026	L	
+Klaus AI	2026	L	
+Korso	2026	L	
+KugelAudio	2026	L	
+Kuli	2026	L	
+Kyten Technologies	2026	I	
+LATO	2026	L	ai,fintech
+Lab0	2026	L	ai
+Lamb Labs	2026	L	ai
+Lambda Robotics	2026	L	ai,devtools
+Lamina Labs	2026	L	
+Lance	2026	L	
+Lantern AI	2026	L	ai
+Last Accounting Company	2026	L	ai,fintech
+Lattice Health	2026	L	
+Laurence	2026	L	
+LegalOS	2026	L	
+LemonLime	2026	L	ai
+Levocred AI	2026	L	
+Lexius	2026	L	
+Libra Robotics	2026	L	ai
+Light Anchor	2026	L	ai
+Lightsprint	2026	L	
+Limrun	2026	L	
+Linzumi	2026	L	ai,devtools
+Litmus	2026	L	ai
+Locke	2026	L	ai
+Luca IQ	2026	L	ai,devtools
+Lucent	2026	L	
+Luel	2026	L	
+Lumeria	2026	L	ai
+Lumius	2026	L	
+Lyon	2026	L	ai
+MOCHI.TV	2026	L	ai
+Madrone	2026	L	
+Magma	2026	L	ai
+Maingen	2026	L	ai
+Mango Medical	2026	L	
+Manicule	2026	L	
+Manifold	2026	L	
+Mantis	2026	L	
+Maquoketa Research	2026	L	
+Marble	2026	L	ai
+Marengo	2026	L	ai
+Marker	2026	L	ai
+Markov	2026	L	
+Martini	2026	L	
+Mass Magnetics	2026	L	
+Maven	2026	L	
+Maywood	2026	L	
+Memoir	2026	L	
+Memory Store	2026	L	
+Mendral	2026	I	
+Mentlio	2026	L	ai,devtools
+Menza	2026	L	
+Meteoric	2026	L	
+Milliray	2026	L	
+Minicor	2026	L	
+Mirabelle	2026	L	
+Mireye	2026	L	ai
+Miso Labs	2026	L	
+MochaCare	2026	L	
+Mochatrade	2026	L	
+Moda	2026	L	
+Modern	2026	L	
+Molagri	2026	L	
+Moritz	2026	L	
+Mosaic	2026	L	ai
+Mount	2026	L	
+MouseCat	2026	L	
+Moving Atoms	2026	L	ai
+Multiplier	2026	L	ai,fintech
+Napkin Math	2026	L	
+Ndea	2026	L	ai
+Nebula Security	2026	L	ai
+Netter	2026	L	
+Neuromorphic	2026	L	ai
+Neuron Industries	2026	L	
+Nex	2026	L	ai
+Nine Fives	2026	L	
+Nori	2026	L	
+OS3	2026	L	ai
+OctaPulse	2026	L	
+Oddpool	2026	L	
+Olam Labs	2026	L	ai
+Omanta	2026	L	ai
+One Robot	2026	L	
+OneCLI	2026	L	ai,devtools
+OneTriangle	2026	L	ai,devtools
+Ontora	2026	L	ai
+Ooak Data	2026	L	ai
+Opalite Health	2026	L	
+OpenProse	2026	L	
+OpenRelay	2026	L	ai
+OpenSpec	2026	L	
+OpenTag	2026	L	ai
+OpenTrade	2026	L	fintech
+OpenVector	2026	L	ai,devtools
+OpenWork	2026	L	
+Origami Robotics	2026	L	
+Origin	2026	L	
+Ornadyne	2026	L	
+Orthogonal	2026	L	
+Osmaura	2026	L	ai
+Osseus	2026	L	ai,devtools
+Ossus	2026	L	ai
+Overdrive Health	2026	L	
+Overshoot	2026	L	
+Oximy	2026	L	
+Oxus	2026	L	
+PLAN0 AI	2026	L	
+PRINCEPS	2026	L	ai
+Pacific	2026	L	ai,fintech
+Pairio	2026	L	
+Palette	2026	L	ai
+Palisade	2026	L	ai
+Palisade	2026	L	ai
+Palus Finance	2026	L	
+Panacea	2026	L	
+Pango	2026	L	ai
+Panta	2026	L	
+Parameter	2026	L	
+Parasma	2026	L	ai
+Parrot	2026	L	
+Patientdesk.ai	2026	L	
+Pavoot	2026	L	
+Pax Historia	2026	L	
+Payna	2026	L	
+Peer	2026	L	
+Pennant	2026	L	ai,fintech
+Pentagon	2026	L	
+Perceptron ML	2026	L	ai
+PerfectBit, Inc.	2026	L	
+Perfectly	2026	L	
+Petrarch	2026	L	
+Piris Labs	2026	L	ai,devtools
+Playabl.ai	2026	L	ai
+Plena Health	2026	L	
+Ploy	2026	L	
+Pluto	2026	L	ai
+Pocket	2026	L	
+PokerClubHub	2026	L	fintech
+Pollen	2026	L	
+Polymath	2026	L	
+Polymorph	2026	L	
+Pops	2026	L	ai
+Poth Labs	2026	L	ai
+Prana	2026	L	
+Praxis Robotics	2026	L	
+Prescience, Inc.	2026	L	fintech
+Prism	2026	L	
+Prized	2026	L	devtools
+Prodigy Research	2026	L	ai,fintech
+ProjectX	2026	L	
+Proprio Robotics	2026	L	ai
+Protent	2026	L	
+Prototyping.io	2026	L	
+ProvenMetal	2026	L	
+Proximitty	2026	L	
+Q2Q	2026	I	ai,fintech
+Qlo	2026	L	ai,fintech
+Qokedas	2026	L	ai
+RASPIRE	2026	L	
+REV1	2026	L	
+Radley	2026	L	
+RamAIn	2026	L	ai
+Rapidfolio	2026	L	ai,fintech
+Rasyn	2026	L	
+Rational	2026	L	ai
+RealPact	2026	L	ai
+ReasonBlocks	2026	L	
+Reframe	2026	L	
+Regbase	2026	L	
+Remix	2026	L	
+Remy AI	2026	L	
+RentAHuman	2026	L	
+Replicas	2026	L	
+Ressl AI	2026	L	ai
+Result	2026	L	
+Revion	2026	L	ai
+Revnu	2026	L	ai
+Rex	2026	L	ai
+Rhizome AI	2026	L	
+Riften	2026	L	ai,devtools
+RightNow	2026	L	
+Rindler	2026	L	devtools
+Rise Reforming	2026	L	
+Risklytics	2026	L	ai,fintech
+Ritivel	2026	L	ai
+River Markets	2026	L	
+Robby	2026	L	
+RoboDock	2026	L	
+Robocurve	2026	L	ai,devtools
+RonanRx Inc.	2026	L	
+Rubric AI	2026	L	
+Rudus	2026	L	
+Ruma Care	2026	L	
+RunAnywhere	2026	L	
+Runtime	2026	L	
+Saffron	2026	L	
+Salem Robotics Inc	2026	L	
+Salesgraph	2026	L	
+Salus	2026	L	ai,devtools
+Samora AI	2026	L	
+Saudara AI	2026	L	
+Savant	2026	L	
+Sazabi	2026	L	
+Scheduling Wizard	2026	L	
+Scope	2026	L	
+Seeing Systems	2026	L	ai
+Sentient OS	2026	L	ai
+Sentrial	2026	L	
+Sequence Markets	2026	L	
+Servo7	2026	L	ai
+Sherpa	2026	L	
+Shielded	2026	L	devtools,fintech
+Shiraz AI	2026	L	ai
+Shofo	2026	L	ai,devtools
+Sidekick	2026	L	ai
+Signals	2026	L	
+Sila	2026	L	
+Silmaril	2026	L	
+Simantic	2026	L	ai,devtools
+Simulithic	2026	L	ai
+Sitefire	2026	L	ai
+Skillsync	2026	L	devtools
+Skymerse	2026	L	ai
+Smartbase	2026	L	
+Snap Poker	2026	L	
+Soria	2026	L	
+SpaceFlow Technologies, Inc.	2026	L	
+Sparkles	2026	L	
+Spectre Intelligence	2026	L	fintech
+Speko	2026	L	ai,devtools
+Sponge	2026	L	
+SpotPay	2026	L	
+Squid	2026	L	
+StableBrowse	2026	L	ai
+Stage	2026	L	
+Standard Machines	2026	L	ai
+Standard Signal	2026	L	
+Standout	2026	L	
+Stilta	2026	L	
+Stoa	2026	L	ai,devtools,fintech
+Strand AI	2026	L	
+Stratum Industries	2026	L	ai
+Studio	2026	L	ai
+SubVysion	2026	L	ai,devtools
+Sunflower	2026	L	
+Supafax	2026	L	ai
+Superlog	2026	L	ai,devtools
+Superset	2026	L	ai,devtools
+Surtr Defense Systems	2026	L	
+Synapse Semiconductor	2026	L	ai
+Synphony	2026	L	
+Synthetic Sciences	2026	L	
+Syntropy	2026	L	
+Taiga	2026	L	
+TakeCareOS	2026	L	
+Talking Computers	2026	L	
+TareBio	2026	L	
+Tarifflo Inc.	2026	L	
+Tasklet	2026	L	
+Tenet Industries	2026	L	
+Tenor	2026	L	ai
+Tensr	2026	L	
+Tepali	2026	L	
+Terminal Use	2026	L	
+Terranox AI	2026	L	
+TesterArmy	2026	L	
+The Company Company	2026	L	
+The Token Company	2026	L	
+Thomas	2026	L	
+Tolmo	2026	L	ai,devtools
+Torus	2026	L	ai
+Totalis	2026	L	
+Touchmark	2026	L	ai,devtools
+Touchy	2026	L	ai
+TovenAI	2026	L	ai,fintech
+Traceforce	2026	L	ai
+Tracer	2026	L	ai,devtools
+Traverse	2026	L	ai
+Travo	2026	L	
+Trellis	2026	L	
+Trident	2026	L	ai
+Trope	2026	L	ai
+TryNearby	2026	L	
+Tsenta	2026	L	
+Twolabs	2026	L	ai
+Ultrasonium	2026	L	
+Understudy Labs	2026	L	ai,devtools
+Unifold	2026	L	
+Unisson	2026	L	
+Uno Wallet	2026	L	ai,devtools,fintech
+Userlens	2026	L	
+VOYGR	2026	L	
+ValCtrl	2026	L	
+Valence	2026	L	
+Valgo	2026	L	
+Vector Legal	2026	L	
+Veeza AI	2026	L	ai
+Vela	2026	L	
+Veltha	2026	L	fintech
+Velum Labs	2026	L	ai
+Vendo	2026	L	ai,devtools
+Ventura	2026	L	
+Verdant	2026	L	
+Verdex	2026	L	
+Verdict Machine	2026	L	ai,fintech
+Vernius Systems, Inc.	2026	L	
+Vestris	2026	L	
+Visibl Semiconductors	2026	L	ai
+Voltair	2026	L	
+Voquill	2026	L	
+Vorelios	2026	L	ai
+Voxel Energy	2026	L	ai
+Waddle Labs	2026	L	ai,devtools
+Walter	2026	L	
+Wato	2026	L	
+Waybill	2026	L	ai
+Wayco	2026	L	
+Wealor	2026	L	
+Whitespace	2026	L	ai
+Wideframe	2026	L	
+WonderTx	2026	L	ai
+Wondering	2026	L	ai
+YouArt	2026	L	
+Zaplar	2026	L	ai
+Zatanna	2026	L	
+Zenbu	2026	L	ai,devtools
+ZeroSettle	2026	L	
+Zibra Labs	2026	L	
+Zolvo	2026	L	
+Zomma	2026	L	ai
+Zymbly	2026	L	
+antimattr	2026	L	ai
+flowscope	2026	L	
+hardware intelligence	2026	L	ai,devtools
+herdr	2026	L	ai,devtools
+hiloop	2026	L	ai,devtools
+jo	2026	L	ai
+machine0	2026	L	devtools
+o11	2026	L	ai
+primitive	2026	L	
+qomplement	2026	L	
+rekursiv.ai	2026	L	ai
+screenpipe	2026	L	ai
+shortkit	2026	L	
+shotwell.ai	2026	L	
+smol machines	2026	L	
+tash	2026	L	fintech
+tday.com	2026	L	
+transload	2026	L	
+Rote	2027	L	fintech

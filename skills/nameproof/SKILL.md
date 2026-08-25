@@ -22,8 +22,12 @@ directly, never rewrite its logic in your head.
 | find me a name / nomme ce projet | `nameproof generate --all --score --count 40` then `score` the shortlist |
 | what do names in this market look like | `nameproof market <corpus file>` (several files = comparison) |
 | find gold names / a revendre / trouve des noms gold | `nameproof gold --available` (multi-seed until enough free .com survive) |
+| est-ce que le nom compte / ca change quoi / des stats | `nameproof cohort [--market ai\|fintech\|devtools]` |
 
-Bundled corpora live at `corpora/`: `ai-infra.txt`, `fintech-infra.txt`, `dev-cli.txt`,
+Bundled corpora live at `corpora/`: `yc-ai-winners.txt` (145), `yc-fintech-winners.txt` (126)
+and `yc-devtools-winners.txt` (116) are every YC company in that market that was acquired or went
+public, so they are the biggest and the only ones selected on an OUTCOME rather than on taste.
+The curated leader lists are `ai-infra.txt`, `fintech-infra.txt`, `dev-cli.txt`,
 `regtech-product.txt`, `aml-fincrime.txt`, `ria-compliance.txt`, `soc2-compliance.txt`, plus
 `roots-trust.txt` which is a root lexicon for `--roots`, not a name corpus.
 
@@ -65,6 +69,27 @@ collisions de marque evidentes) AVANT d'entrer dans une shortlist.
 
 Une shortlist issue d'un seul registre ne se presente JAMAIS comme "les meilleurs": elle se
 presente comme ce qu'elle est, le meilleur du registre explore.
+
+## Reading `cohort`, and the answer you must not soften
+
+`nameproof cohort` tests seven measurable name properties against a real outcome: 1899 resolved
+Y Combinator companies, acquired or public against inactive, permuted WITHIN each batch year
+because resolution rate runs from 91% in 2007 to 0% in 2026.
+
+THE RESULT IS A NULL AND YOU REPORT IT AS ONE. Nothing this tool measures predicts whether a
+company works. The one property that reached significance overall was length, and the command's
+own control row dissolves it: restricted to single-word names it is -0.078 letters at p=0.4708.
+Never quote the length row without the control row. Never let a user leave believing a clean
+nameproof score raises their odds.
+
+WHAT THE NULL DOES NOT KILL, and this is the distinction to hand the user: every finding this
+tool prints is a COST, not a probability of success. `SPELL_AMBIGUOUS` means they will spell the
+name out loud on calls for years. That is real and worth avoiding regardless of what an
+acquisition rate says. Use `cohort` to refuse the opposite claim, never to argue that naming does
+not matter.
+
+The one exception, reported with its n: on the AI slice (n=314), single-word names run 13.7
+points ahead at p=0.0020 and survive the correction. One market, one property.
 
 ## Reading `market`
 

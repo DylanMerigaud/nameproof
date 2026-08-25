@@ -27,7 +27,8 @@ C  Cyclr  (penalty 4)
   [1] READING_TRAP     c before e, i or y is soft, before a, o, u it is hard
 ```
 
-No account, no API key, no language model. `score`, `market` and `generate` run entirely offline.
+No account, no API key, no language model. `score`, `market`, `generate`, `gold` and `cohort`
+run entirely offline.
 
 ## Install
 
@@ -493,6 +494,77 @@ package. The CMU dictionary is Copyright (c) 1993-2015 Carnegie Mellon Universit
 here under its BSD-style license; the SEC company name list is U.S. federal government data,
 public domain in the United States. Full attribution is in the header of each generated data
 file and in `tools/build_data.py`.
+
+## `nameproof cohort`: does any of this actually predict anything?
+
+```bash
+nameproof cohort
+nameproof cohort --market ai
+```
+
+Every other command in this tool describes a name. This one checks the descriptions against what
+happened to the companies, and it is the only command here whose useful answer is usually **no**.
+
+**The dataset.** `nameproof/data/yc_cohort.tsv`, 6190 Y Combinator companies with a batch year
+and a status, built by `tools/build_cohort.py` from the public YC directory with no API key.
+Crunchbase was the obvious source and is out: the Basic API is discontinued, there is no free
+tier, and this tool spends no money. YC is better for this question anyway, because the outcome
+and the **date** travel together.
+
+**The confound, which is the whole methodological problem.** Resolution rate falls from about 91%
+for the 2007 batches to 0% for 2026, because a young company has not had time to resolve either
+way. Comparing names across batches measures age, not names. So every test permutes the outcome
+labels **within** a batch year and never across, 2000 times, on a fixed seed.
+
+```
+$ nameproof cohort
+
+cohort: all markets  (1899 resolved companies, 21 batch-year strata)
+--------------------------------------------------------------------------
+  outcome: 832 acquired or public, 1070 inactive
+  2000 permutations, labels shuffled WITHIN each batch year, seed 20260825
+  Bonferroni across 7 tests -> significant below p=0.0071
+
+  property                                diff         p   verdict
+  letters in the name                   -0.517    0.0010   SIGNIFICANT
+  is a single word                      +0.046    0.0135   marginal
+  phonetic penalty (this tool's score)  -0.198    0.0590   null
+  syllables in the first word           -0.068    0.0860   null
+  built from real words                 +0.033    0.1409   null
+  ends on a vowel                       -0.006    0.7486   null
+  names the category                    -0.001    0.9450   null
+
+  control, same test on SINGLE-WORD names only (1537 companies):
+  letters in the name                   -0.078    0.4708   null
+```
+
+**Read the control row, because it is the finding.** Length looks like a real effect at
+p=0.001. Restricted to single-word names it collapses to noise. The apparent length effect was
+multi-word names being both longer and worse; length was standing in for word count, and word
+count itself was only marginal and did not survive the correction. The command runs that control
+automatically and says so in words, because printing the first table without the second would
+ship exactly the folklore this repository exists to refuse.
+
+**So: nothing this tool measures predicts whether a company works.** That is not a reason to stop
+measuring, and it is worth being precise about what it does and does not kill. A
+`SPELL_AMBIGUOUS` finding is a **cost**, paid every time somebody says your name on a call, and a
+cost is real whether or not it moves an acquisition rate dominated by the product, the market and
+the founders. What the null kills is the claim no naming tool should have made: that a good name
+makes you win.
+
+**One market-specific exception, and it is reported the same careful way.** On the AI slice
+(n=314), single-word names come in **13.7 points** ahead of multi-word ones at p=0.0020, which
+does survive the correction after the length effect dissolves. One property, one market, with its
+n attached.
+
+**Known limits**, because a null is only worth the honesty around it. "Acquired" is not
+unambiguously a win and this data cannot separate an acqui-hire from a success. YC is one
+accelerator with one selection filter. About 0.6% of resolved rows carry an alias or tagline in
+the name field ("Kenota (formerly ExVivo Labs)"); they are kept verbatim because editing
+third-party names is editing the evidence, and dropping all 12 moves the headline from -0.517 to
+-0.461 and leaves the control identical at -0.078. And absence of evidence at n=1899 is not proof
+of absence, though an effect small enough to hide at that size is also small enough to be
+worthless as advice.
 
 ## `nameproof doctor`: does the tool still describe reality?
 

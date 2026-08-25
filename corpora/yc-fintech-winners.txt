@@ -1,0 +1,141 @@
+# Fintech: YC companies that were acquired or went public
+#
+# Y Combinator companies in this market whose outcome resolved POSITIVELY: acquired or gone
+# public. Extracted from nameproof/data/yc_cohort.tsv (built by tools/build_cohort.py from the
+# public YC directory, no API key, read 2026-08-25). Names verbatim, never normalised.
+#
+# WHAT THIS CORPUS IS, and it is not the same thing as the curated lists next to it.
+# `fintech-infra.txt` holds the market's known leaders, picked by hand. This one holds every YC company
+# in the market that actually resolved well, which makes it larger (n=126) and unfiltered by
+# anyone's taste. Use it when you want the shape of what WORKED rather than the shape of what is
+# famous.
+#
+# READ `nameproof cohort --market fintech` BEFORE ACTING ON THIS. The outcome test over the same
+# data finds that name shape does not predict which companies land here. This corpus describes a
+# convention; it does not promise a result.
+Abacus
+Accept.inc (formerly BoardRE)
+Aer
+Alterya
+Altro
+Apto Payments
+Arc
+Arcus
+Arthena
+Axoni
+BharatX
+Bitaccess
+Bouncer
+Brex
+Bueno Finance
+bxblue
+Catamaran
+Catch
+Central
+Chargehound
+Charityvest
+Checkars
+CheqUPI
+Cobblestone
+Cognito
+Coin
+Coinbase
+Compound
+CrowdForce
+Debteye
+Decent
+delt.ai
+Dharma Labs
+Dialect
+Elph
+Emburse
+Evry Health
+Fat Llama
+Final
+Fingo Africa
+Finley
+Finmark
+Fivestars
+Flinto
+Fond
+Fuell
+FutureAdvisor
+GamerPay
+Glide
+Grin
+Groww
+Hent
+Honeydue
+Humi
+hypcloud
+Hyper
+inai
+InterPrime
+Joe
+Kash
+Kinside
+Landed
+LendEDU
+Level
+Look After My Bills
+LotusPay
+Maroo
+Mattermark
+Moltin
+Momence
+Mono
+Mulligan
+Naborly
+Newfront
+No Cap
+Nova
+Obie
+OctiFi
+Onyx Private
+OpenInvest
+OrderAhead
+Paribus
+Pay Swifter
+Payable
+Paystack
+Penny
+Plerk
+Procoto
+Proper
+Pry Financials
+R2
+Railbird
+Rocketrip
+Sable
+Sandbox Banking
+Satsuma
+Savvy
+Second Measure
+Seed
+Sendwave
+SimpleHash
+Skio
+Sliced Investing
+SlidePay
+Sproutfi
+Standard Treasury
+Stilt
+Striga
+Strive School
+Surematics
+TAI
+TaxProper
+Theorem
+Thyme
+Tola
+Tranch
+Trigo
+Truebill
+Verak
+Vest
+Weav
+WePay
+Willing
+Winter
+Xfers
+yBANQ

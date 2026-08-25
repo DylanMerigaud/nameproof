@@ -7,16 +7,18 @@ Five commands, because there are only five questions worth asking about a candid
   market     what do the names that already won in this space look like
   generate   produce candidates instead of judging ones you already have
   gold       produce a name that stands on its own, not tied to any product
+  cohort     does any of this predict an outcome? (the command allowed to answer no)
 
-`score`, `market`, `generate` and `gold` work offline. Only `check` touches the network, and the
-`--available` flag on `generate`/`gold` does too, since it is a bare .com RDAP lookup.
+`score`, `market`, `generate`, `gold` and `cohort` work offline. Only `check` touches the
+network, and the `--available` flag on `generate`/`gold` does too, since it is a bare .com RDAP
+lookup.
 """
 import argparse
 import sys
 
 from concurrent.futures import ThreadPoolExecutor
 
-from . import availability, corpus, doctor, generate, gold, search, seo
+from . import availability, cohort, corpus, doctor, generate, gold, search, seo
 from .phonetics import Finding, analyse, grade as _grade
 
 BAR = "-" * 66
@@ -244,6 +246,31 @@ def cmd_gold(args):
     return 0
 
 
+def cmd_cohort(args):
+    """The only command here whose useful answer is usually "no".
+
+    Every other command describes a name. This one checks the descriptions against what actually
+    happened to 1899 resolved Y Combinator companies, stratified by batch year because a company
+    from 2007 has had eighteen years to resolve and one from 2025 has had none.
+
+    It exists because the alternative is folklore. A naming tool that never checks its own
+    properties against an outcome is free to imply that a clean score buys you something, and
+    the measurement says it does not: the one property that reached significance overall was
+    length, and it dissolved entirely once word count was controlled.
+    """
+    rows = cohort.load()
+    if args.market:
+        rows = cohort.select(rows, market=args.market)
+    else:
+        rows = cohort.select(rows)
+    if not rows:
+        print("no resolved companies in that slice. Markets: {}".format(
+            ", ".join(sorted(cohort.MARKETS_IN_DATA))))
+        return 2
+    print(cohort.render(rows, market=args.market, trials=args.trials, seed=args.seed))
+    return 0
+
+
 def cmd_doctor(args):
     return doctor.run(verbose=args.verbose)
 
@@ -320,6 +347,18 @@ def main(argv=None):
     go.add_argument("--available", action="store_true",
                     help="check the bare .com and rank a free one to the top (network)")
     go.set_defaults(func=cmd_gold)
+
+    co = sub.add_parser("cohort",
+                        help="does any measurable name property predict an outcome? Runs a "
+                             "batch-stratified permutation test over 1899 resolved YC companies")
+    co.add_argument("--market", help="restrict to one market: {}".format(
+        ", ".join(sorted(cohort.MARKETS_IN_DATA))))
+    co.add_argument("--trials", type=int, default=cohort.DEFAULT_TRIALS,
+                    help="permutations. More trials buy resolution on small p-values and "
+                         "nothing else")
+    co.add_argument("--seed", type=int, default=cohort.DEFAULT_SEED,
+                    help="same seed, same p-values. A p that moves between runs is not evidence")
+    co.set_defaults(func=cmd_cohort)
 
     args = p.parse_args(argv)
     return args.func(args)

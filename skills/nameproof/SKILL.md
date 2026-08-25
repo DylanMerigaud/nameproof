@@ -49,6 +49,19 @@ Avant toute recommandation d'achat, une passe de naming couvre AU MOINS:
 4. Sur les meilleurs noms PRIS: dire s'ils sont EN USAGE ou PARQUES (un fetch suffit),
    sans jamais engager d'argent (aftermarket = decision et paiement de Dylan).
 
+### Le 10x par defaut: la cible est le gold PERTINENT (Dylan, 2026-08-25)
+
+La cible de toute passe de naming n'est pas le meilleur descriptif, c'est un nom de la classe
+normfin/praxtrust: **gold-shaped (court, prononcable, revendable) ET porteur du sens du
+projet**. Le registre B est donc le registre PRINCIPAL d'une passe, pas un complement. Mesure
+qui le justifie (2026-08-24/25): les gold purs type mot-reel sont squattes a ~100%, les
+inventes porteurs de sens restent trouvables (renovfin, Versiota, labprove).
+
+**Ecran de connotation OBLIGATOIRE**: le scoreur est phonetique et aveugle au sens. Mesure:
+morbus- (maladie), rectus-, tutus- ("tutu") sont sortis grade A. Chaque finaliste passe un
+jugement humain/LLM de connotation (sens des racines, lecture involontaire en EN et FR,
+collisions de marque evidentes) AVANT d'entrer dans une shortlist.
+
 Une shortlist issue d'un seul registre ne se presente JAMAIS comme "les meilleurs": elle se
 presente comme ce qu'elle est, le meilleur du registre explore.
 

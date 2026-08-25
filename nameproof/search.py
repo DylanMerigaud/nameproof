@@ -78,6 +78,36 @@ pas. c'est meme mieux reecriture ca veut dire que c'est libre en soi." He was ri
 halves, and the second half is the sharper one: a rewrite means NOBODY OWNS YOUR EXACT STRING,
 which is strictly better than a namesake who does.
 
+THE MECHANISM, FROM GOOGLE'S OWN PATENT, and it says what the lever actually is. US11847176B1
+and US9002866B1, "Generating context-based spell corrections of entity names", read 2026-08-25.
+Three signals decide whether your name gets rewritten:
+
+  1. POPULARITY, as a hard stop: "if the entity name is popular, the system stops the process".
+     This is the growth path everyone repeats, and it is real but slow.
+  2. CONTEXT CONSISTENCY, which is the part nobody repeats and the only fast lever: "the context
+     consistency measure for a particular name-context pair is an estimate of a probability
+     that, if the entity name appears in text, the context term will also appear". The
+     correction is chosen by whether the SURROUNDING WORDS fit the candidate.
+  3. EDIT DISTANCE, as a filter: candidates too far from the query are dropped.
+
+Read signal 2 as an instruction. `trimurti` does not co-occur with "claude code", "eval",
+"harness" or "rules" anywhere in the corpus. Every page that puts the brand name NEXT TO its own
+domain vocabulary lowers the context consistency of the wrong correction, which is a different
+and much cheaper action than "grow the brand". Generic backlinks do not do this; writing the
+name inside its own subject matter does.
+
+Read signal 3 as a naming rule, applied BEFORE choosing: a name further from any common word is
+structurally safer, and that is a property you can pick rather than earn.
+
+THE CAVEAT THIS REPO OWES ITS OWN STANDARD. A patent describes an invention, not necessarily the
+system in production, and the same discipline that refuses the 2012 EMD folklore applies here:
+treat the three signals as Google's stated model of the problem, not as a measured description
+of today's ranking stack. What IS confirmed by a live official channel is that there is no
+appeal. Google Search Central Community, a Diamond Product Expert answering this exact case on
+2025-02-05, read 2026-08-25: "There is no support path to 'correct' this. Pretty sure is as you
+already found, need to your brand to grow. If more people are searching for it, Google will be
+'less confident' that the user made a typo."
+
 SO RANK THE DAMAGE BY THE HIJACKER'S STANDING DEMAND, never by the presence of a rewrite:
 
   worst   an entity owns your exact spelling and has its own demand (a 1.4M-follower creator, a

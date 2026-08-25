@@ -24,6 +24,32 @@ directly, never rewrite its logic in your head.
 Bundled corpora live at `corpora/`: `dev-cli.txt`, `regtech-product.txt`, `roots-trust.txt`,
 `aml-fincrime.txt`, `ria-compliance.txt`, `soc2-compliance.txt`.
 
+## DEEP ALWAYS: la profondeur minimale d'une recherche de nom (Dylan, 2026-08-24)
+
+Verbatim fondateur: "j'accepte pas ses reponses, cherche deep always. [...] pour moi cest
+grosse frustration si on doit rename. si on a un nom golde on pourras le revendre au pire."
+Le jour meme, une passe de ~20 candidats d'un seul registre avait ete presentee comme "les
+meilleurs", avec "rename plus tard" en plan B. Refuse. Renommer est un ECHEC, pas un plan,
+et un bon nom est un ACTIF revendable.
+
+Avant toute recommandation d'achat, une passe de naming couvre AU MOINS:
+
+1. **Trois registres distincts**, jamais un seul:
+   - composes descriptifs (msb+renew, plan+remit): disent le job, valeur de revente faible;
+   - inventes porteurs de sens (registre praxtrust: racine latine/grecque + racine metier,
+     via un fichier --roots ecrit pour le domaine);
+   - courts generiques revendables (le registre GOLD: prononcable, 2-3 syllabes, assez
+     large pour survivre a un pivot et se revendre).
+2. **100+ candidats scores PAR produit** (generate multi-seeds + composes a la main),
+   dispo verifiee sur tous les A-grades, `?` rejoue avant d'etre rapporte.
+3. **La shortlist marque les picks GOLD** (revendables) a cote des descriptifs, et dit
+   pour chaque finaliste ce qu'il vaut en revente, pas seulement en usage.
+4. Sur les meilleurs noms PRIS: dire s'ils sont EN USAGE ou PARQUES (un fetch suffit),
+   sans jamais engager d'argent (aftermarket = decision et paiement de Dylan).
+
+Une shortlist issue d'un seul registre ne se presente JAMAIS comme "les meilleurs": elle se
+presente comme ce qu'elle est, le meilleur du registre explore.
+
 ## Reading `score`
 
 Output is one block per name, best first, `GRADE  name  (penalty N)` then one line per finding

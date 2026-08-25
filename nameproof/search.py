@@ -54,6 +54,41 @@ The difference is not company size, it is what the string competes with. Nobody 
 anything. `vanta` is the prefix of `vantage`, a word with permanent search demand that no
 marketing budget can outbid.
 
+GOOGLE SAYS THE SAME THING IN ITS OWN WORDS, and the source matters because this is the single
+most contested verdict this tool produces. Search Central, January 2023 SEO office hours, read
+2026-08-25, answering a founder whose brand `Quoality` was being corrected to `quality`:
+
+    "When you search for something that we often see as a misspelling of a common word, our
+     algorithms learn that and will attempt to suggest a correct spelling or even just do a
+     search for the correct spelling altogether. As your brand grows, eventually our algorithms
+     learn your brand name and perhaps stop showing results for what our algorithms initially
+     detected as the correct spelling. It will take time though."
+
+Read the hedges, they are the whole answer: "PERHAPS stop" and "it will take TIME though". A
+rewrite is a STARTING CONDITION, not a verdict. Practitioner reports put the clearing time at
+weeks to years, with one first-hand account at 7 to 8 months.
+
+MEASURE THE AGE BEFORE YOU CONCLUDE THAT TIME DID NOT WORK. This was got wrong here on
+2026-08-25, out loud: two of this portfolio's LIVE products were still being rewritten, and that
+was presented as proof that a live site does not fix it. Then the registration dates came back.
+`wedpalette.com` was created 2026-07-15, SIX WEEKS old. `praxtrust.com` three days,
+`pamawatch.com` and `planremit.com` the same morning. Six weeks is not a test of "it will take
+time", it is the absence of one. Dylan, pushing back: "je pense qu'avec du temps il re-ecrirat
+pas. c'est meme mieux reecriture ca veut dire que c'est libre en soi." He was right on both
+halves, and the second half is the sharper one: a rewrite means NOBODY OWNS YOUR EXACT STRING,
+which is strictly better than a namesake who does.
+
+SO RANK THE DAMAGE BY THE HIJACKER'S STANDING DEMAND, never by the presence of a rewrite:
+
+  worst   an entity owns your exact spelling and has its own demand (a 1.4M-follower creator, a
+          funded competitor). You are fighting a namesake and growth does not dislodge it.
+  hard    a rewrite toward an ordinary word with permanent demand: `drawer`, `release`,
+          `vantage`. This is the Vanta ceiling, 24 years and hundreds of millions and it still
+          does not own its name.
+  soft    a rewrite toward something niche or decaying. Google's own statement applies and
+          growth clears it.
+  best    a vacuum. `praxtrust.com` ranked first for its own name at THREE DAYS old.
+
 READ THAT AS A RULE: a hijacked name does not get fixed by blog posts and age when the thing
 hijacking it has its own standing demand. It gets fixed when there was nothing there to begin
 with, which is the case where it was barely hijacked at all. If Vanta cannot displace `vantage`,

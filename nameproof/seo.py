@@ -94,13 +94,36 @@ def _load_system_dict():
     return words
 
 
+def has_system_dict():
+    """Whether this machine widened the net beyond the embedded 52-word list.
+
+    Exposed because a caller reporting a SHARE rather than a single verdict has to disclose it:
+    "8% of this market are real words" means something very different when the only dictionary
+    available holds 52 entries. `corpus.py` prints the caveat on the strength of this.
+    """
+    return bool(_load_system_dict())
+
+
+def is_real_word(word):
+    """Is this one token an ordinary English word? The shared primitive.
+
+    Split out of `dictionary_word` below so `corpus.py` can measure the real-word share of a
+    market without duplicating the lookup, the fallback, or the definition of "ordinary". One
+    dictionary, one answer, both callers.
+    """
+    w = re.sub(r"[^a-z]", "", word.lower())
+    if not w:
+        return False
+    return w in COMMON or w in _load_system_dict()
+
+
 def dictionary_word(name):
     """Is the bare name an ordinary English word? The heaviest SEO finding there is."""
     w = re.sub(r"[^a-z]", "", name.lower())
     if not w:
         return []
     sysd = _load_system_dict()
-    hit = w in COMMON or (w in sysd)
+    hit = is_real_word(w)
     if not hit:
         return []
     where = "the system dictionary" if w in sysd else "the built-in common-word list"

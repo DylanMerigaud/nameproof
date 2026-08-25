@@ -78,11 +78,16 @@ MIN_SYLLABLES = 2
 MAX_SYLLABLES = 3
 
 
-def gold_roots(n=20, seed=42):
+def gold_roots(n=20, seed=42, profile=None):
     """`latin_roots`, pointed at the embedded GOLD lexicon instead of the generic built-in one
-    or a `--roots` file. Same call shape as every other entry in `TECHNIQUES` below (`n`, `seed`)
-    so the CLI can pool all three without a special case for this one."""
-    return generate.latin_roots(n=n, seed=seed, roots=GOLD_ROOTS)
+    or a `--roots` file. Same call shape as every other entry in `TECHNIQUES` below (`n`, `seed`,
+    `profile`) so the CLI can pool all three without a special case for this one.
+
+    `profile` is a `corpus.MarketProfile` and it is passed straight through. A GOLD name is
+    supposed to outlive one bet, so shaping it to a market is a narrowing the caller has to ask
+    for explicitly; when they do, the shape they get is the market's, and the GOLD gate below
+    still applies on top of it."""
+    return generate.latin_roots(n=n, seed=seed, roots=GOLD_ROOTS, profile=profile)
 
 
 # Deliberately three, not four: `rare` is excluded on purpose, see the module docstring. Sorted

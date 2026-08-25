@@ -1,0 +1,32 @@
+# Fintech infrastructure: payments, card issuing, banking-as-a-service, ledgers.
+#
+# Source: the providers named across the 2026 banking-as-a-service and fintech-infrastructure
+# roundups (SDK.finance, ConnectPay, Azify, the Forbes Fintech 50 coverage) plus the US
+# issuing/ledger layer every one of them builds on. Read 2026-08-25. Names verbatim.
+#
+# NOT the consumer neobanks. This is the layer a developer integrates, which is what makes it
+# comparable to `dev-cli.txt` and `ai-infra.txt` rather than to a brand-led consumer market.
+Stripe
+Adyen
+Plaid
+Marqeta
+Lithic
+Unit
+Increase
+Column
+Highnote
+Moov
+Galileo
+Solaris
+Treezor
+Intergiro
+Railsr
+Airwallex
+Checkout
+Modern Treasury
+Ramp
+Brex
+Mercury
+Carta
+Pave
+Mesh

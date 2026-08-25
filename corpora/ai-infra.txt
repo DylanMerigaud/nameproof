@@ -1,0 +1,36 @@
+# AI infrastructure and LLM tooling: the model, inference and retrieval layer.
+#
+# Source: the vendors named across the 2026 AI-infrastructure roundups (Y Combinator's
+# infrastructure directory, Northflank's "Top AI companies in 2026", StartupHub.ai's AI
+# infrastructure and LLM categories), cross-checked against the ones with a live product a
+# developer actually installs. Read 2026-08-25. Names are verbatim as the company writes them.
+#
+# WHY THIS CORPUS EXISTS. Dylan named fintech, devtools and AI as the three markets worth
+# measuring, and AI was the one with no corpus at all. It is also the most useful contrast to
+# `soc2-compliance.txt`: both are product markets, and they name themselves nothing alike.
+Anthropic
+OpenAI
+Pinecone
+Qdrant
+Chroma
+Weaviate
+LangChain
+LlamaIndex
+Modal
+Replicate
+Baseten
+Fireworks
+Groq
+Cerebras
+CoreWeave
+Together
+Anyscale
+Braintrust
+Langfuse
+Helicone
+Vellum
+Perplexity
+Cursor
+Sierra
+Harvey
+Glean

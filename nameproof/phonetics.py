@@ -83,6 +83,14 @@ READING_TRAPS = [
 ILLEGAL_ONSETS = ("pf", "ts", "zh", "gz", "vl", "sr", "tl", "dl", "kv", "hr", "mb", "ng", "tk")
 
 
+# A trailing vowel LETTER, silent "e" excluded because it is not an open SOUND. Lives here
+# rather than in `corpus.py` or `generate.py` because BOTH read it and they must agree: the
+# corpus measures how often a market ends open, and the generator is now steered by that
+# number. Two copies of this tuple drifting apart would make the measurement and the thing it
+# calibrates quietly stop meaning the same thing.
+OPEN_FINAL_LETTERS = ("a", "i", "o", "u", "y")
+
+
 class Finding:
     """One thing wrong with a name, with the reason attached.
 

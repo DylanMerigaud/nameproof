@@ -13,7 +13,7 @@ import unittest
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from nameproof import generate  # noqa: E402
-from nameproof.phonetics import analyse, grade  # noqa: E402
+from nameproof.phonetics import analyse, grade, syllables  # noqa: E402
 
 TECHNIQUE_FUNCS = [generate.rare_words, generate.latin_roots,
                    generate.phonotactic, generate.markov_chain]
@@ -163,3 +163,87 @@ class TestRootLexicon(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestMarketProfileSteersGeneration(unittest.TestCase):
+    """The wire built on 2026-08-25, and the reason it was built.
+
+    Three of this module's shaping constants were set against four cherry-picked names (Vanta,
+    Drata, Sprinto, Alessa) and said so in their own comments. Measured at n=200 the day the
+    profile landed: `roots` ended on a vowel 56% of the time and `phonotactic` 46%, against 30%
+    for the SOC 2 corpus, 10% for AML and 0% for developer CLI tools. The generator was not
+    wrong, it was uncalibrated, and it produced one register whoever the buyer was.
+
+    So what these cases guard is not "the profile parameter is accepted". It is that the
+    parameter MOVES the output, that it moves it toward the market rather than away, and that
+    passing none leaves every previously recorded run byte-identical.
+    """
+
+    def _profile(self, basename):
+        from nameproof import corpus
+        path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                            "corpora", basename)
+        return corpus.profile(corpus.CorpusReport(corpus.load(path), label=basename), basename)
+
+    def _open_final_rate(self, names):
+        return sum(1 for x in names
+                   if x.lower().endswith(generate._OPEN_FINAL_LETTERS)) / max(1, len(names))
+
+    def test_no_profile_leaves_every_technique_byte_identical(self):
+        """The seed is a promise, and it was made before the profile existed. A default draw
+        that shifted by one call would break every run recorded in the README."""
+        expected = {
+            "rare": generate.rare_words(10, seed=42),
+            "roots": generate.latin_roots(10, seed=42),
+            "phonotactic": generate.phonotactic(10, seed=42),
+            "markov": generate.markov_chain(10, seed=42),
+        }
+        for label, fn in generate.TECHNIQUES.items():
+            self.assertEqual(expected[label], fn(10, seed=42, profile=None), label)
+
+    def test_a_zero_vowel_market_gets_no_vowel_final_names(self):
+        """`dev-cli` measures 0% vowel-final (ripgrep, fzf, jq, bat, fd). Before the profile,
+        `phonotactic` produced 46% and could not reach that market at all."""
+        p = self._profile("dev-cli.txt")
+        names = generate.phonotactic(40, seed=7, profile=p)
+        self.assertTrue(names)
+        self.assertEqual(0.0, self._open_final_rate(names))
+
+    def test_the_realised_rate_tracks_the_market_rather_than_a_constant(self):
+        """Two markets, one technique, one seed. If the profile were decorative the two lists
+        would come back with the same shape."""
+        dev = self._open_final_rate(generate.phonotactic(40, seed=7,
+                                                         profile=self._profile("dev-cli.txt")))
+        soc = self._open_final_rate(generate.phonotactic(
+            40, seed=7, profile=self._profile("soc2-compliance.txt")))
+        self.assertLess(dev, soc)
+
+    def test_a_one_syllable_market_can_actually_be_reached(self):
+        """`dev-cli` is 7 of 12 one-syllable. The builder used to draw only from {2, 3}, so no
+        seed and no count could ever produce that register."""
+        p = self._profile("dev-cli.txt")
+        names = generate.phonotactic(40, seed=3, profile=p)
+        self.assertTrue(any(syllables(x) == 1 for x in names))
+
+    def test_every_technique_respects_the_length_band(self):
+        """`rare` and `markov` cannot be steered at generation time, so the band is the only
+        handle on them. A technique that ignored it would put out-of-register names into a
+        pool the user asked to be in-register."""
+        p = self._profile("dev-cli.txt")
+        for label, fn in generate.TECHNIQUES.items():
+            for name in fn(25, seed=5, profile=p):
+                self.assertTrue(p.fits_shape(name), "{}: {}".format(label, name))
+
+    def test_a_profile_never_invents_a_name_to_keep_the_count_up(self):
+        """The fallback paths. `latin_roots` returns a bare root plus 'a' when every seam
+        fails, and `markov` used to return its last rejected draw. Either one under a profile
+        would be an out-of-band name arriving through the one path that skips the filter."""
+        p = self._profile("dev-cli.txt")
+        for fn in (generate.latin_roots, generate.markov_chain):
+            names = fn(200, seed=11, profile=p)
+            self.assertTrue(all(p.fits_shape(x) for x in names), fn.__name__)
+
+    def test_a_profiled_run_is_still_reproducible(self):
+        p = self._profile("soc2-compliance.txt")
+        for fn in TECHNIQUE_FUNCS:
+            self.assertEqual(fn(12, seed=9, profile=p), fn(12, seed=9, profile=p), fn.__name__)

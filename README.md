@@ -133,6 +133,7 @@ This is the part no other tool does, and it is usually the most useful output of
 
 ```bash
 nameproof market corpora/soc2-compliance.txt
+nameproof market corpora/soc2-compliance.txt corpora/ria-compliance.txt   # and compare them
 nameproof score mycandidate --market corpora/soc2-compliance.txt
 ```
 
@@ -144,12 +145,23 @@ corpora/soc2-compliance.txt  (10 names)
 --------------------------------------------------------------
   single word            : 8/10  (80%)
   names the category     : 1/10  (10%)  -> Secureframe
+  built from real words  : 2/10  (20%)  -> Strike Graph, Tugboat Logic
   ends on a vowel        : 3/10  (30%)
   syllables (first word) : 1syl x2, 2syl x4, 3syl x2, 4syl x2
   single-word length     : min 5 median 7 max 11
+  phonetic penalty       : median 2, worst 4
 
-  read as: 80% are a single word, 10% name the category, 2 syllables dominate, median length 7
+  read as: 80% are a single word, 10% name the category, 20% are built from real words,
+           2 syllables dominate, median length 7  (n=10)
 ```
+
+Every share carries its `n`, because every corpus in this repository is between 10 and 26 names
+and a share computed on 10 reads exactly like one computed on 1000 until somebody acts on it.
+
+**Real word or coined** is the axis most naming decisions actually turn on, and it is measured
+against your system dictionary. On a machine without one the row says it was not measured rather
+than printing a share off the 52-word embedded fallback: a stub reference set would report
+almost everything as coined, confidently and wrongly.
 
 **The finding that pays for the whole feature.** Run it on two markets that sell the same thing
 in different ways:
@@ -164,8 +176,30 @@ Vanta, Drata, Sprinto, Scrut. Then Core Compliance, MyComplianceOffice, Hardin C
 wrong convention your name quietly tells the market you are the other one. Nobody can tell you
 that from a general rule about good names. Ten lines of a competitor list can.
 
-Corpora are plain text, one name per line, `#` for comments. Four are bundled; write your own in
-two minutes.
+That finding used to be made by hand, by running the command twice and diffing the output by eye.
+Pass several corpora and the tool states it:
+
+```
+$ nameproof market corpora/ai-infra.txt corpora/fintech-infra.txt corpora/dev-cli.txt
+
+comparison
+--------------------------------------------------------------
+                        ai-infra      fintech-infra   dev-cli
+  names the category    0%  (n=26)    0%  (n=24)      0%  (n=12)
+  single word           100% (n=26)   96% (n=24)      100% (n=12)
+  ends on a vowel       19%  (n=26)   25% (n=24)      0%  (n=12)
+  built from real words 50%  (n=26)   50% (n=24)      17% (n=12)
+
+  built from real words splits these markets: 50% for fintech-infra against 17% for dev-cli
+```
+
+Read that last row. Half of AI infrastructure and half of fintech infrastructure are ordinary
+English words (Stripe, Column, Increase, Modal, Together, Cursor). Developer CLI tools are not:
+they are `ripgrep`, `fzf`, `zoxide`, `hadolint`. Same buyer persona, opposite convention.
+
+Corpora are plain text, one name per line, `#` for comments. Six name corpora ship with the
+tool (`soc2-compliance`, `ria-compliance`, `regtech-product`, `aml-fincrime`, `dev-cli`,
+`ai-infra`, `fintech-infra`); write your own in two minutes.
 
 ### 4. Will you be able to rank for your own name?
 
@@ -390,6 +424,66 @@ roots  (10 generated)
 That `--score` line is the point of shipping generation and scoring in the same tool: generate,
 then judge with the exact rules already sitting in `phonetics.py`, instead of eyeballing which
 of forty candidates look right.
+
+### `--market`: generate names shaped like the ones that already won
+
+The two halves above were built separately and, until 2026-08-25, had never been connected.
+`market` measured a market's conventions; `generate` ignored them. Three of the generator's
+shaping constants were set against **four cherry-picked names** (Vanta, Drata, Sprinto, Alessa)
+and said so in their own comments, while the corpora that could measure them sat in the same
+repository. Measured at n=200 per technique:
+
+| source | ends on a vowel |
+|---|---|
+| generator `roots` | **56%** |
+| generator `phonotactic` | **46%** |
+| corpus soc2-compliance | 30% |
+| corpus aml-fincrime | 10% |
+| corpus dev-cli | **0%** |
+
+The generator was not wrong, it was **uncalibrated**: it produced one register regardless of who
+the buyer was, and for a CLI-tool market it was calibrated at the wrong end of the scale
+entirely. `--market` replaces those constants with the corpus's own numbers, at generation time:
+
+```
+$ nameproof generate --technique phonotactic --count 10 --seed 11
+A  Boype     A  Emo       A  Pipaw     A  Pita      A  Triduda
+A  Tryshol   B  Hukel     B  Moomaho   B  Stikoo    C  Sootan
+
+$ nameproof generate --technique phonotactic --count 10 --seed 11 --market corpora/dev-cli.txt
+
+  shaped by corpora/dev-cli.txt (n=12): 0% vowel-final, 3-10 letters, 1syl x7, 2syl x3, ...
+
+A  Bles      A  Lol       A  Mod       A  Owk       A  Pal
+A  Rang      A  Slol      A  Swyd      B  Mawzood   C  Tayoos
+```
+
+Three things come off the corpus and one comes back into the ranking:
+
+| lever | what it replaces |
+|---|---|
+| vowel-final rate | the 2-to-1 suffix bias in `roots` and the 0.25 closed-final chance in `phonotactic` |
+| syllable distribution | the flat 80/20 draw over 2 and 3 syllables |
+| length band | nothing. `rare` and `markov` draw from fixed pools and could not be steered at all; the band is how they get pointed at a market |
+| `corpus.fits` findings | nothing. Distance from the market now enters the penalty, so the ranking is market-aware too |
+
+Measured after the wire, `phonotactic` at n=40: dev-cli **0%** against a 0% target,
+soc2-compliance **30%** against 30%, ria-compliance **10%** against 8%. And the one-syllable
+register became reachable for the first time: `dev-cli` is 7 of 12 one-syllable names and the
+builder previously drew only from {2, 3}, so no seed and no count could ever produce it.
+
+**One limit, stated rather than hidden.** `roots` has a vocabulary of 20 roots by 15 suffixes, so
+the register a market asks for is a pool of a few dozen to a few hundred *distinct* names, not an
+infinite stream. Against the RIA corpus (8% vowel-final), `--count 20` realises 7.1% across 40
+seeds; `--count 150` drifts to 21%, because the closed pool holds 136 combinations and
+`_collect_unique` has nowhere else to go. **Ask for more names than a register contains and you
+get the other register.** The fix is more roots (a `--roots` file for your own field), never a
+bigger `--count`.
+
+`--market` works on `gold` too, with one consequence worth naming: a GOLD name is meant to
+outlive one bet, so shaping it to a market is a deliberate narrowing. The GOLD gate still runs on
+top, the strictest of the two wins, and an empty result is the honest answer when a market's
+shape and the GOLD profile do not overlap.
 
 **On the data.** The CMU Pronouncing Dictionary is 3.6 MB and most of it is not needed here, so
 it never enters the repository. `tools/build_data.py` downloads it, extracts a small filtered

@@ -23,9 +23,7 @@ BAR = "-" * 66
 
 
 def cmd_score(args):
-    market = None
-    if args.market:
-        market = corpus.CorpusReport(corpus.load(args.market))
+    market, _ = _market_profile(args.market)
     keywords = args.keywords.split(",") if args.keywords else ()
     rows = []
     for name in args.names:
@@ -63,9 +61,32 @@ def cmd_check(args):
 
 
 def cmd_market(args):
-    names = corpus.load(args.file)
-    print(corpus.CorpusReport(names).render(args.file))
+    """One corpus, or several side by side.
+
+    Several, because this tool's best finding was made by hand. The README reports that SOC 2
+    compliance sold as a PRODUCT names the category 10% of the time while investment adviser
+    compliance sold as a SERVICE does it 50% of the time, and that product companies and service
+    firms therefore do not name themselves the same way. A human produced that by running this
+    command twice and diffing the output by eye: nothing guarded it, and nobody could reproduce
+    it without being told how. `market a.txt b.txt` states it.
+    """
+    reports = [corpus.CorpusReport(corpus.load(f), label=f) for f in args.files]
+    for r in reports:
+        print(r.render())
+        print()
+    if len(reports) > 1:
+        print(corpus.compare(reports))
     return 0
+
+
+def _market_profile(path):
+    """The corpus behind `--market`, as both halves: the report that scores fit and the profile
+    that shapes generation. Returned together because a run using one without the other would
+    either produce market-shaped names ranked by a market-blind rule, or the reverse."""
+    if not path:
+        return None, None
+    report = corpus.CorpusReport(corpus.load(path), label=path)
+    return report, corpus.profile(report, path)
 
 
 def _apply_available_bonus(pool):
@@ -117,10 +138,14 @@ def cmd_generate(args):
     techniques = (sorted(generate.TECHNIQUES.items()) if args.all
                   else [(args.technique, generate.TECHNIQUES[args.technique])])
 
+    report, profile = _market_profile(args.market)
+    if profile:
+        print("\n  " + profile.describe())
+
     pool = []
     seen = set()
     for label, fn in techniques:
-        kwargs = {"n": args.count, "seed": args.seed}
+        kwargs = {"n": args.count, "seed": args.seed, "profile": profile}
         if label == "roots" and getattr(args, "roots", None):
             kwargs["roots_file"] = args.roots
         for name in fn(**kwargs):
@@ -129,6 +154,14 @@ def cmd_generate(args):
                 continue
             seen.add(key)
             findings = analyse(name)
+            # `score --market` keeps fit findings OUT of the penalty on purpose: breaking a
+            # market's pattern is a positioning choice and the tool has no business overruling
+            # a name the user already picked. Here it is the opposite. The user asked for
+            # candidates shaped like this market, so distance FROM it is the thing being
+            # ranked, and leaving it out would produce market-shaped names ordered by a
+            # market-blind rule.
+            if report:
+                findings = findings + corpus.fits(name, report)
             grade, total = _grade(findings)
             pool.append({"name": name, "how": label, "grade": grade,
                          "penalty": total, "findings": findings})
@@ -168,10 +201,14 @@ def cmd_gold(args):
     reserve for a bet nobody has named yet, so a fragment that already reads as one vertical
     (compliance jargon, a category word) is exactly what this gate exists to keep out.
     """
+    report, profile = _market_profile(args.market)
+    if profile:
+        print("\n  " + profile.describe())
+
     pool = []
     seen = set()
     for label, fn in sorted(gold.TECHNIQUES.items()):
-        for name in fn(n=args.count, seed=args.seed):
+        for name in fn(n=args.count, seed=args.seed, profile=profile):
             key = name.lower()
             if key in seen:
                 continue
@@ -179,6 +216,13 @@ def cmd_gold(args):
             if not gold.passes_profile(name, args.min_length, args.max_length):
                 continue
             findings = analyse(name)
+            # Same reasoning as `generate --market`, with one extra consequence worth naming: a
+            # GOLD name is supposed to outlive one bet, so asking for one shaped by a market is
+            # a deliberate narrowing. The GOLD gate still runs on top, which means the two can
+            # disagree and the strictest wins, and an empty result is the honest outcome when a
+            # market's shape and the GOLD profile have no overlap.
+            if report:
+                findings = findings + corpus.fits(name, report)
             g, total = _grade(findings)
             pool.append({"name": name, "how": label, "grade": g, "penalty": total,
                          "findings": findings})
@@ -238,7 +282,9 @@ def main(argv=None):
     d.set_defaults(func=cmd_doctor)
 
     m = sub.add_parser("market", help="describe the naming conventions of a market")
-    m.add_argument("file", help="one competitor name per line")
+    m.add_argument("files", nargs="+",
+                   help="one competitor name per line. Pass several corpora to get the "
+                        "comparison as well as the descriptions")
     m.set_defaults(func=cmd_market)
 
     g_ = sub.add_parser("generate", help="produce candidate names, deterministic and offline")
@@ -255,6 +301,7 @@ def main(argv=None):
     g_.add_argument("--available", action="store_true",
                     help="keep only names whose BARE .com is free. No get- or -hq trick: if it "
                          "needs a prefix it does not make the list")
+    g_.add_argument("--market", help="{}".format('a corpus file of names that already won in this market. Shapes the candidates AT GENERATION TIME (vowel-final rate, syllable count and length band are taken from the corpus instead of from constants) and folds fit-against-the-market into the ranking'))
     g_.add_argument("--score", action="store_true",
                     help="run each name through phonetics.analyse, keep only grade A or B")
     g_.set_defaults(func=cmd_generate)
@@ -269,6 +316,7 @@ def main(argv=None):
                     help="shortest letter count the GOLD profile keeps")
     go.add_argument("--max-length", type=int, default=9, dest="max_length",
                     help="longest letter count the GOLD profile keeps")
+    go.add_argument("--market", help="{}".format('a corpus file of names that already won in this market. Shapes the candidates AT GENERATION TIME (vowel-final rate, syllable count and length band are taken from the corpus instead of from constants) and folds fit-against-the-market into the ranking'))
     go.add_argument("--available", action="store_true",
                     help="check the bare .com and rank a free one to the top (network)")
     go.set_defaults(func=cmd_gold)

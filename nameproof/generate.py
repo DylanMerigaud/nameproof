@@ -36,6 +36,8 @@ import os
 import random
 import re
 
+from .phonetics import OPEN_FINAL_LETTERS as _OPEN_FINAL_LETTERS
+
 DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
 
 
@@ -56,12 +58,32 @@ def _collect_unique(gen_one, n, max_attempts):
     while len(out) < n and attempts < max_attempts:
         attempts += 1
         candidate = gen_one()
+        # A technique under a `profile` can exhaust its inner budget without producing anything
+        # inside the market's shape band. Returning None there and spending an attempt is
+        # correct: inventing an out-of-band name to keep the count up is how a filter silently
+        # stops being a filter.
+        if not candidate:
+            continue
         key = candidate.lower()
         if key in seen:
             continue
         seen.add(key)
         out.append(candidate)
     return out
+
+
+def _profile_filter(profile):
+    """Every technique's shape gate, in one place.
+
+    `rare` and `markov` draw from FIXED pools and cannot be steered at generation time: there is
+    no knob inside a dictionary sample or a trigram walk that makes it prefer a market. So they
+    are steered by rejection instead, which is honest about what it is, and the two techniques
+    that CAN be steered (`roots`, `phonotactic`) also pass through here so a candidate means the
+    same thing whichever technique produced it.
+    """
+    if profile is None:
+        return lambda name: True
+    return profile.fits_shape
 
 
 def _weighted(rng, entries):
@@ -95,7 +117,7 @@ def _load_rare_words():
     return words
 
 
-def rare_words(n=20, seed=42):
+def rare_words(n=20, seed=42, profile=None):
     """Real English words, 6 to 9 letters, 3 syllables or fewer, filtered out of the CMU
     dictionary against a general wordlist to drop proper nouns and inflected forms.
 
@@ -103,6 +125,11 @@ def rare_words(n=20, seed=42):
     already spoken by whoever built the dictionary is pronounceable by construction. This is
     the cheapest technique of the four and, on the numbers, the best one."""
     pool = _load_rare_words()
+    # Filter the POOL, then sample, rather than sampling and then rejecting: this technique's
+    # pool is finite and fixed, so narrowing it first is both cheaper and the only way a tight
+    # band still returns `n` names instead of whatever survived a fixed attempt budget.
+    keep = _profile_filter(profile)
+    pool = [w for w in pool if keep(w)]
     rng = random.Random(seed)
     n = min(n, len(pool))
     return [w.capitalize() for w in rng.sample(pool, n)]
@@ -129,10 +156,6 @@ ROOTS = {
 
 SUFFIXES = ["a", "o", "us", "ix", "ta", "ara", "ero", "ent", "ify",
             "io", "ly", "fin", "sys", "wave", "flow"]
-
-# Same test `corpus.py` uses for `open_final`: a trailing vowel LETTER, silent e excluded because
-# it is not an open SOUND. Reused here so the bias below means the same thing it means there.
-_OPEN_FINAL_LETTERS = ("a", "i", "o", "u", "y")
 
 # Seams that read as a typo or a stutter rather than a word boundary: a doubled consonant
 # ("Novvix") or a doubled vowel ("Scalaa", root "scala" plus suffix "a") both do this, and a
@@ -165,11 +188,20 @@ def load_roots(path):
     return out
 
 
-def latin_roots(n=20, seed=42, roots_file=None, roots=None):
+def latin_roots(n=20, seed=42, roots_file=None, roots=None, profile=None):
     """A root plus a suffix, biased toward a vowel-final suffix at roughly 2 to 1.
 
     The bias is deliberate, not measured: about half the suffix list already ends open, and
     that is not enough to reliably echo the Vanta/Drata/Sprinto register on its own.
+
+    WITH A `profile`, THE BIAS STOPS BEING CHOSEN AND STARTS BEING MEASURED. The two-to-one
+    weighting above was set against four cherry-picked names; run at n=200 it produced a
+    vowel-final rate of 56%, higher than every market corpus in this repository (30% for SOC 2,
+    21% regtech, 10% AML, 8% RIA, 0% developer CLI). A profile replaces the weighting with a
+    per-candidate coin flip at the market's own measured rate, which lands the output ON the
+    number instead of near it: the suffix list is drawn from the open half or the closed half
+    according to the flip, rather than from one weighted pool whose realised rate the
+    `BAD_SEAMS` filter then shifts by an amount nobody measured.
 
     `roots`, a dict passed directly, wins over `roots_file` and over the built-in `ROOTS`.
     Added for `gold.py`: its lexicon is embedded in code rather than sitting in a file on disk,
@@ -181,18 +213,47 @@ def latin_roots(n=20, seed=42, roots_file=None, roots=None):
     weighted_suffixes = [
         (s, 2 if s.endswith(_OPEN_FINAL_LETTERS) else 1) for s in SUFFIXES
     ]
+    open_suffixes = [s for s in SUFFIXES if s.endswith(_OPEN_FINAL_LETTERS)]
+    closed_suffixes = [s for s in SUFFIXES if not s.endswith(_OPEN_FINAL_LETTERS)]
+    keep = _profile_filter(profile)
+
+    # THE LIMIT OF STEERING THIS TECHNIQUE, measured 2026-08-25 and stated rather than hidden.
+    # The vocabulary is 20 roots by 15 suffixes, so the register a market asks for is a pool of
+    # a few dozen to a few hundred DISTINCT names, not an infinite stream. Against the RIA
+    # corpus (8% vowel-final) the closed register holds 136 usable combinations: `--count 20`
+    # realises 7.1% open-final across 40 seeds, right on target, while `--count 150` drifts to
+    # 21% because the closed pool is exhausted and `_collect_unique` has nowhere else to go.
+    # Ask for more names than a register contains and you get the other register. The fix is
+    # more roots (a `--roots` file for your own field), never a bigger `--count`.
+
+    def pick_suffix():
+        if profile is None:
+            return _weighted(rng, weighted_suffixes)
+        # Both halves are non-empty for the built-in list (9 open, 6 closed); the `or` guards a
+        # caller who narrows SUFFIXES to one register, where an empty half would otherwise make
+        # `rng.choice` raise on a target of 0% or 100%.
+        want_open = rng.random() < profile.open_final
+        pool = (open_suffixes or closed_suffixes) if want_open else (closed_suffixes
+                                                                     or open_suffixes)
+        return rng.choice(pool)
 
     def gen_one():
         for _ in range(50):
             root = rng.choice(root_pool)
-            suffix = _weighted(rng, weighted_suffixes)
+            suffix = pick_suffix()
             seam = root[-1] + suffix[0]
             if seam in BAD_SEAMS:
                 continue
-            return (root + suffix).capitalize()
+            candidate = (root + suffix).capitalize()
+            if not keep(candidate):
+                continue
+            return candidate
         # Every combination for this root kept hitting a bad seam; a bad seam plus a fresh
-        # root is virtually certain to clear, and this keeps the function total.
-        return (rng.choice(root_pool) + "a").capitalize()
+        # root is virtually certain to clear, and this keeps the function total. Under a
+        # profile the fallback still has to clear the band, or the one path that skips the
+        # filter becomes the path that quietly breaks it.
+        fallback = (rng.choice(root_pool) + "a").capitalize()
+        return fallback if keep(fallback) else None
 
     max_attempts = max(200, n * 20)
     return _collect_unique(gen_one, n, max_attempts)
@@ -247,8 +308,20 @@ def _load_phonotactics():
     return _phonotactics_cache
 
 
-def _gen_phonotactic_one(rng, data):
-    n_syllables = rng.choices([2, 3], weights=[80, 20])[0]
+def _gen_phonotactic_one(rng, data, syllable_weights=None, closed_final_chance=None):
+    """One name. `syllable_weights` and `closed_final_chance` are the two knobs a market moves.
+
+    Both default to the module constants, so a call with no profile produces exactly what it
+    produced before the profile existed. That matters more than it looks: the seed is a promise,
+    and a refactor that shifted the default draw would break every recorded run in the repo.
+    """
+    if syllable_weights:
+        counts = sorted(syllable_weights)
+        n_syllables = rng.choices(counts, weights=[syllable_weights[c] for c in counts])[0]
+    else:
+        n_syllables = rng.choices([2, 3], weights=[80, 20])[0]
+    if closed_final_chance is None:
+        closed_final_chance = _CLOSED_FINAL_CHANCE
     parts = []
     for i in range(n_syllables):
         is_first = i == 0
@@ -259,7 +332,7 @@ def _gen_phonotactic_one(rng, data):
         # against the next syllable's onset cluster is what produces an unpronounceable seam.
         onset = _weighted(rng, data["onsets"] if is_first else data["medial_onsets"])
         nucleus = VOWEL_GRAPH[rng.choices(_WEIGHTED_VOWEL_PHONES, weights=_WEIGHTED_VOWEL_WEIGHTS)[0]]
-        if is_last and rng.random() < _CLOSED_FINAL_CHANCE:
+        if is_last and rng.random() < closed_final_chance:
             coda = _weighted(rng, data["codas"])
         else:
             coda = ""
@@ -267,18 +340,46 @@ def _gen_phonotactic_one(rng, data):
     return "".join(parts).capitalize()
 
 
-def phonotactic(n=20, seed=42):
+def phonotactic(n=20, seed=42, profile=None):
     """Syllables built from consonant clusters attested to open or close a real English word in
     the CMU dictionary, at their attested frequency, with vowels chosen freely between them.
 
     This is the only one of the four techniques that guarantees pronounceability by
     CONSTRUCTION rather than by filtering afterward: every cluster it can produce is one some
-    real English word already opens or closes on."""
+    real English word already opens or closes on.
+
+    THE TECHNIQUE A MARKET PROFILE CHANGES MOST, because both of its shaping constants were
+    guesses. `_CLOSED_FINAL_CHANCE` at 0.25 and the flat 80/20 draw over two and three syllables
+    were set to echo four cherry-picked names; measured at n=200 the result was 46% vowel-final,
+    against 0% for the developer-CLI corpus and 30% for the SOC 2 one. Worse, a market whose
+    names are overwhelmingly ONE syllable (dev-cli: 7 of 12) could not be reproduced at all,
+    because the builder never emitted a one-syllable name. A profile drives both, so naming a
+    CLI tool and naming a compliance product stop producing the same register.
+    """
     data = _load_phonotactics()
     rng = random.Random(seed)
+    keep = _profile_filter(profile)
+    syllable_weights = profile.syllable_weights if profile else None
+    closed_final_chance = (1.0 - profile.open_final) if profile else None
 
     def gen_one():
-        return _gen_phonotactic_one(rng, data)
+        # THE KNOB AND THE MEASURE DISAGREE, so the output is checked rather than trusted. An
+        # "open" final syllable is one with no coda, but its vowel grapheme can still be "e",
+        # "ee", "ay", "er" or "oo", and `OPEN_FINAL_LETTERS` counts none of those as ending on a
+        # vowel (silent e is excluded there on purpose). Driving only the coda chance therefore
+        # landed at 20% against a 30% target on the SOC 2 corpus. Deciding the outcome first and
+        # rejecting a candidate that contradicts it makes the realised rate the target rate,
+        # which is the whole point of measuring the market instead of guessing at it.
+        want_open = profile is not None and rng.random() < profile.open_final
+        for _ in range(30):
+            candidate = _gen_phonotactic_one(rng, data, syllable_weights, closed_final_chance)
+            if not keep(candidate):
+                continue
+            if profile is not None:
+                if candidate.lower().endswith(_OPEN_FINAL_LETTERS) != want_open:
+                    continue
+            return candidate
+        return None
 
     max_attempts = max(200, n * 30)
     return _collect_unique(gen_one, n, max_attempts)
@@ -384,7 +485,7 @@ def _has_attested_edges(word, legal_onsets, legal_codas):
     return True
 
 
-def markov_chain(n=20, seed=42):
+def markov_chain(n=20, seed=42, profile=None):
     """A character trigram model trained on cleaned SEC company names (public domain data,
     legal suffixes stripped), with the loosest guarantees of the four techniques here and
     therefore the strictest output filter: shape rejection first, then a check that the name
@@ -398,13 +499,19 @@ def markov_chain(n=20, seed=42):
     legal_onsets = phonotactics["onset_graphs"]
     legal_codas = phonotactics["coda_graphs"]
     rng = random.Random(seed)
+    keep = _profile_filter(profile)
 
     def gen_one():
         for _ in range(100):
             candidate = _gen_markov_one(rng, model, starts, _MARKOV_ORDER)
-            if _looks_pronounceable(candidate) and _has_attested_edges(candidate, legal_onsets, legal_codas):
+            if (_looks_pronounceable(candidate)
+                    and _has_attested_edges(candidate, legal_onsets, legal_codas)
+                    and keep(candidate)):
                 return candidate
-        return candidate  # exhausted the inner budget; let the outer dedupe/attempt cap decide
+        # Exhausted the inner budget. With no profile the last draw is returned as before, so
+        # the default output is byte-identical; under a profile it is dropped, because a name
+        # that failed the market band is the one thing this call was asked not to produce.
+        return None if profile is not None else candidate
 
     max_attempts = max(400, n * 60)
     return _collect_unique(gen_one, n, max_attempts)

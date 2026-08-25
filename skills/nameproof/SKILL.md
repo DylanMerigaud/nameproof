@@ -20,11 +20,12 @@ directly, never rewrite its logic in your head.
 | roast this name / is X any good / X vs Y | `nameproof score X Y` |
 | is X free / can I get the domain | `nameproof check X --surfaces com,io,pypi,npm,github` |
 | find me a name / nomme ce projet | `nameproof generate --all --score --count 40` then `score` the shortlist |
-| what do names in this market look like | `nameproof market <corpus file>` |
+| what do names in this market look like | `nameproof market <corpus file>` (several files = comparison) |
 | find gold names / a revendre / trouve des noms gold | `nameproof gold --available` (multi-seed until enough free .com survive) |
 
-Bundled corpora live at `corpora/`: `dev-cli.txt`, `regtech-product.txt`, `roots-trust.txt`,
-`aml-fincrime.txt`, `ria-compliance.txt`, `soc2-compliance.txt`.
+Bundled corpora live at `corpora/`: `ai-infra.txt`, `fintech-infra.txt`, `dev-cli.txt`,
+`regtech-product.txt`, `aml-fincrime.txt`, `ria-compliance.txt`, `soc2-compliance.txt`, plus
+`roots-trust.txt` which is a root lexicon for `--roots`, not a name corpus.
 
 ## DEEP ALWAYS: la profondeur minimale d'une recherche de nom (Dylan, 2026-08-24)
 
@@ -65,6 +66,22 @@ collisions de marque evidentes) AVANT d'entrer dans une shortlist.
 Une shortlist issue d'un seul registre ne se presente JAMAIS comme "les meilleurs": elle se
 presente comme ce qu'elle est, le meilleur du registre explore.
 
+## Reading `market`
+
+Five conventions per corpus, each printed as `k/n (pct)`: single word, names the category, built
+from real words, ends on a vowel, syllable spread, length spread, and the market's own median
+phonetic penalty. Quote the `read as:` line, which carries `n`.
+
+`built from real words` is the axis the DEEP ALWAYS rule turns on (real-word golds are squatted
+at ~100%, coined meaning-carriers stay findable), so it is the row to read first when choosing a
+register. On a machine with no system dictionary that row says it was not measured; do NOT
+report it as 0%.
+
+Pass several corpora to get the comparison block, which names the conventions that actually
+SPLIT the markets. That is where the findings are: product versus service compliance splits 10%
+against 50% on naming the category, and AI infrastructure and fintech infrastructure are both
+50% built from real words against 17% for developer CLI tools.
+
 ## Reading `score`
 
 Output is one block per name, best first, `GRADE  name  (penalty N)` then one line per finding
@@ -96,6 +113,30 @@ deterministic: same `--seed` and `--count`, same names.
 For a name that has to mean something in a specific field, write a roots file
 (`root meaning` per line) and pass `--technique roots --roots <file>`. The built-in roots are
 generic on purpose.
+
+### `--market`: always pass it when the market is known (2026-08-25)
+
+`generate --market <corpus>` and `gold --market <corpus>` shape the candidates AT GENERATION
+TIME off the corpus, then fold fit-against-the-market into the ranking. Use it whenever the user
+named a market or a competitor set, and write a 15-line corpus if none of the bundled ones fit:
+that costs two minutes and changes the register of every candidate.
+
+WHY IT IS NOT OPTIONAL WHEN THE MARKET IS KNOWN. Without it the generator produces one register
+whoever the buyer is. Measured at n=200 before the flag existed: `roots` ended on a vowel 56% of
+the time and `phonotactic` 46%, against 30% for the SOC 2 corpus, 10% for AML and 0% for
+developer CLI tools. A run for a CLI tool was calibrated at the wrong end of the scale entirely,
+and no seed and no count could reach the one-syllable register that market lives in.
+
+Three levers come off the corpus: the vowel-final rate, the syllable distribution and the length
+band. Report the `shaped by ... (n=N)` line the command prints, because `n` is small on every
+bundled corpus and the user is entitled to know the sample the shape came from.
+
+ONE TRAP, and it bites on exactly the deep passes DEEP ALWAYS asks for. `roots` has 20 roots by
+15 suffixes, so a market's register is a pool of a few dozen to a few hundred DISTINCT names.
+Against a market at 8% vowel-final, `--count 20` lands on target while `--count 150` drifts to
+21%, because the register is exhausted and the generator falls back to the other one. When a pass
+needs 100+ candidates, get them from MULTIPLE SEEDS and a `--roots` file for the domain, never
+from one big `--count`.
 
 ## Reading `gold`
 

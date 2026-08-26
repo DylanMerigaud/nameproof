@@ -78,6 +78,41 @@ pas. c'est meme mieux reecriture ca veut dire que c'est libre en soi." He was ri
 halves, and the second half is the sharper one: a rewrite means NOBODY OWNS YOUR EXACT STRING,
 which is strictly better than a namesake who does.
 
+CAN THE GOOD OUTCOME BE ENGINEERED? NO, AND THAT WAS TESTED RATHER THAN ASSUMED. Three names in
+this portfolio ranked first for their own name almost immediately: `praxtrust.com` at three days
+old, `pamawatch.com` and `planremit.com` the same morning they were registered. The obvious
+question is what they did right, so 2026-08-25 went looking for the rule.
+
+  Edit distance to the nearest dictionary word does NOT separate them. The instant-rank group
+  sits at 3, 3, 3, 4; the rewritten group at 2, 2, 3, 3, 3. The dictionary only separates the
+  names that ARE ordinary words (`selfheal`, `residual`, both at distance 0).
+
+  The suggestion RATIO does not separate them either: every name in both groups keeps its
+  spelling in 0% of suggestions.
+
+  The shape looked like it separated them. Every instant-rank name is a niche jargon token plus
+  a plain word: prax+trust, pama+watch, plan+remit. Every rewritten name is two ordinary words:
+  trim+writ, draw+rev, release+reel, wed+palette. A clean story, and it is wrong. `msbwatch`,
+  built to the exact winning shape from this same portfolio's own jargon, is rewritten to
+  `mewatch`, a Singaporean streaming service. `msbrenew` has the jargon token too and is
+  rewritten to an adult creator.
+
+SO THE OUTCOME IS NOT A TECHNIQUE, IT IS A LOOKUP. Whether a name is rewritten depends on
+whether a popular string happens to sit inside Google's edit-distance window, and that window is
+a private popularity table nobody outside can compute. praxtrust did not earn its instant rank;
+its neighbourhood was empty.
+
+WHAT IS REPRODUCIBLE IS THE PROCESS, AND IT HAS A NUMBER. Of eight fresh candidates put through
+a real browser on 2026-08-25: two came back clean (`ruleproof`, `rulecase`), two were softly
+corrected toward an on-topic parent term (`ruleprune`, `fincenwatch` to `fincen`, whose results
+are treasury.gov and fincen.gov), and four were rewritten into another universe entirely
+(`msbwatch`, `ruletare`, `cruftlint`, `cruftcut`). Roughly ONE IN FOUR survives.
+
+That is the operating instruction: generate four times more candidates than you need, put every
+one through a real results page BEFORE registering anything, and keep the quarter that comes
+back clean. Do not try to predict which quarter. This module cannot, and neither can anyone
+selling a heuristic for it.
+
 THE MECHANISM, FROM GOOGLE'S OWN PATENT, and it says what the lever actually is. US11847176B1
 and US9002866B1, "Generating context-based spell corrections of entity names", read 2026-08-25.
 Three signals decide whether your name gets rewritten:
